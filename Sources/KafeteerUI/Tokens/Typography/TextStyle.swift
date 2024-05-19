@@ -22,7 +22,7 @@ public enum TextStyle: String, Identifiable, Hashable, CaseIterable {
     
     public var id: Self { self }
     public var custom: Font { Font.custom(FontWeight.fontName(for: weight), size: size, relativeTo: textStyle) }
-    public var uiFont: CrossplatformFont { CrossplatformFont(name: FontWeight.fontName(for: weight), size: size)! }
+    public var uiFont: CrossPlatformFont { CrossPlatformFont(name: FontWeight.fontName(for: weight), size: size)! }
     
     // swiftlint:disable cyclomatic_complexity
     var textStyle: Font.TextStyle {

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FixedHeightSheetModifier<Value: View>: ViewModifier {
+private struct FixedHeightSheetModifier<Value: View>: ViewModifier {
     @Binding var isPresented: Bool
     var onDismiss: (() -> Void)?
     @ViewBuilder let sheetContent: () -> Value
@@ -21,6 +21,7 @@ struct FixedHeightSheetModifier<Value: View>: ViewModifier {
                         sheetHeight = size.height
                     }
                     .presentationDetents([.height(sheetHeight)])
+                    .presentationDragIndicator(.visible)
             }
     }
 }

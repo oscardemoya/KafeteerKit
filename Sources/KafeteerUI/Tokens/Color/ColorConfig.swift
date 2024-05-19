@@ -54,7 +54,7 @@ struct DefaultColorConfiguration: ColorConfiguration {
     
     // Lines
     var borderColor: Color { Color(.foreground500).opacity(0.25) }
-    var dividerColor: Color { Color(.foreground500).opacity(0.5) }
+    var dividerColor: Color { Color(.foreground500).opacity(0.25) }
     
     // Inputs
     var primaryInputBackground: Color { Color(.background500) }

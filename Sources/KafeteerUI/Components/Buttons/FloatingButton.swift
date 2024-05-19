@@ -1,0 +1,48 @@
+//
+//  FloatingButton.swift
+//
+//
+//  Created by Oscar De Moya on 18/05/24.
+//
+
+import SwiftUI
+
+public struct FloatingButton: View {
+    @Binding public var isOn: Bool
+    public var icon: Image
+    public var action: Action
+    
+    public init(isOn: Binding<Bool>, icon: Image = Image(systemName: "plus"), action: @escaping Action) {
+        self._isOn = isOn
+        self.icon = icon
+        self.action = action
+    }
+
+    public var body: some View {
+        VStack {
+            Spacer()
+            HStack {
+                Spacer()
+                Button(action: action) {
+                    icon
+                        .font(.system(size: 24))
+                        .rotationEffect(.degrees(isOn ? 45 : 0))
+                        .animation(.easeOut, value: isOn)
+                        .padding(8)
+                }
+                .tint(.primaryBrand)
+                .buttonStyle(.borderedProminent)
+                .clipShape(.circle)
+                .frame(width: 40, height: 40)
+                .padding(.horizontal, 20)
+                .padding(.vertical, 16)
+                .shadow(color: .primaryForeground.opacity(0.25), radius: 12, x: 0, y: 2)
+            }
+        }
+    }
+}
+
+#Preview {
+    @State var isAdding: Bool = false
+    return FloatingButton(isOn: $isAdding) { isAdding.toggle() }
+}

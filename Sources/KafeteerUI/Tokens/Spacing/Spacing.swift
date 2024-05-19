@@ -9,7 +9,7 @@ import SwiftUI
 
 // TODO: Move values to a Config file
 public enum Spacing: CGFloat, Identifiable, Hashable, CaseIterable {
-    case none = 0
+    case zero = 0
     case quark = 4
     case nano = 8
     case extraSmall = 12
