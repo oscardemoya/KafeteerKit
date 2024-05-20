@@ -13,6 +13,11 @@ public protocol ColorConfiguration {
     var secondaryBrand: Color { get }
     var tertiaryBrand: Color { get }
     
+    // Tint
+    var primaryTint: Color { get }
+    var secondaryTint: Color { get }
+    var tertiaryTint: Color { get }
+    
     // Backgrounds
     var primaryBackground: Color { get }
     var secondaryBackground: Color { get }
@@ -41,6 +46,11 @@ struct DefaultColorConfiguration: ColorConfiguration {
     var primaryBrand: Color { Color(.primary500) }
     var secondaryBrand: Color { Color(.secondary500) }
     var tertiaryBrand: Color { Color(.tertiary500) }
+    
+    // Tint
+    var primaryTint: Color { Color(.primary200) }
+    var secondaryTint: Color { Color(.secondary200) }
+    var tertiaryTint: Color { Color(.tertiary200) }
     
     // Backgrounds
     var primaryBackground: Color { Color(.background300) }

@@ -37,7 +37,7 @@ public enum ColorShade: CaseIterable, Identifiable {
     // TODO: Move values to a Config file
     var blendIntensity: CGFloat {
         switch self {
-        case .shade1: 0.9
+        case .shade1: 0.8
         case .shade2: 0.6
         case .shade3: 0.4
         case .shade4: 0.2
@@ -45,7 +45,7 @@ public enum ColorShade: CaseIterable, Identifiable {
         case .shade6: 0.2
         case .shade7: 0.4
         case .shade8: 0.6
-        case .shade9: 0.9
+        case .shade9: 0.8
         }
     }
 }

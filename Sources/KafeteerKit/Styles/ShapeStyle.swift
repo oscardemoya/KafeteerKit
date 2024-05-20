@@ -13,6 +13,11 @@ public extension ShapeStyle where Self == Color {
     static var secondaryBrand: Color { Config.shared.colors.secondaryBrand }
     static var tertiaryBrand: Color { Config.shared.colors.tertiaryBrand }
     
+    // Tint
+    static var primaryTint: Color { Config.shared.colors.primaryTint }
+    static var secondaryTint: Color { Config.shared.colors.secondaryTint }
+    static var tertiaryTint: Color { Config.shared.colors.tertiaryTint }
+    
     // Backgrounds
     static var primaryBackground: Color { Config.shared.colors.primaryBackground }
     static var secondaryBackground: Color { Config.shared.colors.secondaryBackground }
@@ -23,10 +28,6 @@ public extension ShapeStyle where Self == Color {
     static var secondaryForeground: Color { Config.shared.colors.secondaryForeground }
     static var tertiaryForeground: Color { Config.shared.colors.tertiaryForeground }
     
-    // Lines
-    static var borderColor: Color { Config.shared.colors.borderColor }
-    static var dividerColor: Color { Config.shared.colors.dividerColor }
-    
     // Inputs
     static var primaryInputBackground: Color { Config.shared.colors.primaryInputBackground }
     static var secondaryInputBackground: Color { Config.shared.colors.secondaryInputBackground }
@@ -34,4 +35,8 @@ public extension ShapeStyle where Self == Color {
     
     // Bars
     static var barBackground: Color { Config.shared.colors.barBackground }
+    
+    // Lines
+    static var borderColor: Color { Config.shared.colors.borderColor }
+    static var dividerColor: Color { Config.shared.colors.dividerColor }
 }

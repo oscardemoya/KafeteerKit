@@ -17,11 +17,27 @@ public struct HierarchicalButtonStyle: ButtonStyle {
             .frame(maxWidth: .infinity)
             .controlSize(.large)
             .padding()
-            .background(hierarchy.brandColor)
-            .foregroundColor(.white)
+            .background(backgroundColor)
+            .foregroundColor(foregroundColor)
             .cornerStyle(.rounded(.medium))
             .scaleEffect(configuration.isPressed ? 0.99 : 1.0)
             .transition(.opacity)
+    }
+    
+    var backgroundColor: Color {
+        switch hierarchy {
+        case .primary: .primaryBrand
+        case .secondary: .primaryTint.opacity(0.4)
+        case .tertiary: .primaryForeground.shade(.shade3).opacity(0.15)
+        }
+    }
+    
+    var foregroundColor: Color {
+        switch hierarchy {
+        case .primary: Color(.lightOverlay)
+        case .secondary: .primaryBrand
+        case .tertiary: .primaryBrand
+        }
     }
 }
 

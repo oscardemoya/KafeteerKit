@@ -16,6 +16,14 @@ public extension Hierarchy {
         }
     }
     
+    var tintColor: Color {
+        switch self {
+        case .primary: .primaryTint
+        case .secondary: .secondaryTint
+        case .tertiary: .tertiaryTint
+        }
+    }
+        
     var backgroundColor: Color {
         switch self {
         case .primary: .primaryBackground
