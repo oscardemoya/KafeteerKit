@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-public struct KafeteerUI {
+public struct KafeteerKit {
     public static var currentSizing: Sizing { Config.shared.sizing }
     
     public static func configure(sizing: Sizing = .regular, 

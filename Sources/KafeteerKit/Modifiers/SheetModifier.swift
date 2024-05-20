@@ -16,17 +16,18 @@ private struct FixedHeightSheetModifier<Value: View>: ViewModifier {
     func body(content: Content) -> some View {
         content
             .sheet(isPresented: $isPresented, onDismiss: onDismiss) {
-                sheetContent()
-                    .onSizeChange { size in
-                        sheetHeight = size.height
-                    }
-                    .presentationDetents([.height(sheetHeight)])
-                    .presentationDragIndicator(.visible)
+                ZStack {
+                    Color.tertiaryBackground.edgesIgnoringSafeArea(.all)
+                    sheetContent()
+                        .onSizeChange { size in
+                            sheetHeight = size.height
+                        }
+                        .presentationDetents([.height(sheetHeight)])
+                        .presentationDragIndicator(.visible)
+                }
             }
     }
 }
-
-// MARK: View Extension
 
 public extension View {
     func fixedHeightSheet<Content>(isPresented: Binding<Bool>,
@@ -39,7 +40,3 @@ public extension View {
         )
     }
 }
-
-
-
-

@@ -13,7 +13,7 @@ public struct HierarchicalTextFieldStyle: TextFieldStyle {
     public func _body(configuration: TextField<Self._Label>) -> some View {
         configuration
             .padding()
-            .background(.secondaryBackground)
+            .background(hierarchy.inputBackgroundColor)
             .borderStyle(.stroke(.nano), borderColor: .borderColor, cornerStyle: .rounded(.medium))
     }
 }

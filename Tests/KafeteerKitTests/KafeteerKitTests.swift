@@ -1,7 +1,7 @@
 import XCTest
-@testable import KafeteerUI
+@testable import KafeteerKit
 
-final class KafeteerUITests: XCTestCase {
+final class KafeteerKitTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest

@@ -17,7 +17,7 @@ public struct HierarchicalButtonStyle: ButtonStyle {
             .frame(maxWidth: .infinity)
             .controlSize(.large)
             .padding()
-            .background(.primaryBrand)
+            .background(hierarchy.brandColor)
             .foregroundColor(.white)
             .cornerStyle(.rounded(.medium))
             .scaleEffect(configuration.isPressed ? 0.99 : 1.0)

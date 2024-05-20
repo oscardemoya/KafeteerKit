@@ -12,8 +12,7 @@ struct BaseDateField: View {
     @Binding var date: Date
     var isOptional: Bool = false
     @State var internalDate: Date? = .today
-    @State var showDatePicker: Bool = false
-    
+    @State var isExpanded: Bool = false
     var onExpandChange: ValueAction<Bool>?
     
     init(_ titleKey: LocalizedStringKey,
@@ -35,16 +34,16 @@ struct BaseDateField: View {
             .onTapGesture {
                 date = internalDate ?? .today
                 withAnimation {
-                    showDatePicker.toggle()
+                    isExpanded.toggle()
                 }
             }
-            if showDatePicker {
+            if isExpanded {
                 datePicker
             }
         }
-        .cornerStyle(.rounded(.medium))
-        .animation(.easeInOut(duration: 0.2), value: showDatePicker)
-        .onChange(of: showDatePicker) { _, newValue in
+        .borderStyle(.stroke(.nano), borderColor: .borderColor, cornerStyle: .rounded(.medium))
+        .animation(.easeInOut(duration: 0.2), value: isExpanded)
+        .onChange(of: isExpanded) { _, newValue in
             onExpandChange?(newValue)
         }
     }
@@ -75,7 +74,7 @@ struct BaseDateField: View {
             CircularCloseButton {
                 self.internalDate = nil
                 withAnimation {
-                    showDatePicker = false
+                    isExpanded = false
                 }
             }
         }
@@ -83,7 +82,7 @@ struct BaseDateField: View {
     
     @ViewBuilder
     var datePicker: some View {
-        Divider()
+        Divider().background(.dividerColor)
         DatePicker(titleKey, selection: $date, displayedComponents: .date)
             .datePickerStyle(.graphical)
             .onChange(of: date) { newValue in
