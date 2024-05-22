@@ -42,7 +42,7 @@ public struct BaseDateField: View {
                 datePicker
             }
         }
-        .borderStyle(.stroke(.nano), borderColor: .borderColor, cornerStyle: .rounded(.medium))
+        .borderStyle(.stroke(.regular), borderColor: .borderColor, cornerStyle: .rounded(.medium))
         .animation(.easeInOut(duration: 0.2), value: isExpanded)
     }
     

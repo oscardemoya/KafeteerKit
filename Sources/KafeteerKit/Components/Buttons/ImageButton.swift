@@ -80,7 +80,6 @@ public struct ImageButton: View {
         }
         .tint(color)
         .cornerStyle(.rounded(.medium))
-        .buttonStyle(.bordered)
     }
 }
 

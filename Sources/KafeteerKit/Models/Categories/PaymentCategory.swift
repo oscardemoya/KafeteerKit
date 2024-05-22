@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, CategoryRepresentable {
+public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepresentable, IconRepresentable {
     case generic(Generic)
     case home(Home)
     case utility(Utility)

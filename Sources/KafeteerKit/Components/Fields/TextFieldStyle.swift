@@ -14,7 +14,7 @@ public struct HierarchicalTextFieldStyle: TextFieldStyle {
         configuration
             .padding()
             .background(hierarchy.inputBackgroundColor)
-            .borderStyle(.stroke(.nano), borderColor: .borderColor, cornerStyle: .rounded(.medium))
+            .borderStyle(.stroke(.regular), borderColor: .borderColor, cornerStyle: .rounded(.medium))
     }
 }
 

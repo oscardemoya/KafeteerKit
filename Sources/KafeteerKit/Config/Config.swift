@@ -10,6 +10,7 @@ class Config {
     var sizing: Sizing = .regular
     var colors: any ColorConfiguration = DefaultColorConfiguration()
     var fonts: any FontConfiguration = DefaultFontConfiguration()
-    
+    var isLoggingEnabled = true
+
     private init() {}
 }
