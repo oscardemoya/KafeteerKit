@@ -79,5 +79,9 @@ public extension PaymentCategory {
             case .jewelry: String(localized: LocalizedStringResource("Jewelry"))
             }
         }
+        
+        public var keywords: [String] {
+            Keyword.allCases.filter({ $0.value == self }).map(\.rawValue)
+        }
     }
 }

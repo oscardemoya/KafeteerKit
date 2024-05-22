@@ -8,6 +8,7 @@
 import SwiftUI
 
 public enum ShadowStyle: Identifiable, Hashable, CaseIterable {
+    case subtle
     case light
     case medium
     case intense
@@ -18,6 +19,7 @@ public enum ShadowStyle: Identifiable, Hashable, CaseIterable {
     // TODO: Move values to a Config file
     public var opacity: CGFloat {
         switch self {
+        case .subtle: 0.04
         case .light: 0.08
         case .medium: 0.12
         case .intense: 0.32
@@ -27,6 +29,7 @@ public enum ShadowStyle: Identifiable, Hashable, CaseIterable {
     // TODO: Move values to a Config file
     public var radius: CGFloat {
         switch self {
+        case .subtle: 1
         case .light: 1
         case .medium: 4
         case .intense: 12
@@ -36,6 +39,7 @@ public enum ShadowStyle: Identifiable, Hashable, CaseIterable {
     // TODO: Move values to a Config file
     public var offset: CGPoint {
         switch self {
+        case .subtle: CGPoint(x: 0, y: 2 * Self.offsetMultiplier)
         case .light: CGPoint(x: 0, y: 4 * Self.offsetMultiplier)
         case .medium: CGPoint(x: 0, y: 12 * Self.offsetMultiplier)
         case .intense: CGPoint(x: 0, y: 24 * Self.offsetMultiplier)

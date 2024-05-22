@@ -86,5 +86,9 @@ public extension PaymentCategory {
             case .learning: String(localized: LocalizedStringResource("Learning"))
             }
         }
+        
+        public var keywords: [String] {
+            Keyword.allCases.filter({ $0.value == self }).map(\.rawValue)
+        }
     }
 }

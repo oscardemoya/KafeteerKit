@@ -8,6 +8,7 @@
 import SwiftUI
 
 public protocol FontConfiguration {
+    var fontFamilyName: String { get }
     var thinFontName: String { get }
     var lightFontName: String { get }
     var regularFontName: String { get }
@@ -19,6 +20,7 @@ public protocol FontConfiguration {
 }
 
 struct DefaultFontConfiguration: FontConfiguration {
+    var fontFamilyName: String { "AvenirNext" }
     var thinFontName: String { "AvenirNext-UltraLight" }
     var lightFontName: String { "Avenir-Light" }
     var regularFontName: String { "AvenirNext-Regular" }

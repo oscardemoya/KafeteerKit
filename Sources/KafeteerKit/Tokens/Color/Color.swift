@@ -8,4 +8,6 @@
 import SwiftUI
 
 public extension Color {
+    static var lightOverlay = Color(.lightOverlay)
+    static var darkOverlay = Color(.darkOverlay)
 }

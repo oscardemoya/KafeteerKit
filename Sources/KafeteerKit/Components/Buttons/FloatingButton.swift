@@ -19,26 +19,20 @@ public struct FloatingButton: View {
     }
 
     public var body: some View {
-        VStack {
-            Spacer()
-            HStack {
-                Spacer()
-                Button(action: action) {
-                    icon
-                        .font(.system(size: 24))
-                        .rotationEffect(.degrees(isOn ? 45 : 0))
-                        .animation(.easeOut, value: isOn)
-                        .padding(8)
-                }
-                .tint(.primaryBrand)
-                .buttonStyle(.borderedProminent)
-                .clipShape(.circle)
-                .frame(width: 40, height: 40)
-                .padding(.horizontal, 20)
-                .padding(.vertical, 16)
-                .shadow(color: .primaryForeground.opacity(0.25), radius: 12, x: 0, y: 2)
-            }
+        Button(action: action) {
+            icon
+                .font(.system(size: 24))
+                .rotationEffect(.degrees(isOn ? 45 : 0))
+                .animation(.easeOut, value: isOn)
+                .padding(8)
         }
+        .tint(.primaryBrand)
+        .buttonStyle(.borderedProminent)
+        .clipShape(.circle)
+        .frame(width: 40, height: 40)
+        .padding(.horizontal, 20)
+        .padding(.vertical, 16)
+        .shadowStyle(.medium)
     }
 }
 

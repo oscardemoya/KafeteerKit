@@ -25,7 +25,7 @@ public struct ModalTitleBar: View {
                     Spacer().frame(width: closeButtonWidth)
                 }
                 Text(titleKey)
-                    .font(.title3)
+                    .font(.systemDefault(.title3))
                     .fontWeight(.bold)
                     .fontDesign(.rounded)
                     .frame(maxWidth: .infinity)

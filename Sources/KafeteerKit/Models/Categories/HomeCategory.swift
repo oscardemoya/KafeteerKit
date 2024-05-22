@@ -45,7 +45,7 @@ public extension PaymentCategory {
                 case .groceries: .groceries
                 case .toiletries: .toiletries
                 case .food, .meals: .food
-                case .drinks, .beverages, .coffee, .tea: .food
+                case .drinks, .beverages, .coffee, .tea: .drinks
                 case .rent: .rent
                 case .mortgage, .home: .mortgage
                 case .condoFee: .condoFee
@@ -84,6 +84,10 @@ public extension PaymentCategory {
             case .domesticService: String(localized: LocalizedStringResource("Domestic Service"))
             case .lawn: String(localized: LocalizedStringResource("Lawn"))
             }
+        }
+        
+        public var keywords: [String] {
+            Keyword.allCases.filter({ $0.value == self }).map(\.rawValue)
         }
     }
 }

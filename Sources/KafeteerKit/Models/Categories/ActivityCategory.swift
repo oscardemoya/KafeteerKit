@@ -53,5 +53,9 @@ public extension PaymentCategory {
             case .outdoor: String(localized: LocalizedStringResource("Outdoor"))
             }
         }
+        
+        public var keywords: [String] {
+            Keyword.allCases.filter({ $0.value == self }).map(\.rawValue)
+        }
     }
 }

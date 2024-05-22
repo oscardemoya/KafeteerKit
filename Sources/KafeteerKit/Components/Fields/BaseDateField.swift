@@ -7,23 +7,24 @@
 
 import SwiftUI
 
-struct BaseDateField: View {
+public struct BaseDateField: View {
     @State var titleKey: LocalizedStringKey = ""
     @Binding var date: Date
     var isOptional: Bool = false
     @State var internalDate: Date? = .today
-    @State var isExpanded: Bool = false
-    var onExpandChange: ValueAction<Bool>?
+    @Binding public var isExpanded: Bool
     
     init(_ titleKey: LocalizedStringKey,
          selection date: Binding<Date>,
-         isOptional: Bool = false) {
+         isOptional: Bool = false,
+         isExpanded: Binding<Bool>) {
         self.titleKey = titleKey
         self._date = date
         self.isOptional = isOptional
+        self._isExpanded = isExpanded
     }
     
-    var body: some View {
+    public var body: some View {
         VStack(spacing: 0) {
             HStack {
                 textField
@@ -43,9 +44,6 @@ struct BaseDateField: View {
         }
         .borderStyle(.stroke(.nano), borderColor: .borderColor, cornerStyle: .rounded(.medium))
         .animation(.easeInOut(duration: 0.2), value: isExpanded)
-        .onChange(of: isExpanded) { _, newValue in
-            onExpandChange?(newValue)
-        }
     }
     
     @ViewBuilder
@@ -94,9 +92,9 @@ struct BaseDateField: View {
 
 #Preview {
     @State var date: Date = .today
+    @State var isExpanded: Bool = false
     return VStack {
-        BaseDateField("Date", selection: $date)
-        BaseDateField("Date", selection: $date, isOptional: true)
+        BaseDateField("Date", selection: $date, isOptional: true, isExpanded: $isExpanded)
     }
     .padding()
 }

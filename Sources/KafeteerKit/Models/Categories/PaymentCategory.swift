@@ -208,6 +208,22 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, Categor
         }
     }
     
+    public var keywords: [String] {
+        switch self {
+        case .generic(let value): value.keywords
+        case .home(let value): value.keywords
+        case .utility(let value): value.keywords
+        case .finance(let value): value.keywords
+        case .personal(let value): value.keywords
+        case .activity(let value): value.keywords
+        case .entertainment(let value): value.keywords
+        case .transportation(let value): value.keywords
+        case .maintenance(let value): value.keywords
+        case .subscription(let value): value.keywords
+        case .purchase(let value): value.keywords
+        }
+    }
+    
     public var kind: Kind {
         switch self {
         case .generic: .generic

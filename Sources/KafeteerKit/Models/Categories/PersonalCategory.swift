@@ -97,5 +97,9 @@ public extension PaymentCategory {
             case .birthday: String(localized: LocalizedStringResource("Birthday"))
             }
         }
+        
+        public var keywords: [String] {
+            Keyword.allCases.filter({ $0.value == self }).map(\.rawValue)
+        }
     }
 }

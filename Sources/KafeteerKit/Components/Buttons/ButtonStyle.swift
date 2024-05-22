@@ -12,11 +12,10 @@ public struct HierarchicalButtonStyle: ButtonStyle {
     
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.headline)
+            .font(.systemDefault(.headline))
             .fontWeight(.medium)
             .frame(maxWidth: .infinity)
-            .controlSize(.large)
-            .padding()
+            .padding(.small)
             .background(backgroundColor)
             .foregroundColor(foregroundColor)
             .cornerStyle(.rounded(.medium))

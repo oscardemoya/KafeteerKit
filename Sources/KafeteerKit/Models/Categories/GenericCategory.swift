@@ -8,7 +8,7 @@
 import Foundation
 
 public extension PaymentCategory {
-    public enum Generic: String, CategoryRepresentable {
+    public enum Generic: String, CaseIterable, CategoryRepresentable {
         case `default`
         case document
         case recurring
@@ -33,6 +33,10 @@ public extension PaymentCategory {
             case .heart: String(localized: LocalizedStringResource("Heart"))
             case .star: String(localized: LocalizedStringResource("Star"))
             }
+        }
+        
+        public var keywords: [String] {
+            [rawValue]
         }
     }
 }

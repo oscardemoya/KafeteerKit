@@ -73,11 +73,15 @@ public extension PaymentCategory {
             case .oil: String(localized: LocalizedStringResource("Oil"))
             case .battery: String(localized: LocalizedStringResource("Battery"))
             case .tires: String(localized: LocalizedStringResource("Tires"))
-            case .airConditioner: String(localized: LocalizedStringResource("Air Conditioner"))
+            case .airConditioner: String(localized: LocalizedStringResource("Air Cooler"))
             case .airPurifier: String(localized: LocalizedStringResource("Air Purifier"))
             case .plumber: String(localized: LocalizedStringResource("Plumber"))
             case .renovation: String(localized: LocalizedStringResource("Renovation"))
             }
+        }
+        
+        public var keywords: [String] {
+            Keyword.allCases.filter({ $0.value == self }).map(\.rawValue)
         }
     }
 }
