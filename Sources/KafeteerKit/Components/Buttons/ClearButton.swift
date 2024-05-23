@@ -26,11 +26,8 @@ public struct ClearButton: ViewModifier {
     }
 }
 
-// MARK: View Extension
-
 public extension View {
     func clearButton(text: Binding<String>) -> some View {
         modifier(ClearButton(text: text))
     }
 }
-
