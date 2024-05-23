@@ -68,22 +68,22 @@ public extension PaymentCategory {
             case .dataStorage: "externaldrive.badge.icloud" // 􀪹
             case .dataProtection: "lock.shield" // 􀞙
             case .social: "checkmark.seal" // 􀇺
-            case .learning: "book" // 􀉚
+            case .learning: "brain" // 􀯐
             }
         }
         
         public var name: String {
             switch self {
-            case .music: String(localized: LocalizedStringResource("Music"))
-            case .video: String(localized: LocalizedStringResource("Video"))
-            case .gaming: String(localized: LocalizedStringResource("Gaming"))
-            case .app: String(localized: LocalizedStringResource("App"))
-            case .cloud: String(localized: LocalizedStringResource("Cloud"))
-            case .vpn: String(localized: LocalizedStringResource("VPN"))
-            case .dataStorage: String(localized: LocalizedStringResource("Data Storage"))
-            case .dataProtection: String(localized: LocalizedStringResource("Data Protection"))
-            case .social: String(localized: LocalizedStringResource("Social"))
-            case .learning: String(localized: LocalizedStringResource("Learning"))
+            case .music: String(localized: "Music")
+            case .video: String(localized: "Video")
+            case .gaming: String(localized: "Gaming")
+            case .app: String(localized: "App")
+            case .cloud: String(localized: "Cloud")
+            case .vpn: String(localized: "VPN")
+            case .dataStorage: String(localized: "Data Storage")
+            case .dataProtection: String(localized: "Data Protection")
+            case .social: String(localized: "Social")
+            case .learning: String(localized: "Learning Platform")
             }
         }
         

@@ -39,18 +39,18 @@ public extension PaymentCategory {
             case .vacation: "water.waves" // 􁎄
             case .travel: "globe.europe.africa" // 􀵳
             case .restaurant: "fork.knife" // 􀸩
-            case .movies: "popcorn" // 􁐇
+            case .movies: "movieclapper" // 􀜤
             case .club: "figure.golf" // 􁔩
             }
         }
         
         public var name: String {
             switch self {
-            case .vacation: String(localized: LocalizedStringResource("Vacation"))
-            case .travel: String(localized: LocalizedStringResource("Travel"))
-            case .restaurant: String(localized: LocalizedStringResource("Restaurant"))
-            case .movies: String(localized: LocalizedStringResource("Movies"))
-            case .club: String(localized: LocalizedStringResource("Club"))
+            case .vacation: String(localized: "Vacation")
+            case .travel: String(localized: "Travel")
+            case .restaurant: String(localized: "Restaurant")
+            case .movies: String(localized: "Movies")
+            case .club: String(localized: "Club")
             }
         }
         

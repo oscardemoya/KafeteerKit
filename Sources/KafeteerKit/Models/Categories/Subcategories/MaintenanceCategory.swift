@@ -60,23 +60,23 @@ public extension PaymentCategory {
             case .tires: "car.side" // 􁎷
             case .airConditioner: "air.conditioner.horizontal" // 􁓭
             case .airPurifier: "air.purifier" // 􁓥
-            case .plumber: "spigot" // 􁒾
+            case .plumber: "wrench.adjustable" // 􀎕
             case .renovation: "paintbrush" // 􀎑
             }
         }
         
         public var name: String {
             switch self {
-            case .maintenance: String(localized: LocalizedStringResource("Maintenance"))
-            case .repair: String(localized: LocalizedStringResource("Repair"))
-            case .fuel: String(localized: LocalizedStringResource("Fuel"))
-            case .oil: String(localized: LocalizedStringResource("Oil"))
-            case .battery: String(localized: LocalizedStringResource("Battery"))
-            case .tires: String(localized: LocalizedStringResource("Tires"))
-            case .airConditioner: String(localized: LocalizedStringResource("Air Cooler"))
-            case .airPurifier: String(localized: LocalizedStringResource("Air Purifier"))
-            case .plumber: String(localized: LocalizedStringResource("Plumber"))
-            case .renovation: String(localized: LocalizedStringResource("Renovation"))
+            case .maintenance: String(localized: "Maintenance")
+            case .repair: String(localized: "Repair")
+            case .fuel: String(localized: "Fuel")
+            case .oil: String(localized: "Oil")
+            case .battery: String(localized: "Battery")
+            case .tires: String(localized: "Tires")
+            case .airConditioner: String(localized: "Air Cooler")
+            case .airPurifier: String(localized: "Air Purifier")
+            case .plumber: String(localized: "Plumber")
+            case .renovation: String(localized: "Renovation")
             }
         }
         

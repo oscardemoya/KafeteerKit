@@ -10,26 +10,27 @@ import Foundation
 public extension PaymentCategory {
     public enum Transportation: String, CategoryRepresentable {
         case car
-        case bike
         case train
         case commute
+        case bike
+        case scooter
         case pass
         case delivery
-        case supplier
         case flight
         case cruise
         case boat
 
         public enum Keyword: String, CaseInsensitive {
             case car
+            case train
+            case commute
             case bike
             case bicycle
             case motorcicle
-            case train
-            case commute
+            case scooter
             case pass
             case delivery
-            case supplier
+            case courier
             case transit
             case flight
             case cruise
@@ -38,12 +39,12 @@ public extension PaymentCategory {
             public var value: Transportation {
                 switch self {
                 case .car: .car
-                case .bike, .bicycle, .motorcicle: .bike
                 case .train: .train
                 case .commute, .transit: .commute
+                case .bike, .bicycle, .motorcicle: .bike
+                case .scooter: .scooter
                 case .pass: .pass
-                case .delivery: .delivery
-                case .supplier: .supplier
+                case .delivery, .courier: .delivery
                 case .flight: .flight
                 case .cruise: .cruise
                 case .boat: .boat
@@ -54,12 +55,12 @@ public extension PaymentCategory {
         public var iconName: String {
             switch self {
             case .car: "car" // 􀙘
-            case .bike: "bicycle" // 􀡥
             case .train: "tram" // 􀝆
             case .commute: "bus" // 􀝈
+            case .bike: "bicycle" // 􀡥
+            case .scooter: "scooter" // 􁈌
             case .pass: "wallet.pass" // 􀟾
-            case .delivery: "shippingbox" // 􀐚
-            case .supplier: "box.truck" // 􁁾
+            case .delivery: "box.truck" // 􁁾
             case .flight: "airplane" // 􀑓
             case .cruise: "ferry" // 􀸅
             case .boat: "sailboat" // 􁋴
@@ -68,16 +69,16 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .car: String(localized: LocalizedStringResource("Car"))
-            case .bike: String(localized: LocalizedStringResource("Bike"))
-            case .train: String(localized: LocalizedStringResource("Train"))
-            case .commute: String(localized: LocalizedStringResource("Commute"))
-            case .pass: String(localized: LocalizedStringResource("Pass"))
-            case .delivery: String(localized: LocalizedStringResource("Delivery"))
-            case .supplier: String(localized: LocalizedStringResource("Supplier"))
-            case .flight: String(localized: LocalizedStringResource("Flight"))
-            case .cruise: String(localized: LocalizedStringResource("Cruise"))
-            case .boat: String(localized: LocalizedStringResource("Boat"))
+            case .car: String(localized: "Car")
+            case .train: String(localized: "Train")
+            case .commute: String(localized: "Commute")
+            case .bike: String(localized: "Bike")
+            case .scooter: String(localized: "Scooter")
+            case .pass: String(localized: "Pass")
+            case .delivery: String(localized: "Delivery")
+            case .flight: String(localized: "Flight")
+            case .cruise: String(localized: "Cruise")
+            case .boat: String(localized: "Boat")
             }
         }
         

@@ -10,25 +10,19 @@ import Foundation
 public extension PaymentCategory {
     public enum Home: String, CategoryRepresentable {
         case groceries
-        case toiletries
-        case food
-        case drinks
+        case homeSupplies
         case rent
         case mortgage
         case condoFee
         case security
         case domesticService
+        case chef
+        case laundry
         case lawn
         
         public enum Keyword: String, CaseInsensitive {
             case groceries
-            case toiletries
-            case food
-            case meals
-            case drinks
-            case beverages
-            case coffee
-            case tea
+            case homeSupplies
             case rent
             case mortgage
             case home
@@ -36,21 +30,23 @@ public extension PaymentCategory {
             case security
             case domesticService
             case cleaning
+            case chef
             case cooking
+            case laundry
             case lawn
             case landscaping
 
             public var value: Home {
                 switch self {
                 case .groceries: .groceries
-                case .toiletries: .toiletries
-                case .food, .meals: .food
-                case .drinks, .beverages, .coffee, .tea: .drinks
+                case .homeSupplies: .homeSupplies
                 case .rent: .rent
                 case .mortgage, .home: .mortgage
                 case .condoFee: .condoFee
                 case .security: .security
-                case .domesticService, .cleaning, .cooking: .domesticService
+                case .domesticService, .cleaning: .domesticService
+                case .chef, .cooking: .chef
+                case .laundry: .laundry
                 case .lawn, .landscaping: .lawn
                 }
             }
@@ -59,30 +55,30 @@ public extension PaymentCategory {
         public var iconName: String {
             switch self {
             case .groceries: "basket" // 􁖊
-            case .toiletries: "bubbles.and.sparkles" // 􁒉
-            case .food: "takeoutbag.and.cup.and.straw" // 􀻐
-            case .drinks: "cup.and.saucer" // 􀸘
+            case .homeSupplies: "storefront" // 􁽇
             case .rent: "person.badge.key" // 􁏺
             case .mortgage: "house" // 􀎞
             case .condoFee: "building" // 􀮅
             case .security: "lock.fill" // 􀎡
-            case .domesticService: "hands.sparkles" // 􀲮
+            case .domesticService: "bubbles.and.sparkles" // 􁒉
+            case .chef: "frying.pan" // 􁐅
+            case .laundry: "washer" // 􁐠
             case .lawn: "leaf" // 􀥲
             }
         }
         
         public var name: String {
             switch self {
-            case .groceries: String(localized: LocalizedStringResource("Groceries"))
-            case .toiletries: String(localized: LocalizedStringResource("Toiletries"))
-            case .food: String(localized: LocalizedStringResource("Food"))
-            case .drinks: String(localized: LocalizedStringResource("Drinks"))
-            case .rent: String(localized: LocalizedStringResource("Rent"))
-            case .mortgage: String(localized: LocalizedStringResource("Mortgage"))
-            case .condoFee: String(localized: LocalizedStringResource("Condo Fee"))
-            case .security: String(localized: LocalizedStringResource("Security"))
-            case .domesticService: String(localized: LocalizedStringResource("Domestic Service"))
-            case .lawn: String(localized: LocalizedStringResource("Lawn"))
+            case .groceries: String(localized: "Groceries")
+            case .homeSupplies: String(localized: "Home Supplies")
+            case .rent: String(localized: "Rent")
+            case .mortgage: String(localized: "Mortgage")
+            case .condoFee: String(localized: "Condo Fee")
+            case .security: String(localized: "Security")
+            case .domesticService: String(localized: "Domestic Service")
+            case .chef: String(localized: "Chef")
+            case .laundry: String(localized: "Laundry")
+            case .lawn: String(localized: "Lawn")
             }
         }
         

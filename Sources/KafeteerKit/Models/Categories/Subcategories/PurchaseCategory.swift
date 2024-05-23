@@ -10,73 +10,68 @@ import Foundation
 public extension PaymentCategory {
     public enum Purchase: String, CategoryRepresentable {
         case shopping
-        case clothing
+        case gift
         case furniture
         case furnishing
         case appliance
         case computer
+        case phone
         case gadgets
         case toys
-        case gifts
-        case jewelry
 
         public enum Keyword: String, CaseInsensitive {
             case shopping
-            case clothing
+            case gift
+            case present
             case furniture
             case furnishing
             case appliance
             case computer
+            case phone
             case gadgets
             case toys
             case christmas
-            case gifts
-            case presents
-            case jewelry
 
             public var value: Purchase {
                 switch self {
-                case .clothing: .clothing
                 case .shopping: .shopping
+                case .gift, .present: .gift
                 case .furniture: .furniture
                 case .furnishing: .furnishing
                 case .appliance: .appliance
                 case .computer: .computer
+                case .phone: .phone
                 case .gadgets: .gadgets
                 case .toys, .christmas: .toys
-                case .gifts, .presents: .gifts
-                case .jewelry: .jewelry
                 }
             }
         }
         
         public var iconName: String {
             switch self {
-            case .clothing: "tshirt" // 􀾠
             case .shopping: "cart" // 􀍩
+            case .gift: "gift" // 􀑉
             case .furniture: "sofa" // 􁐲
             case .furnishing: "curtains.closed" // 􁑸
             case .appliance: "refrigerator" // 􁐞
             case .computer: "desktopcomputer" // 􀙗
+            case .phone: "candybarphone" // 􀪳
             case .gadgets: "headphones" // 􀑈
-            case .toys: "teddybear" // 􀑈
-            case .gifts: "gift" // 􀲬
-            case .jewelry: "crown" // 􀦅
+            case .toys: "teddybear" // 􀲬
             }
         }
         
         public var name: String {
             switch self {
-            case .clothing: String(localized: LocalizedStringResource("Clothing"))
-            case .shopping: String(localized: LocalizedStringResource("Shopping"))
-            case .furniture: String(localized: LocalizedStringResource("Furniture"))
-            case .furnishing: String(localized: LocalizedStringResource("Furnishing"))
-            case .appliance: String(localized: LocalizedStringResource("Appliance"))
-            case .computer: String(localized: LocalizedStringResource("Computer"))
-            case .gadgets: String(localized: LocalizedStringResource("Gadgets"))
-            case .toys: String(localized: LocalizedStringResource("Toys"))
-            case .gifts: String(localized: LocalizedStringResource("Gifts"))
-            case .jewelry: String(localized: LocalizedStringResource("Jewelry"))
+            case .shopping: String(localized: "Shopping")
+            case .gift: String(localized: "Gift")
+            case .furniture: String(localized: "Furniture")
+            case .furnishing: String(localized: "Furnishing")
+            case .appliance: String(localized: "Appliance")
+            case .computer: String(localized: "Computer")
+            case .phone: String(localized: "Phone")
+            case .gadgets: String(localized: "Gadgets")
+            case .toys: String(localized: "Toys")
             }
         }
         

@@ -65,16 +65,16 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .creditCard: String(localized: LocalizedStringResource("Credit Card"))
-            case .loan: String(localized: LocalizedStringResource("Loan"))
-            case .taxes: String(localized: LocalizedStringResource("Taxes"))
-            case .savings: String(localized: LocalizedStringResource("Savings"))
-            case .insurance: String(localized: LocalizedStringResource("Insurance"))
-            case .business: String(localized: LocalizedStringResource("Business"))
-            case .investment: String(localized: LocalizedStringResource("Investment"))
-            case .funds: String(localized: LocalizedStringResource("Funds"))
-            case .retirement: String(localized: LocalizedStringResource("Retirement"))
-            case .accounting: String(localized: LocalizedStringResource("Accounting"))
+            case .creditCard: String(localized: "Credit Card")
+            case .loan: String(localized: "Loan")
+            case .taxes: String(localized: "Taxes")
+            case .savings: String(localized: "Savings")
+            case .insurance: String(localized: "Insurance")
+            case .business: String(localized: "Business")
+            case .investment: String(localized: "Investment")
+            case .funds: String(localized: "Funds")
+            case .retirement: String(localized: "Retirement")
+            case .accounting: String(localized: "Accounting")
             }
         }
         

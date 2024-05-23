@@ -38,9 +38,9 @@ public extension Date {
     var isThisYear: Bool { Calendar.current.isDate(self, equalTo: Date(), toGranularity: .year) }
     
     var relative: String {
-        if isToday { return String(localized: LocalizedStringResource("Today")) }
-        if isTomorrow { return String(localized: LocalizedStringResource("Tomorrow")) }
-        if isYesterday { return String(localized: LocalizedStringResource("Yesterday")) }
+        if isToday { return String(localized: "Today") }
+        if isTomorrow { return String(localized: "Tomorrow") }
+        if isYesterday { return String(localized: "Yesterday") }
         let formatter = RelativeDateTimeFormatter()
         let components = Calendar.current.dateComponents([.year, .month, .day], from: .today, to: self)
         return formatter.localizedString(from: components)

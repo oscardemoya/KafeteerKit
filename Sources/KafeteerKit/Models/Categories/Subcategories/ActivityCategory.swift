@@ -46,11 +46,11 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .membership: String(localized: LocalizedStringResource("Membership"))
-            case .gym: String(localized: LocalizedStringResource("Gym"))
-            case .fitness: String(localized: LocalizedStringResource("Fitness"))
-            case .sports: String(localized: LocalizedStringResource("Sports"))
-            case .outdoor: String(localized: LocalizedStringResource("Outdoor"))
+            case .membership: String(localized: "Membership")
+            case .gym: String(localized: "Gym")
+            case .fitness: String(localized: "Fitness")
+            case .sports: String(localized: "Sports")
+            case .outdoor: String(localized: "Outdoor")
             }
         }
         

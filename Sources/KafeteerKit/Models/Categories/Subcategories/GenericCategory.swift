@@ -17,7 +17,7 @@ public extension PaymentCategory {
 
         public var iconName: String {
             switch self {
-            case .default: "scroll" // 􀤏
+            case .default: "creditcard.circle.fill" // 􀒰
             case .document: "doc.text" // 􀈿
             case .recurring: "dollarsign.arrow.circlepath" // 􁎣
             case .heart: "heart" // 􀊴
@@ -27,11 +27,11 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .default: String(localized: LocalizedStringResource("Default"))
-            case .document: String(localized: LocalizedStringResource("Document"))
-            case .recurring: String(localized: LocalizedStringResource("Recurring"))
-            case .heart: String(localized: LocalizedStringResource("Heart"))
-            case .star: String(localized: LocalizedStringResource("Star"))
+            case .default: String(localized: "Default")
+            case .document: String(localized: "Document")
+            case .recurring: String(localized: "Recurring")
+            case .heart: String(localized: "Heart")
+            case .star: String(localized: "Star")
             }
         }
         
