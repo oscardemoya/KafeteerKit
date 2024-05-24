@@ -9,13 +9,17 @@ import Foundation
 
 public extension PaymentCategory {
     public enum PersonalCare: String, CategoryRepresentable {
+        public static var defaultValue: Self = .hygiene
+        public static var categoryName = String(localized: "Personal Care")
+        public var asPaymentCategory: PaymentCategory { .personalCare(self) }
+        
         case toiletries
         case hygiene
         case hairCare
         case cosmetics
         case beauty
         
-        public enum Keyword: String, CaseInsensitive {
+        public enum Keyword: String, KeywordRepresentable {
             case toiletries
             case hygiene
             case personalCare

@@ -9,6 +9,10 @@ import Foundation
 
 public extension PaymentCategory {
     public enum Transportation: String, CategoryRepresentable {
+        public static var defaultValue: Self = .car
+        public static var categoryName = String(localized: "Transportation")
+        public var asPaymentCategory: PaymentCategory { .transportation(self) }
+        
         case car
         case train
         case commute
@@ -20,7 +24,7 @@ public extension PaymentCategory {
         case cruise
         case boat
 
-        public enum Keyword: String, CaseInsensitive {
+        public enum Keyword: String, KeywordRepresentable {
             case car
             case train
             case commute

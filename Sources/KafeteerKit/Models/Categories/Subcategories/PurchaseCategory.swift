@@ -9,6 +9,10 @@ import Foundation
 
 public extension PaymentCategory {
     public enum Purchase: String, CategoryRepresentable {
+        public static var defaultValue: Self = .shopping
+        public static var categoryName = String(localized: "Purchase")
+        public var asPaymentCategory: PaymentCategory { .purchase(self) }
+        
         case shopping
         case gift
         case furniture
@@ -19,7 +23,7 @@ public extension PaymentCategory {
         case gadgets
         case toys
 
-        public enum Keyword: String, CaseInsensitive {
+        public enum Keyword: String, KeywordRepresentable {
             case shopping
             case gift
             case present

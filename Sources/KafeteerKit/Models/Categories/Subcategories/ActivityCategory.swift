@@ -15,7 +15,7 @@ public extension PaymentCategory {
         case sports
         case outdoor
 
-        public enum Keyword: String, CaseInsensitive {
+        public enum Keyword: String, KeywordRepresentable {
             case membership
             case gym
             case fitness
@@ -34,6 +34,10 @@ public extension PaymentCategory {
             }
         }
 
+        public static var defaultValue: Self = .fitness
+        public static var categoryName = String(localized: "Activity")
+        public var asPaymentCategory: PaymentCategory { .activity(self) }
+        
         public var iconName: String {
             switch self {
             case .membership: "person.text.rectangle" // 􀿒

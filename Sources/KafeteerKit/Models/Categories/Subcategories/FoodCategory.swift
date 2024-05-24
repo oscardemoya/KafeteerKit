@@ -9,6 +9,10 @@ import Foundation
 
 public extension PaymentCategory {
     public enum Food: String, CategoryRepresentable {
+        public static var defaultValue: Self = .food
+        public static var categoryName = String(localized: "Food")
+        public var asPaymentCategory: PaymentCategory { .food(self) }
+        
         case food
         case snacks
         case breakfast
@@ -20,7 +24,7 @@ public extension PaymentCategory {
         case water
         case coffee
         
-        public enum Keyword: String, CaseInsensitive {
+        public enum Keyword: String, KeywordRepresentable {
             case food
             case meals
             case snacks

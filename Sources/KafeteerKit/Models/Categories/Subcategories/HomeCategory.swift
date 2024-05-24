@@ -9,6 +9,10 @@ import Foundation
 
 public extension PaymentCategory {
     public enum Home: String, CategoryRepresentable {
+        public static var defaultValue: Self = .mortgage
+        public static var categoryName = String(localized: "Home")
+        public var asPaymentCategory: PaymentCategory { .home(self) }
+        
         case groceries
         case homeSupplies
         case rent
@@ -20,7 +24,7 @@ public extension PaymentCategory {
         case laundry
         case lawn
         
-        public enum Keyword: String, CaseInsensitive {
+        public enum Keyword: String, KeywordRepresentable {
             case groceries
             case homeSupplies
             case rent

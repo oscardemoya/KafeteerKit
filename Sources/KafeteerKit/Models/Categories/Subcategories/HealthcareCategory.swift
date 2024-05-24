@@ -9,6 +9,10 @@ import Foundation
 
 public extension PaymentCategory {
     public enum Healthcare: String, CategoryRepresentable {
+        public static var defaultValue: Self = .healthcare
+        public static var categoryName = String(localized: "Healthcare")
+        public var asPaymentCategory: PaymentCategory { .healthcare(self) }
+        
         case healthcare
         case dentalCare
         case mentalHealth
@@ -18,7 +22,7 @@ public extension PaymentCategory {
         case childcare
         case pet
         
-        public enum Keyword: String, CaseInsensitive {
+        public enum Keyword: String, KeywordRepresentable {
             case healthcare
             case health
             case medical

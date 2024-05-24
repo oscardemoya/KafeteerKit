@@ -9,13 +9,17 @@ import Foundation
 
 public extension PaymentCategory {
     public enum Education: String, CategoryRepresentable {
+        public static var defaultValue: Self = .education
+        public static var categoryName = String(localized: "Education")
+        public var asPaymentCategory: PaymentCategory { .education(self) }
+        
         case education
         case schoolSupplies
         case books
         case courses
         case tutors
         
-        public enum Keyword: String, CaseInsensitive {
+        public enum Keyword: String, KeywordRepresentable {
             case education
             case school
             case university

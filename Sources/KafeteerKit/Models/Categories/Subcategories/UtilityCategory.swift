@@ -9,6 +9,10 @@ import Foundation
 
 extension PaymentCategory {
     public enum Utility: String, CategoryRepresentable {
+        public static var defaultValue: Self = .waterSupply
+        public static var categoryName = String(localized: "Utility")
+        public var asPaymentCategory: PaymentCategory { .utility(self) }
+        
         case waterSupply
         case sewer
         case electricity
@@ -20,7 +24,7 @@ extension PaymentCategory {
         case phone
         case cellphone
         
-        public enum Keyword: String, CaseInsensitive {
+        public enum Keyword: String, KeywordRepresentable {
             case waterSupply
             case sewer
             case electricity

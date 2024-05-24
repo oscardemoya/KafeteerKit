@@ -9,13 +9,17 @@ import Foundation
 
 public extension PaymentCategory {
     public enum Generic: String, CategoryRepresentable {
+        public static var defaultValue: Self = .payment
+        public static var categoryName = String(localized: "Generic")
+        public var asPaymentCategory: PaymentCategory { .generic(self) }
+        
         case payment
         case document
         case recurring
         case heart
         case star
         
-        public enum Keyword: String, CaseInsensitive {
+        public enum Keyword: String, KeywordRepresentable {
             case payment
             case document
             case recurring

@@ -9,13 +9,17 @@ import Foundation
 
 public extension PaymentCategory {
     public enum Entertainment: String, CategoryRepresentable {
+        public static var defaultValue: Self = .movies
+        public static var categoryName = String(localized: "Entertainment")
+        public var asPaymentCategory: PaymentCategory { .entertainment(self) }
+        
         case vacation
         case travel
         case restaurant
         case movies
         case club
 
-        public enum Keyword: String, CaseInsensitive {
+        public enum Keyword: String, KeywordRepresentable {
             case vacation
             case travel
             case restaurant

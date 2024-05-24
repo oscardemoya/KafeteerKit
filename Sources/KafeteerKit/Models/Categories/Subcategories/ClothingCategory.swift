@@ -19,7 +19,7 @@ public extension PaymentCategory {
         case bag
         case handbag
 
-        public enum Keyword: String, CaseInsensitive {
+        public enum Keyword: String, KeywordRepresentable {
             case clothing
             case jeans
             case pants
@@ -49,6 +49,10 @@ public extension PaymentCategory {
                 }
             }
         }
+        
+        public static var defaultValue: Self = .clothing
+        public static var categoryName = String(localized: "Clothing")
+        public var asPaymentCategory: PaymentCategory { .clothing(self) } 
         
         public var iconName: String {
             switch self {

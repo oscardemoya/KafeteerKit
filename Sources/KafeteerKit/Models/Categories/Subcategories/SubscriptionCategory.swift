@@ -9,6 +9,10 @@ import Foundation
 
 public extension PaymentCategory {
     public enum Subscription: String, CategoryRepresentable {
+        public static var defaultValue: Self = .cloud
+        public static var categoryName = String(localized: "Subscription")
+        public var asPaymentCategory: PaymentCategory { .subscription(self) }
+        
         case music
         case video
         case gaming
@@ -20,7 +24,7 @@ public extension PaymentCategory {
         case social
         case learning
         
-        public enum Keyword: String, CaseInsensitive {
+        public enum Keyword: String, KeywordRepresentable {
             case music
             case spotify
             case appleMusic

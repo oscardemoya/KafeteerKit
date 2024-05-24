@@ -9,13 +9,17 @@ import Foundation
 
 public extension PaymentCategory {
     public enum Event: String, CategoryRepresentable {
+        public static var defaultValue: Self = .event
+        public static var categoryName = String(localized: "Event")
+        public var asPaymentCategory: PaymentCategory { .event(self) }
+        
         case event
         case party
         case celebration
         case birthday
         case wedding
 
-        public enum Keyword: String, CaseInsensitive {
+        public enum Keyword: String, KeywordRepresentable {
             case event
             case party
             case celebration
