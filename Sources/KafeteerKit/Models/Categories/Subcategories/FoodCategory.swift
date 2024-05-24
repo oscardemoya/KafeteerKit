@@ -40,7 +40,6 @@ public extension PaymentCategory {
             case tea
             case water
             case juice
-            
 
             public var value: Food {
                 switch self {

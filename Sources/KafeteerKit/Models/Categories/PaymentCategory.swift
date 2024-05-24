@@ -24,7 +24,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
     case subscription(Subscription)
     case purchase(Purchase)
     
-    public static let `default`: PaymentCategory = .generic(.default)
+    public static let `default`: PaymentCategory = .generic(.payment)
     
     public var id: Self { self }
     
@@ -67,6 +67,26 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
             }
         }
         
+        public var categoryClass: any CategoryRepresentable.Type {
+            switch self {
+            case .generic: Generic.self
+            case .home: Home.self
+            case .food: Food.self
+            case .utility: Utility.self
+            case .transportation: Transportation.self
+            case .clothing: Clothing.self
+            case .healthcare: Healthcare.self
+            case .personalCare: PersonalCare.self
+            case .entertainment: Entertainment.self
+            case .education: Education.self
+            case .finance: Finance.self
+            case .activity: Activity.self
+            case .maintenance: Maintenance.self
+            case .subscription: Subscription.self
+            case .purchase: Purchase.self
+            }
+        }
+        
         public var categories: [PaymentCategory] {
             switch self {
             case .generic: Generic.allCases.map { .generic($0) }
@@ -89,7 +109,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         
         public var iconName: String {
             switch self {
-            case .generic: Generic.default.iconName // 􀒰
+            case .generic: Generic.payment.iconName // 􀒰
             case .home: Home.mortgage.iconName // 􀎞
             case .food: Food.food.iconName // 􀻐
             case .utility: Utility.waterSupply.iconName // 􁒾
@@ -105,12 +125,6 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
             case .subscription: Subscription.cloud.iconName // 􀇂
             case .purchase: Purchase.shopping.iconName // 􀍩
             }
-        }
-    }
-    
-    public static var allCases: [PaymentCategory] {
-        Kind.allCases.reduce(into: []) { results, kind in
-            results.append(contentsOf: kind.categories)
         }
     }
     
@@ -174,24 +188,19 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         self = .default
     }
     
-    public var rawValue: String {
-        switch self {
-        case .generic(let value): value.rawValue
-        case .food(let value): value.rawValue
-        case .home(let value): value.rawValue
-        case .utility(let value): value.rawValue
-        case .transportation(let value): value.rawValue
-        case .clothing(let value): value.rawValue
-        case .healthcare(let value): value.rawValue
-        case .personalCare(let value): value.rawValue
-        case .entertainment(let value): value.rawValue
-        case .education(let value): value.rawValue
-        case .finance(let value): value.rawValue
-        case .activity(let value): value.rawValue
-        case .maintenance(let value): value.rawValue
-        case .subscription(let value): value.rawValue
-        case .purchase(let value): value.rawValue
+    public var rawValue: String { value.name }
+    public var iconName: String { value.iconName }
+    public var name: String { value.name }
+    public var keywords: [String] { value.keywords }
+    
+    public static var allCases: [PaymentCategory] {
+        Kind.allCases.reduce(into: []) { results, kind in
+            results.append(contentsOf: kind.categories)
         }
+    }
+    
+    public static func == (lhs: PaymentCategory, rhs: PaymentCategory) -> Bool {
+        lhs.value.stringValue == rhs.value.stringValue
     }
     
     public func hash(into hasher: inout Hasher) {
@@ -199,84 +208,23 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         hasher.combine(rawValue)
     }
     
-    public static func == (lhs: PaymentCategory, rhs: PaymentCategory) -> Bool {
-        switch (lhs, rhs) {
-        case (.generic(let lhsValue), .generic(let rhsValue)): lhsValue == rhsValue
-        case (.home(let lhsValue), .home(let rhsValue)): lhsValue == rhsValue
-        case (.food(let lhsValue), .food(let rhsValue)): lhsValue == rhsValue
-        case (.utility(let lhsValue), .utility(let rhsValue)): lhsValue == rhsValue
-        case (.transportation(let lhsValue), .transportation(let rhsValue)): lhsValue == rhsValue
-        case (.clothing(let lhsValue), .clothing(let rhsValue)): lhsValue == rhsValue
-        case (.healthcare(let lhsValue), .healthcare(let rhsValue)): lhsValue == rhsValue
-        case (.personalCare(let lhsValue), .personalCare(let rhsValue)): lhsValue == rhsValue
-        case (.entertainment(let lhsValue), .entertainment(let rhsValue)): lhsValue == rhsValue
-        case (.education(let lhsValue), .education(let rhsValue)): lhsValue == rhsValue
-        case (.finance(let lhsValue), .finance(let rhsValue)): lhsValue == rhsValue
-        case (.activity(let lhsValue), .activity(let rhsValue)): lhsValue == rhsValue
-        case (.maintenance(let lhsValue), .maintenance(let rhsValue)): lhsValue == rhsValue
-        case (.subscription(let lhsValue), .subscription(let rhsValue)): lhsValue == rhsValue
-        case (.purchase(let lhsValue), .purchase(let rhsValue)): lhsValue == rhsValue
-        default: false
-        }
-    }
-    
-    public var iconName: String {
+    public var value: any CategoryRepresentable {
         switch self {
-        case .generic(let value): value.iconName
-        case .home(let value): value.iconName
-        case .food(let value): value.iconName
-        case .utility(let value): value.iconName
-        case .transportation(let value): value.iconName
-        case .clothing(let value): value.iconName
-        case .healthcare(let value): value.iconName
-        case .personalCare(let value): value.iconName
-        case .entertainment(let value): value.iconName
-        case .education(let value): value.iconName
-        case .finance(let value): value.iconName
-        case .activity(let value): value.iconName
-        case .maintenance(let value): value.iconName
-        case .subscription(let value): value.iconName
-        case .purchase(let value): value.iconName
-        }
-    }
-    
-    public var name: String {
-        switch self {
-        case .generic(let value): value.name
-        case .home(let value): value.name
-        case .food(let value): value.name
-        case .utility(let value): value.name
-        case .transportation(let value): value.name
-        case .clothing(let value): value.name
-        case .healthcare(let value): value.name
-        case .personalCare(let value): value.name
-        case .entertainment(let value): value.name
-        case .education(let value): value.name
-        case .finance(let value): value.name
-        case .activity(let value): value.name
-        case .maintenance(let value): value.name
-        case .subscription(let value): value.name
-        case .purchase(let value): value.name
-        }
-    }
-    
-    public var keywords: [String] {
-        switch self {
-        case .generic(let value): value.keywords
-        case .home(let value): value.keywords
-        case .food(let value): value.keywords
-        case .utility(let value): value.keywords
-        case .transportation(let value): value.keywords
-        case .clothing(let value): value.keywords
-        case .finance(let value): value.keywords
-        case .education(let value): value.keywords
-        case .healthcare(let value): value.keywords
-        case .personalCare(let value): value.keywords
-        case .activity(let value): value.keywords
-        case .entertainment(let value): value.keywords
-        case .maintenance(let value): value.keywords
-        case .subscription(let value): value.keywords
-        case .purchase(let value): value.keywords
+        case .generic(let value): value
+        case .home(let value): value
+        case .food(let value): value
+        case .utility(let value): value
+        case .transportation(let value): value
+        case .clothing(let value): value
+        case .healthcare(let value): value
+        case .personalCare(let value): value
+        case .entertainment(let value): value
+        case .education(let value): value
+        case .finance(let value): value
+        case .activity(let value): value
+        case .maintenance(let value): value
+        case .subscription(let value): value
+        case .purchase(let value): value
         }
     }
     

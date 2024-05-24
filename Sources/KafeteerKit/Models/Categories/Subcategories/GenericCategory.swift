@@ -8,16 +8,34 @@
 import Foundation
 
 public extension PaymentCategory {
-    public enum Generic: String, CaseIterable, CategoryRepresentable {
-        case `default`
+    public enum Generic: String, CategoryRepresentable {
+        case payment
         case document
         case recurring
         case heart
         case star
+        
+        public enum Keyword: String, CaseInsensitive {
+            case payment
+            case document
+            case recurring
+            case heart
+            case star
+            
+            public var value: Generic {
+                switch self {
+                case .payment: .payment
+                case .document: .document
+                case .recurring: .recurring
+                case .heart: .heart
+                case .star: .star
+                }
+            }
+        }
 
         public var iconName: String {
             switch self {
-            case .default: "creditcard.circle.fill" // 􀒰
+            case .payment: "creditcard.circle.fill" // 􀒰
             case .document: "doc.text" // 􀈿
             case .recurring: "dollarsign.arrow.circlepath" // 􁎣
             case .heart: "heart" // 􀊴
@@ -27,7 +45,7 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .default: String(localized: "Default")
+            case .payment: String(localized: "Default")
             case .document: String(localized: "Document")
             case .recurring: String(localized: "Recurring")
             case .heart: String(localized: "Heart")

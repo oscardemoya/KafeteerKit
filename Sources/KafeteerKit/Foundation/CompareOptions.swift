@@ -7,7 +7,9 @@
 
 import Foundation
 
-public protocol CaseInsensitive: RawRepresentable, CaseIterable {}
+public protocol CaseInsensitive: RawRepresentable, CaseIterable {
+    var stringValue: String { get }
+}
 
 public extension CaseInsensitive where RawValue == String {
     init?(rawValue: String) {
@@ -16,4 +18,6 @@ public extension CaseInsensitive where RawValue == String {
         guard let value = match else { return nil }
         self = value
     }
+    
+    var stringValue: String { rawValue }
 }
