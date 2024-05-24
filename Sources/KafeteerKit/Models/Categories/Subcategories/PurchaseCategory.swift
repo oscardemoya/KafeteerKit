@@ -79,8 +79,5 @@ public extension PaymentCategory {
             }
         }
         
-        public var keywords: [String] {
-            Keyword.allCases.filter({ $0.value == self }).map(\.rawValue)
-        }
     }
 }

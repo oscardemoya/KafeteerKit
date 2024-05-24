@@ -22,9 +22,13 @@ public protocol KeywordRepresentable: CaseInsensitive {
     var value: Category { get }
 }
 
-public extension CategoryRepresentable {
-    init?(keyword: Self.Keyword.RawValue) {
-        guard let value = Self.Keyword(rawValue: keyword)?.value as? Self else { return nil }
+public extension CategoryRepresentable where Self.RawValue == String, Keyword.RawValue == String {
+    init?(keyword: Keyword.RawValue) {
+        guard let value = Keyword(rawValue: keyword)?.value as? Self else { return nil }
         self = value
+    }
+    
+    var keywords: [String] {
+        Self.Keyword.allCases.filter({ $0.rawValue == self.rawValue }).map(\.rawValue)
     }
 }

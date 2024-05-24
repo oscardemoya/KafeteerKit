@@ -90,9 +90,5 @@ public extension PaymentCategory {
             case .learning: String(localized: "Learning Platform")
             }
         }
-        
-        public var keywords: [String] {
-            Keyword.allCases.filter { $0.value == self }.map(\.stringValue)
-        }
     }
 }

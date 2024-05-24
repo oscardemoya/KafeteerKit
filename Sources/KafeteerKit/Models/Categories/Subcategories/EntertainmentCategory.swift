@@ -57,9 +57,5 @@ public extension PaymentCategory {
             case .club: String(localized: "Club")
             }
         }
-        
-        public var keywords: [String] {
-            Keyword.allCases.filter({ $0.value == self }).map(\.rawValue)
-        }
     }
 }

@@ -85,9 +85,5 @@ public extension PaymentCategory {
             case .lawn: String(localized: "Lawn")
             }
         }
-        
-        public var keywords: [String] {
-            Keyword.allCases.filter({ $0.value == self }).map(\.rawValue)
-        }
     }
 }

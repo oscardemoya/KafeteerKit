@@ -56,9 +56,5 @@ public extension PaymentCategory {
             case .star: String(localized: "Star")
             }
         }
-        
-        public var keywords: [String] {
-            [rawValue]
-        }
     }
 }

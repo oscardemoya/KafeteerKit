@@ -49,9 +49,5 @@ public extension PaymentCategory {
             case .pet: String(localized: "Pet")
             }
         }
-        
-        public var keywords: [String] {
-            Keyword.allCases.filter({ $0.value == self }).map(\.rawValue)
-        }
     }
 }
