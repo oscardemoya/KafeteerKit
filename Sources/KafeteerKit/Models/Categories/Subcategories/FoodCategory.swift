@@ -65,8 +65,8 @@ public extension PaymentCategory {
             switch self {
             case .food: "fork.knife" // 􀸩
             case .snacks: "popcorn" // 􁐇
-            case .breakfast: "fork.knife.circle" // 􀸹
-            case .lunch: "takeoutbag.and.cup.and.straw" // 􀻐
+            case .breakfast: "takeoutbag.and.cup.and.straw" // 􀻐
+            case .lunch: "fish" // 􁖐
             case .dinner: "wineglass" // 􁎤
             case .healthyFood: "carrot" // 􁖎
             case .junkFood: "xmark.bin" // 􀈱

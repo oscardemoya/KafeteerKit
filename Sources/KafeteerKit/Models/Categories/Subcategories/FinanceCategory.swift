@@ -15,39 +15,37 @@ public extension PaymentCategory {
         
         case creditCard
         case loan
+        case bankFee
+        case bankCheck
+        case digitalCurrency
         case taxes
-        case savings
         case insurance
-        case business
-        case investment
-        case funds
+        case savings
         case retirement
-        case accounting
         
         public enum Keyword: String, KeywordRepresentable {
             case creditCard
             case loan
+            case bankFee
+            case bankCheck
+            case digitalCurrency
+            case bitcoin
             case taxes
-            case savings
             case insurance
-            case business
-            case investment
-            case funds
+            case savings
             case retirement
-            case accounting
             
             public var value: Finance {
                 switch self {
                 case .creditCard: .creditCard
                 case .loan: .loan
+                case .bankFee: .bankFee
+                case .bankCheck: .bankCheck
+                case .digitalCurrency, .bitcoin: .digitalCurrency
                 case .taxes: .taxes
-                case .savings: .savings
                 case .insurance: .insurance
-                case .business: .business
-                case .investment: .investment
-                case .funds: .funds
+                case .savings: .savings
                 case .retirement: .retirement
-                case .accounting: .accounting
                 }
             }
         }
@@ -56,14 +54,13 @@ public extension PaymentCategory {
             switch self {
             case .creditCard: "creditcard" // 􀍯
             case .loan: "building.columns" // 􀤨
+            case .bankFee: "scroll" // 􀤏
+            case .bankCheck: "signature" // 􀙤
+            case .digitalCurrency: "bitcoinsign.circle" // 􀗕
             case .taxes: "percent" // 􀘾
-            case .savings: "dollarsign.circle" // 􀖗
             case .insurance: "umbrella.percent" // 􀸰
-            case .business: "briefcase" // 􀎜
-            case .investment: "chart.line.uptrend.xyaxis" // 􀑁
-            case .funds: "banknote" // 􀭿
-            case .retirement: "eyeglasses" // 􀖆
-            case .accounting: "candybarphone" // 􀪳
+            case .savings: "dollarsign.square" // 􀗗
+            case .retirement: "signpost.right" // 􀯌
             }
         }
         
@@ -71,14 +68,13 @@ public extension PaymentCategory {
             switch self {
             case .creditCard: String(localized: "Credit Card")
             case .loan: String(localized: "Loan")
+            case .bankFee: String(localized: "Bank Fee")
+            case .bankCheck: String(localized: "Bank Check")
+            case .digitalCurrency: String(localized: "Digital Currency")
             case .taxes: String(localized: "Taxes")
-            case .savings: String(localized: "Savings")
             case .insurance: String(localized: "Insurance")
-            case .business: String(localized: "Business")
-            case .investment: String(localized: "Investment")
-            case .funds: String(localized: "Funds")
+            case .savings: String(localized: "Savings")
             case .retirement: String(localized: "Retirement")
-            case .accounting: String(localized: "Accounting")
             }
         }
     }

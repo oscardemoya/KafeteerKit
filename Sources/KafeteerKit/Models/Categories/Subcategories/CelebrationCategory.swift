@@ -1,5 +1,5 @@
 //
-//  EventCategory.swift
+//  CelebrationCategory.swift
 //
 //
 //  Created by Oscar De Moya on 8/05/23.
@@ -8,29 +8,26 @@
 import Foundation
 
 public extension PaymentCategory {
-    public enum Event: String, CategoryRepresentable {
-        public static var defaultValue: Self = .event
-        public static var categoryName = String(localized: "Event")
-        public var asPaymentCategory: PaymentCategory { .event(self) }
+    public enum Celebration: String, CategoryRepresentable {
+        public static var defaultValue: Self = .celebration
+        public static var categoryName = String(localized: "Celebration")
+        public var asPaymentCategory: PaymentCategory { .celebration(self) }
         
-        case event
-        case party
         case celebration
+        case party
         case birthday
         case wedding
 
         public enum Keyword: String, KeywordRepresentable {
-            case event
-            case party
             case celebration
+            case party
             case birthday
             case wedding
             
-            public var value: Event {
+            public var value: Celebration {
                 switch self {
-                case .event: .event
-                case .party: .party
                 case .celebration: .celebration
+                case .party: .party
                 case .birthday: .birthday
                 case .wedding: .wedding
                 }
@@ -39,9 +36,8 @@ public extension PaymentCategory {
         
         public var iconName: String {
             switch self {
-            case .event: "ticket" // 􀪃
-            case .party: "party.popper" // 􁓵
             case .celebration: "fireworks" // 􂁞
+            case .party: "party.popper" // 􁓵
             case .birthday: "birthday.cake" // 􁖩
             case .wedding: "figure.2.arms.open" // 􁗆
             }
@@ -49,9 +45,8 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .event: String(localized: "Event")
-            case .party: String(localized: "Party")
             case .celebration: String(localized: "Celebration")
+            case .party: String(localized: "Party")
             case .birthday: String(localized: "Birthday")
             case .wedding: String(localized: "Wedding")
             }

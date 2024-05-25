@@ -19,8 +19,6 @@ public extension PaymentCategory {
         case oil
         case battery
         case tires
-        case airConditioner
-        case airPurifier
         case plumber
         case renovation
 
@@ -31,8 +29,6 @@ public extension PaymentCategory {
             case oil
             case battery
             case tires
-            case airConditioner
-            case airPurifier
             case plumber
             case renovation
             case painting
@@ -46,8 +42,6 @@ public extension PaymentCategory {
                 case .oil: .oil
                 case .battery: .battery
                 case .tires: .tires
-                case .airConditioner: .airConditioner
-                case .airPurifier: .airPurifier
                 case .plumber: .plumber
                 case .renovation, .painting, .homeImprovement: .renovation
                 }
@@ -62,8 +56,6 @@ public extension PaymentCategory {
             case .oil: "oilcan" // 􀿄
             case .battery: "minus.plus.batteryblock" // 􀫬
             case .tires: "car.side" // 􁎷
-            case .airConditioner: "air.conditioner.horizontal" // 􁓭
-            case .airPurifier: "air.purifier" // 􁓥
             case .plumber: "wrench.adjustable" // 􀎕
             case .renovation: "paintbrush" // 􀎑
             }
@@ -77,8 +69,6 @@ public extension PaymentCategory {
             case .oil: String(localized: "Oil")
             case .battery: String(localized: "Battery")
             case .tires: String(localized: "Tires")
-            case .airConditioner: String(localized: "Air Cooler")
-            case .airPurifier: String(localized: "Air Purifier")
             case .plumber: String(localized: "Plumber")
             case .renovation: String(localized: "Renovation")
             }

@@ -17,7 +17,7 @@ public extension PaymentCategory {
         case dentalCare
         case mentalHealth
         case medication
-        case protectiveEquipment
+        case firstAid
         
         public enum Keyword: String, KeywordRepresentable {
             case healthcare
@@ -27,7 +27,7 @@ public extension PaymentCategory {
             case mentalHealth
             case medication
             case meds
-            case protectiveEquipment
+            case firstAid
             
             public var value: Healthcare {
                 switch self {
@@ -35,7 +35,7 @@ public extension PaymentCategory {
                 case .dentalCare: .dentalCare
                 case .mentalHealth: .mentalHealth
                 case .medication, .meds: .medication
-                case .protectiveEquipment: .protectiveEquipment
+                case .firstAid: .firstAid
                 }
             }
         }
@@ -46,7 +46,7 @@ public extension PaymentCategory {
             case .dentalCare: "face.smiling" // 􀎸
             case .mentalHealth: "brain.head.profile" // 􀯏
             case .medication: "pill" // 􁚭
-            case .protectiveEquipment: "facemask" // 􁃌
+            case .firstAid: "bandage" // 􀎓
             }
         }
         
@@ -56,7 +56,7 @@ public extension PaymentCategory {
             case .dentalCare: String(localized: "Dental Care")
             case .mentalHealth: String(localized: "Mental Health")
             case .medication: String(localized: "Medication")
-            case .protectiveEquipment: String(localized: "Protective Equipment")
+            case .firstAid: String(localized: "First Aid")
             }
         }
     }

@@ -22,7 +22,7 @@ public extension PaymentCategory {
         case domesticService
         case chef
         case laundry
-        case lawn
+        case lawnCare
         
         public enum Keyword: String, KeywordRepresentable {
             case groceries
@@ -37,7 +37,7 @@ public extension PaymentCategory {
             case chef
             case cooking
             case laundry
-            case lawn
+            case lawnCare
             case landscaping
 
             public var value: Home {
@@ -51,7 +51,7 @@ public extension PaymentCategory {
                 case .domesticService, .cleaning: .domesticService
                 case .chef, .cooking: .chef
                 case .laundry: .laundry
-                case .lawn, .landscaping: .lawn
+                case .lawnCare, .landscaping: .lawnCare
                 }
             }
         }
@@ -59,15 +59,15 @@ public extension PaymentCategory {
         public var iconName: String {
             switch self {
             case .groceries: "basket" // 􁖊
-            case .homeSupplies: "storefront" // 􁽇
+            case .homeSupplies: "lightbulb" // 􀛭
             case .rent: "person.badge.key" // 􁏺
             case .mortgage: "house" // 􀎞
             case .condoFee: "building" // 􀮅
             case .security: "lock.fill" // 􀎡
             case .domesticService: "bubbles.and.sparkles" // 􁒉
-            case .chef: "frying.pan" // 􁐅
-            case .laundry: "washer" // 􁐠
-            case .lawn: "leaf" // 􀥲
+            case .chef: "cooktop" // 􁕠
+            case .laundry: "drop.keypad.rectangle" // 􁓀
+            case .lawnCare: "tree" // 􁝯
             }
         }
         
@@ -82,7 +82,7 @@ public extension PaymentCategory {
             case .domesticService: String(localized: "Domestic Service")
             case .chef: String(localized: "Chef")
             case .laundry: String(localized: "Laundry")
-            case .lawn: String(localized: "Lawn")
+            case .lawnCare: String(localized: "Lawn Care")
             }
         }
     }

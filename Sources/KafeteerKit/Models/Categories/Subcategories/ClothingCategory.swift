@@ -18,6 +18,7 @@ public extension PaymentCategory {
         case jewelry
         case bag
         case handbag
+        case suitcase
 
         public enum Keyword: String, KeywordRepresentable {
             case clothing
@@ -34,6 +35,7 @@ public extension PaymentCategory {
             case backpack
             case handbag
             case purse
+            case suitcase
 
             public var value: Clothing {
                 switch self {
@@ -46,6 +48,7 @@ public extension PaymentCategory {
                 case .jewelry: .jewelry
                 case .bag, .backpack: .bag
                 case .handbag, .purse: .handbag
+                case .suitcase: .suitcase
                 }
             }
         }
@@ -65,6 +68,7 @@ public extension PaymentCategory {
             case .jewelry: "crown" // 􀦅
             case .bag: "backpack" // 􁋹
             case .handbag: "handbag" // 􁞸
+            case .suitcase: "suitcase" // 􀶉
             }
         }
         
@@ -79,6 +83,7 @@ public extension PaymentCategory {
             case .sunglasses: String(localized: "Sunglasses")
             case .bag: String(localized: "Bag")
             case .handbag: String(localized: "Handbag")
+            case .suitcase: String(localized: "Suitcase")
             }
         }
     }

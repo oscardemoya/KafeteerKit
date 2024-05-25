@@ -11,6 +11,7 @@ public protocol CategoryRepresentable: RawRepresentable, Equatable, CaseInsensit
     associatedtype Keyword: KeywordRepresentable
     static var defaultValue: Self { get }
     static var categoryName: String { get }
+    static var allValues: [PaymentCategory] { get }
     var name: String { get }
     var keywords: [String] { get }
     var asPaymentCategory: PaymentCategory { get }
@@ -26,6 +27,10 @@ public extension CategoryRepresentable where Self.RawValue == String, Keyword.Ra
     init?(keyword: Keyword.RawValue) {
         guard let value = Keyword(rawValue: keyword)?.value as? Self else { return nil }
         self = value
+    }
+    
+    static var allValues: [PaymentCategory] {
+        allCases.compactMap { $0 as? Self }.map(\.asPaymentCategory)
     }
     
     var keywords: [String] {

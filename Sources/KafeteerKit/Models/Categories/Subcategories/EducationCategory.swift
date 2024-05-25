@@ -16,8 +16,8 @@ public extension PaymentCategory {
         case education
         case schoolSupplies
         case books
-        case courses
-        case tutors
+        case course
+        case tutor
         
         public enum Keyword: String, KeywordRepresentable {
             case education
@@ -34,8 +34,8 @@ public extension PaymentCategory {
                 case .education, .school, .university: .education
                 case .schoolSupplies: .schoolSupplies
                 case .books, .eBooks: .books
-                case .courses: .courses
-                case .tutors: .tutors
+                case .courses: .course
+                case .tutors: .tutor
                 }
             }
         }
@@ -45,8 +45,8 @@ public extension PaymentCategory {
             case .education: "graduationcap" // 􀫓
             case .schoolSupplies: "pencil.and.ruler" // 􁖆
             case .books: "book" // 􀉚
-            case .courses: "books.vertical" // 􀬒
-            case .tutors: "rectangle.inset.filled.and.person.filled" // 􁅀
+            case .course: "macwindow.and.cursorarrow" // 􁝸
+            case .tutor: "rectangle.inset.filled.and.person.filled" // 􁅀
             }
         }
         
@@ -55,8 +55,8 @@ public extension PaymentCategory {
             case .education: String(localized: "Education")
             case .schoolSupplies: String(localized: "School Supplies")
             case .books: String(localized: "Books")
-            case .courses: String(localized: "Courses")
-            case .tutors: String(localized: "Tutors")
+            case .course: String(localized: "Course")
+            case .tutor: String(localized: "Tutor")
             }
         }
     }

@@ -1,5 +1,5 @@
 //
-//  PurchaseCategory.swift
+//  FurnishingCategory.swift
 //
 //
 //  Created by Oscar De Moya on 8/05/23.
@@ -8,10 +8,10 @@
 import Foundation
 
 public extension PaymentCategory {
-    public enum Purchase: String, CategoryRepresentable {
+    public enum Furnishing: String, CategoryRepresentable {
         public static var defaultValue: Self = .computer
-        public static var categoryName = String(localized: "Purchase")
-        public var asPaymentCategory: PaymentCategory { .purchase(self) }
+        public static var categoryName = String(localized: "Furnishing")
+        public var asPaymentCategory: PaymentCategory { .furnishing(self) }
         
         case furnishing
         case computer
@@ -24,7 +24,7 @@ public extension PaymentCategory {
             case phone
             case gadgets
 
-            public var value: Purchase {
+            public var value: Furnishing {
                 switch self {
                 case .furnishing: .furnishing
                 case .computer: .computer
