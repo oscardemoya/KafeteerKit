@@ -27,6 +27,7 @@ public extension PaymentCategory {
         public enum Keyword: String, KeywordRepresentable {
             case food
             case meals
+            case restaurant
             case snacks
             case breakfast
             case lunch
@@ -47,7 +48,7 @@ public extension PaymentCategory {
 
             public var value: Food {
                 switch self {
-                case .food, .meals: .food
+                case .food, .meals, .restaurant: .food
                 case .snacks: .snacks
                 case .breakfast: .breakfast
                 case .lunch: .lunch

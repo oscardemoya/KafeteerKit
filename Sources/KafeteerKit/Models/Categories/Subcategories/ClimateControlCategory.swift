@@ -10,7 +10,7 @@ import Foundation
 public extension PaymentCategory {
     public enum ClimateControl: String, CategoryRepresentable {
         public static var defaultValue: Self = .airConditioner
-        public static var categoryName = String(localized: "ClimateControl")
+        public static var categoryName = String(localized: "Climate Control")
         public var asPaymentCategory: PaymentCategory { .climateControl(self) }
         
         case airConditioner
