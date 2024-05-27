@@ -13,6 +13,11 @@ public protocol ColorConfiguration {
     var secondaryBrand: Color { get }
     var tertiaryBrand: Color { get }
     
+    // Semantic
+    var successColor: Color { get }
+    var warningColor: Color { get }
+    var dangerColor: Color { get }
+    
     // Tint
     var primaryTint: Color { get }
     var secondaryTint: Color { get }
@@ -32,6 +37,9 @@ public protocol ColorConfiguration {
     var borderColor: Color { get }
     var dividerColor: Color { get }
     
+    // Shadows
+    var shadowColor: Color { get }
+    
     // Inputs
     var primaryInputBackground: Color { get }
     var secondaryInputBackground: Color { get }
@@ -41,11 +49,16 @@ public protocol ColorConfiguration {
     var barBackground: Color { get }
 }
 
-struct DefaultColorConfiguration: ColorConfiguration {
+struct DefaultColorConfiguration: ColorConfiguration {    
     // Brand
     var primaryBrand: Color { Color(.primary500) }
     var secondaryBrand: Color { Color(.secondary500) }
     var tertiaryBrand: Color { Color(.tertiary500) }
+    
+    // Semantic
+    var successColor: Color { Color(.success500) }
+    var warningColor: Color { Color(.warning500) }
+    var dangerColor: Color { Color(.danger500) }
     
     // Tint
     var primaryTint: Color { Color(.primary200) }
@@ -66,11 +79,14 @@ struct DefaultColorConfiguration: ColorConfiguration {
     var borderColor: Color { Color(.foreground500).opacity(0.25) }
     var dividerColor: Color { Color(.foreground500).opacity(0.25) }
     
+    // Bars
+    var barBackground: Color { Color(.background200) }
+
+    // Shadows
+    var shadowColor: Color { Color(.foreground100) }
+    
     // Inputs
     var primaryInputBackground: Color { Color(.background500) }
     var secondaryInputBackground: Color { Color(.background700) }
     var tertiaryInputBackground: Color { Color(.background700) }
-    
-    // Bars
-    var barBackground: Color { Color(.background200) }
 }

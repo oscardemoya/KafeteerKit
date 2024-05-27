@@ -24,7 +24,7 @@
         "components" : {
           "alpha" : "{{da}}",
           "blue" : "0x07",
-          "green" : "0x04",
+          "green" : "0x03",
           "red" : "0x02"
         }
       },

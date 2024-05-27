@@ -5,12 +5,12 @@
 //  Created by Oscar De Moya on 14/03/24.
 //
 
-class Config {
-    static let shared = Config()
-    var sizing: Sizing = .regular
-    var colors: any ColorConfiguration = DefaultColorConfiguration()
-    var fonts: any FontConfiguration = DefaultFontConfiguration()
-    var isLoggingEnabled = true
+public class Config {
+    public static let shared = Config()
+    public var sizing: Sizing = .regular
+    public var colors: any ColorConfiguration = DefaultColorConfiguration()
+    public var fonts: any FontConfiguration = DefaultFontConfiguration()
+    public var isLoggingEnabled = true
 
     private init() {}
 }

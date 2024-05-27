@@ -8,7 +8,7 @@
 import SwiftUI
 
 public extension View {
-    func shadowStyle(_ style: ShadowStyle, color: Color = Color.primaryForeground) -> some View {
+    func shadowStyle(_ style: ShadowStyle, color: Color = Config.shared.colors.shadowColor) -> some View {
         modifier(
             ShadowStyleModifier(
                 shadowStyle: style,
