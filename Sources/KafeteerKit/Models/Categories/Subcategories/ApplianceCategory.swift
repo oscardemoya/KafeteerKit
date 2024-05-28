@@ -20,6 +20,9 @@ public extension PaymentCategory {
         case dishwasher
         case washer
         case dryer
+        case securityCamera
+        case sensor
+        case powerOutlet
 
         public enum Keyword: String, KeywordRepresentable {
             case appliance
@@ -30,7 +33,10 @@ public extension PaymentCategory {
             case dishwasher
             case washer
             case dryer
-            
+            case securityCamera
+            case sensor
+            case powerOutlet
+
             public var value: Appliance {
                 switch self {
                 case .refrigerator, .appliance: .refrigerator
@@ -40,6 +46,9 @@ public extension PaymentCategory {
                 case .dishwasher: .dishwasher
                 case .washer: .washer
                 case .dryer: .dryer
+                case .securityCamera: .securityCamera
+                case .sensor: .sensor
+                case .powerOutlet: .powerOutlet
                 }
             }
         }
@@ -53,6 +62,9 @@ public extension PaymentCategory {
             case .dishwasher: "dishwasher" // 􁐢
             case .washer: "washer" // 􁐠
             case .dryer: "dryer" // 􁖒
+            case .securityCamera: "web.camera" // 􁒲
+            case .sensor: "sensor" // 􁔉
+            case .powerOutlet: "poweroutlet.strip" // 􁌲
             }
         }
         
@@ -65,6 +77,9 @@ public extension PaymentCategory {
             case .dishwasher: String(localized: "Dishwasher")
             case .washer: String(localized: "Washer")
             case .dryer: String(localized: "Dryer")
+            case .securityCamera: String(localized: "Security Camera")
+            case .sensor: String(localized: "Sensor")
+            case .powerOutlet: String(localized: "Power Outlet")
             }
         }
         

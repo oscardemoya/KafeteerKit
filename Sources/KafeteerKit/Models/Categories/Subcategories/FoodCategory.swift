@@ -19,7 +19,7 @@ public extension PaymentCategory {
         case lunch
         case dinner
         case healthyFood
-        case junkFood
+        case fastFood
         case drinks
         case water
         case coffee
@@ -33,7 +33,6 @@ public extension PaymentCategory {
             case lunch
             case dinner
             case healthyFood
-            case junkFood
             case fastFood
             case pizza
             case burger
@@ -54,7 +53,7 @@ public extension PaymentCategory {
                 case .lunch: .lunch
                 case .dinner: .dinner
                 case .healthyFood: .healthyFood
-                case .junkFood, .fastFood, .pizza, .burger: .junkFood
+                case .fastFood, .pizza, .burger: .fastFood
                 case .drinks, .beverages, .soda, .beer: .drinks
                 case .coffee, .tea: .coffee
                 case .water, .juice: .water
@@ -70,7 +69,7 @@ public extension PaymentCategory {
             case .lunch: "fish" // 􁖐
             case .dinner: "wineglass" // 􁎤
             case .healthyFood: "carrot" // 􁖎
-            case .junkFood: "xmark.bin" // 􀈱
+            case .fastFood: "stopwatch" // 􀐯
             case .drinks:  "mug" // 􁞴
             case .water: "waterbottle" // 􁻊
             case .coffee: "cup.and.saucer" // 􀸘
@@ -85,7 +84,7 @@ public extension PaymentCategory {
             case .lunch: String(localized: "Lunch")
             case .dinner: String(localized: "Dinner")
             case .healthyFood: String(localized: "Healthy Food")
-            case .junkFood: String(localized: "Junk Food")
+            case .fastFood: String(localized: "Fast Food")
             case .drinks: String(localized: "Drinks")
             case .water: String(localized: "Water")
             case .coffee: String(localized: "Coffee")

@@ -22,6 +22,7 @@ public extension PaymentCategory {
         case officeSupplies
         case hardware
         case conference
+        case branding
 
         public enum Keyword: String, KeywordRepresentable {
             case business
@@ -33,6 +34,9 @@ public extension PaymentCategory {
             case officeSupplies
             case hardware
             case conference
+            case branding
+            case verification
+            case social
 
             public var value: Business {
                 switch self {
@@ -45,6 +49,7 @@ public extension PaymentCategory {
                 case .officeSupplies: .officeSupplies
                 case .hardware: .hardware
                 case .conference: .conference
+                case .branding, .verification, .social: .branding
                 }
             }
         }
@@ -60,6 +65,7 @@ public extension PaymentCategory {
             case .officeSupplies: "paperclip" // 􀉢
             case .hardware: "printer" // 􀎚
             case .conference: "person.3" // 􀝊
+            case .branding: "checkmark.seal" // 􀇺
             }
         }
         
@@ -74,6 +80,7 @@ public extension PaymentCategory {
             case .officeSupplies: String(localized: "Office Supplies")
             case .hardware: String(localized: "Hardware")
             case .conference: String(localized: "Conference")
+            case .branding: String(localized: "Branding")
             }
         }
     }

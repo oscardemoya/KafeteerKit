@@ -18,7 +18,7 @@ public extension PaymentCategory {
         case rent
         case mortgage
         case condoFee
-        case security
+        case securityGuard
         case domesticService
         case chef
         case laundry
@@ -31,6 +31,7 @@ public extension PaymentCategory {
             case mortgage
             case home
             case condoFee
+            case securityGuard
             case security
             case domesticService
             case cleaning
@@ -47,7 +48,7 @@ public extension PaymentCategory {
                 case .rent: .rent
                 case .mortgage, .home: .mortgage
                 case .condoFee: .condoFee
-                case .security: .security
+                case .securityGuard, .security: .securityGuard
                 case .domesticService, .cleaning: .domesticService
                 case .chef, .cooking: .chef
                 case .laundry: .laundry
@@ -63,7 +64,7 @@ public extension PaymentCategory {
             case .rent: "person.badge.key" // 􁏺
             case .mortgage: "house" // 􀎞
             case .condoFee: "building" // 􀮅
-            case .security: "lock.fill" // 􀎡
+            case .securityGuard: "lock.fill" // 􀎡
             case .domesticService: "bubbles.and.sparkles" // 􁒉
             case .chef: "cooktop" // 􁕠
             case .laundry: "drop.keypad.rectangle" // 􁓀
@@ -78,7 +79,7 @@ public extension PaymentCategory {
             case .rent: String(localized: "Rent")
             case .mortgage: String(localized: "Mortgage")
             case .condoFee: String(localized: "Condo Fee")
-            case .security: String(localized: "Security")
+            case .securityGuard: String(localized: "Security Guard")
             case .domesticService: String(localized: "Domestic Service")
             case .chef: String(localized: "Chef")
             case .laundry: String(localized: "Laundry")

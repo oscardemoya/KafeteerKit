@@ -15,24 +15,27 @@ public extension PaymentCategory {
         
         case airConditioner
         case heater
-        case airPurifier
+        case fan
         case humidifier
         case dehumidifier
+        case airPurifier
 
         public enum Keyword: String, KeywordRepresentable {
             case airConditioner
             case heater
-            case airPurifier
+            case fan
             case humidifier
             case dehumidifier
-            
+            case airPurifier
+
             public var value: ClimateControl {
                 switch self {
                 case .airConditioner: .airConditioner
                 case .heater: .heater
-                case .airPurifier: .airPurifier
+                case .fan: .fan
                 case .humidifier: .humidifier
                 case .dehumidifier: .dehumidifier
+                case .airPurifier: .airPurifier
                 }
             }
         }
@@ -41,10 +44,10 @@ public extension PaymentCategory {
             switch self {
             case .airConditioner: "air.conditioner.horizontal" // 􁓭
             case .heater: "heater.vertical" // 􁓩
-            case .airPurifier: "air.purifier" // 􁓥
+            case .fan: "fan.floor" // 􁌚
             case .humidifier: "humidifier" // 􁘘
             case .dehumidifier: "dehumidifier" // 􁓧
-            
+            case .airPurifier: "air.purifier" // 􁓥
             }
         }
         
@@ -52,9 +55,10 @@ public extension PaymentCategory {
             switch self {
             case .airConditioner: String(localized: "Air Cooler")
             case .heater: String(localized: "Heater")
-            case .airPurifier: String(localized: "Air Purifier")
+            case .fan: String(localized: "Fan")
             case .humidifier: String(localized: "Humidifier")
             case .dehumidifier: String(localized: "Dehumidifier")
+            case .airPurifier: String(localized: "Air Purifier")
             }
         }
         

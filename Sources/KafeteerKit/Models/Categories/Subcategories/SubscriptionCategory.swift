@@ -21,7 +21,6 @@ public extension PaymentCategory {
         case vpn
         case dataStorage
         case app
-        case social
         case learning
         case newspaper
         
@@ -41,8 +40,6 @@ public extension PaymentCategory {
             case dataStorage
             case dataProtection
             case app
-            case social
-            case verification
             case learning
             case courses
             case newspaper
@@ -57,7 +54,6 @@ public extension PaymentCategory {
                 case .vpn: .vpn
                 case .dataStorage, .dataProtection: .dataStorage
                 case .app: .app
-                case .social, .verification: .social
                 case .learning, .courses: .learning
                 case .newspaper: .newspaper
                 }
@@ -74,7 +70,6 @@ public extension PaymentCategory {
             case .cloud: "cloud" // 􀇂
             case .vpn: "network.badge.shield.half.filled" // 􁅏
             case .dataStorage: "externaldrive.badge.icloud" // 􀪹
-            case .social: "checkmark.seal" // 􀇺
             case .learning: "brain" // 􀯐
             case .newspaper: "newspaper" // 􀤦
             }
@@ -90,7 +85,6 @@ public extension PaymentCategory {
             case .cloud: String(localized: "Cloud Service")
             case .vpn: String(localized: "VPN")
             case .dataStorage: String(localized: "Data Storage")
-            case .social: String(localized: "Social Network")
             case .learning: String(localized: "Learning Platform")
             case .newspaper: String(localized: "Newspaper")
             }

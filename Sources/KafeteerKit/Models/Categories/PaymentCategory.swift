@@ -14,9 +14,11 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
     case clothing(Clothing)
     case home(Home)
     case utility(Utility)
-    case furnishing(Furnishing)
     case appliance(Appliance)
     case electronics(Electronics)
+    case furnishing(Furnishing)
+    case furniture(Furniture)
+    case fixture(Fixture)
     case climateControl(ClimateControl)
     case healthcare(Healthcare)
     case personalCare(PersonalCare)
@@ -43,9 +45,11 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         case clothing
         case home
         case utility
-        case furnishing
         case appliance
         case electronics
+        case furnishing
+        case furniture
+        case fixture
         case climateControl
         case healthcare
         case personalCare
@@ -73,9 +77,11 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
             case .clothing: Clothing.self
             case .home: Home.self
             case .utility: Utility.self
-            case .furnishing: Furnishing.self
             case .appliance: Appliance.self
             case .electronics: Electronics.self
+            case .furnishing: Furnishing.self
+            case .furniture: Furniture.self
+            case .fixture: Fixture.self
             case .climateControl: ClimateControl.self
             case .healthcare: Healthcare.self
             case .personalCare: PersonalCare.self
@@ -107,9 +113,11 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         if let value = Clothing(keyword: rawValue) { return value }
         if let value = Home(keyword: rawValue) { return value }
         if let value = Utility(keyword: rawValue) { return value }
-        if let value = Furnishing(keyword: rawValue) { return value }
         if let value = Appliance(keyword: rawValue) { return value }
         if let value = Electronics(keyword: rawValue) { return value }
+        if let value = Furnishing(keyword: rawValue) { return value }
+        if let value = Furniture(keyword: rawValue) { return value }
+        if let value = Fixture(keyword: rawValue) { return value }
         if let value = ClimateControl(keyword: rawValue) { return value }
         if let value = Healthcare(keyword: rawValue) { return value }
         if let value = PersonalCare(keyword: rawValue) { return value }
@@ -154,9 +162,11 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         case .clothing(let value): value
         case .home(let value): value
         case .utility(let value): value
-        case .furnishing(let value): value
         case .appliance(let value): value
         case .electronics(let value): value
+        case .furnishing(let value): value
+        case .furniture(let value): value
+        case .fixture(let value): value
         case .climateControl(let value): value
         case .healthcare(let value): value
         case .personalCare(let value): value
@@ -182,9 +192,11 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         case .clothing: .clothing
         case .home: .home
         case .utility: .utility
-        case .furnishing: .furnishing
         case .appliance: .appliance
         case .electronics: .electronics
+        case .furnishing: .furnishing
+        case .furniture: .furniture
+        case .fixture: .fixture
         case .climateControl: .climateControl
         case .finance: .finance
         case .business: .business
