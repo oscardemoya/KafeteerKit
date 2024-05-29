@@ -9,7 +9,7 @@ import Foundation
 
 public extension PaymentCategory {
     public enum Education: String, CategoryRepresentable {
-        public static var defaultValue: Self = .education
+        public static var categoryIcon: Self = .education
         public static var categoryName = String(localized: "Education")
         public var asPaymentCategory: PaymentCategory { .education(self) }
         

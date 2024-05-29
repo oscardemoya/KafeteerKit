@@ -9,7 +9,7 @@ import Foundation
 
 public extension PaymentCategory {
     public enum Entertainment: String, CategoryRepresentable {
-        public static var defaultValue: Self = .movie
+        public static var categoryIcon: Self = .movie
         public static var categoryName = String(localized: "Entertainment")
         public var asPaymentCategory: PaymentCategory { .entertainment(self) }
         

@@ -7,7 +7,7 @@
 
 public extension PaymentCategory {
     public enum Electronics: String, CategoryRepresentable {
-        public static var defaultValue: Self = .computer
+        public static var categoryIcon: Self = .computer
         public static var categoryName = String(localized: "Electronics")
         public var asPaymentCategory: PaymentCategory { .electronics(self) }
         

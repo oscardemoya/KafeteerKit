@@ -9,7 +9,7 @@ import SwiftUI
 
 public protocol CategoryRepresentable: RawRepresentable, Equatable, CaseInsensitive, IconRepresentable {
     associatedtype Keyword: KeywordRepresentable
-    static var defaultValue: Self { get }
+    static var categoryIcon: Self { get }
     static var categoryName: String { get }
     static var allValues: [PaymentCategory] { get }
     var name: String { get }

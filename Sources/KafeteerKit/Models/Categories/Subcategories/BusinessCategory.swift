@@ -9,7 +9,7 @@ import Foundation
 
 public extension PaymentCategory {
     public enum Business: String, CategoryRepresentable {
-        public static var defaultValue: Self = .business
+        public static var categoryIcon: Self = .business
         public static var categoryName = String(localized: "Business")
         public var asPaymentCategory: PaymentCategory { .business(self) }
         
@@ -21,7 +21,6 @@ public extension PaymentCategory {
         case payroll
         case officeSupplies
         case hardware
-        case conference
         case branding
 
         public enum Keyword: String, KeywordRepresentable {
@@ -33,7 +32,6 @@ public extension PaymentCategory {
             case payroll
             case officeSupplies
             case hardware
-            case conference
             case branding
             case verification
             case social
@@ -48,7 +46,6 @@ public extension PaymentCategory {
                 case .payroll: .payroll
                 case .officeSupplies: .officeSupplies
                 case .hardware: .hardware
-                case .conference: .conference
                 case .branding, .verification, .social: .branding
                 }
             }
@@ -64,8 +61,7 @@ public extension PaymentCategory {
             case .payroll: "lanyardcard" // 􀰵
             case .officeSupplies: "paperclip" // 􀉢
             case .hardware: "printer" // 􀎚
-            case .conference: "person.3" // 􀝊
-            case .branding: "checkmark.seal" // 􀇺
+            case .branding: "theatermask.and.paintbrush" // 􁔘
             }
         }
         
@@ -79,7 +75,6 @@ public extension PaymentCategory {
             case .payroll: String(localized: "Payroll")
             case .officeSupplies: String(localized: "Office Supplies")
             case .hardware: String(localized: "Hardware")
-            case .conference: String(localized: "Conference")
             case .branding: String(localized: "Branding")
             }
         }

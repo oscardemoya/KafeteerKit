@@ -25,6 +25,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
     case familyCare(FamilyCare)
     case entertainment(Entertainment)
     case education(Education)
+    case professional(Professional)
     case finance(Finance)
     case business(Business)
     case activity(Activity)
@@ -56,6 +57,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         case familyCare
         case entertainment
         case education
+        case professional
         case finance
         case business
         case activity
@@ -67,7 +69,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         
         public var id: Self { self }
         public var categoryName: String { categoryClass.categoryName }
-        public var iconName: String { categoryClass.defaultValue.iconName }
+        public var iconName: String { categoryClass.categoryIcon.iconName }
         
         public var categoryClass: any CategoryRepresentable.Type {
             switch self {
@@ -88,6 +90,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
             case .familyCare: FamilyCare.self
             case .entertainment: Entertainment.self
             case .education: Education.self
+            case .professional: Professional.self
             case .finance: Finance.self
             case .business: Business.self
             case .activity: Activity.self
@@ -124,6 +127,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         if let value = FamilyCare(keyword: rawValue) { return value }
         if let value = Entertainment(keyword: rawValue) { return value }
         if let value = Education(keyword: rawValue) { return value }
+        if let value = Professional(keyword: rawValue) { return value }
         if let value = Finance(keyword: rawValue) { return value }
         if let value = Business(keyword: rawValue) { return value }
         if let value = Activity(keyword: rawValue) { return value }
@@ -131,7 +135,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         if let value = Celebration(keyword: rawValue) { return value }
         if let value = Maintenance(keyword: rawValue) { return value }
         if let value = Subscription(keyword: rawValue) { return value }
-        return General.defaultValue
+        return General.categoryIcon
     }
     
     public var rawValue: String { value.name }
@@ -173,6 +177,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         case .familyCare(let value): value
         case .entertainment(let value): value
         case .education(let value): value
+        case .professional(let value): value
         case .finance(let value): value
         case .business(let value): value
         case .activity(let value): value
@@ -201,6 +206,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         case .finance: .finance
         case .business: .business
         case .education: .education
+        case .professional: .professional
         case .healthcare: .healthcare
         case .personalCare: .personalCare
         case .familyCare: .familyCare
