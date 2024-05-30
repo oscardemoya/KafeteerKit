@@ -24,6 +24,16 @@ public extension TextFieldStyle where Self == HierarchicalTextFieldStyle {
     static var tertiary: HierarchicalTextFieldStyle { .init(hierarchy: .tertiary) }
 }
 
+public extension Hierarchy {
+    var textFieldStyle: HierarchicalTextFieldStyle {
+        switch self {
+        case .primary: .primary
+        case .secondary: .secondary
+        case .tertiary: .tertiary
+        }
+    }
+}
+
 #Preview {
     @State var text: String = ""
     return VStack {

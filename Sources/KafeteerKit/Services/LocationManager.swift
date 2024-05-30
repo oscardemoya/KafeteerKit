@@ -9,7 +9,8 @@ import Foundation
 import CoreLocation
 import Combine
 
-@Observable public class LocationManager: NSObject, CLLocationManagerDelegate {
+@Observable
+public class LocationManager: NSObject, CLLocationManagerDelegate {
     public var location: CLLocationCoordinate2D?
     public var status: CLAuthorizationStatus?
     private var locationManager = CLLocationManager()

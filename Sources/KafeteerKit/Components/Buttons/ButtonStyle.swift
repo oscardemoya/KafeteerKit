@@ -41,9 +41,10 @@ public struct HierarchicalButtonStyle: ButtonStyle {
 }
 
 public extension ButtonStyle where Self == HierarchicalButtonStyle {
-    static var primary: HierarchicalButtonStyle { .init(hierarchy: .primary) }
-    static var secondary: HierarchicalButtonStyle { .init(hierarchy: .secondary) }
-    static var tertiary: HierarchicalButtonStyle { .init(hierarchy: .tertiary) }
+    static func hierarchical(_ hierarchy: Hierarchy) -> Self { .init(hierarchy: hierarchy) }
+    static var primary: Self { .init(hierarchy: .primary) }
+    static var secondary: Self { .init(hierarchy: .secondary) }
+    static var tertiary: Self { .init(hierarchy: .tertiary) }
 }
 
 #Preview {

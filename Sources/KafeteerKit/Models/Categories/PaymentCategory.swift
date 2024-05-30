@@ -13,6 +13,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
     case transportation(Transportation)
     case clothing(Clothing)
     case home(Home)
+    case domestic(Domestic)
     case utility(Utility)
     case appliance(Appliance)
     case electronics(Electronics)
@@ -24,7 +25,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
     case personalCare(PersonalCare)
     case familyCare(FamilyCare)
     case entertainment(Entertainment)
-    case education(Education)
+    case education(Knowledge)
     case professional(Professional)
     case finance(Finance)
     case business(Business)
@@ -32,7 +33,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
     case sports(Sports)
     case hobby(Hobby)
     case celebration(Celebration)
-    case maintenance(Maintenance)
+    case maintenance(Automotive)
     case subscription(Subscription)
     
     public static let `default`: PaymentCategory = .general(.payment)
@@ -45,6 +46,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         case transportation
         case clothing
         case home
+        case domestic
         case utility
         case appliance
         case electronics
@@ -78,6 +80,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
             case .transportation: Transportation.self
             case .clothing: Clothing.self
             case .home: Home.self
+            case .domestic: Domestic.self
             case .utility: Utility.self
             case .appliance: Appliance.self
             case .electronics: Electronics.self
@@ -89,7 +92,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
             case .personalCare: PersonalCare.self
             case .familyCare: FamilyCare.self
             case .entertainment: Entertainment.self
-            case .education: Education.self
+            case .education: Knowledge.self
             case .professional: Professional.self
             case .finance: Finance.self
             case .business: Business.self
@@ -97,7 +100,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
             case .sports: Sports.self
             case .hobby: Hobby.self
             case .celebration: Celebration.self
-            case .maintenance: Maintenance.self
+            case .maintenance: Automotive.self
             case .subscription: Subscription.self
             }
         }
@@ -115,6 +118,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         if let value = Transportation(keyword: rawValue) { return value }
         if let value = Clothing(keyword: rawValue) { return value }
         if let value = Home(keyword: rawValue) { return value }
+        if let value = Domestic(keyword: rawValue) { return value }
         if let value = Utility(keyword: rawValue) { return value }
         if let value = Appliance(keyword: rawValue) { return value }
         if let value = Electronics(keyword: rawValue) { return value }
@@ -126,14 +130,14 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         if let value = PersonalCare(keyword: rawValue) { return value }
         if let value = FamilyCare(keyword: rawValue) { return value }
         if let value = Entertainment(keyword: rawValue) { return value }
-        if let value = Education(keyword: rawValue) { return value }
+        if let value = Knowledge(keyword: rawValue) { return value }
         if let value = Professional(keyword: rawValue) { return value }
         if let value = Finance(keyword: rawValue) { return value }
         if let value = Business(keyword: rawValue) { return value }
         if let value = Activity(keyword: rawValue) { return value }
         if let value = Sports(keyword: rawValue) { return value }
         if let value = Celebration(keyword: rawValue) { return value }
-        if let value = Maintenance(keyword: rawValue) { return value }
+        if let value = Automotive(keyword: rawValue) { return value }
         if let value = Subscription(keyword: rawValue) { return value }
         return General.categoryIcon
     }
@@ -165,6 +169,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         case .transportation(let value): value
         case .clothing(let value): value
         case .home(let value): value
+        case .domestic(let value): value
         case .utility(let value): value
         case .appliance(let value): value
         case .electronics(let value): value
@@ -196,6 +201,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         case .transportation: .transportation
         case .clothing: .clothing
         case .home: .home
+        case .domestic: .domestic
         case .utility: .utility
         case .appliance: .appliance
         case .electronics: .electronics
