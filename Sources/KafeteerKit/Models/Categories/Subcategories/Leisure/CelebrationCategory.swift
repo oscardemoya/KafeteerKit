@@ -44,7 +44,7 @@ public extension PaymentCategory {
             case .party: "party.popper" // 􁓵
             case .birthday: "birthday.cake" // 􁖩
             case .wedding: "figure.2.arms.open" // 􁗆
-            case .festival: "theatermasks" // 􀺧
+            case .festival: "theatermask.and.paintbrush" // 􁔘
             }
         }
         

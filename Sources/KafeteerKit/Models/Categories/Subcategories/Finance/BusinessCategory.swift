@@ -63,7 +63,7 @@ public extension PaymentCategory {
             case .payroll: "lanyardcard" // 􀰵
             case .officeSupplies: "paperclip" // 􀉢
             case .hardware: "printer" // 􀎚
-            case .branding: "theatermask.and.paintbrush" // 􁔘
+            case .branding: "rosette" // 􀛯
             case .marketing: "burst" // 􀑂
             }
         }

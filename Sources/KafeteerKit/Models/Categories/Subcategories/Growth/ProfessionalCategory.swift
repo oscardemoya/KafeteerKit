@@ -44,7 +44,7 @@ public extension PaymentCategory {
             case .certification: "checkmark.seal" // 􀇺
             case .conference: "person.3" // 􀝊
             case .accommodation: "building.2" // 􀝒
-            case .allowance: "rosette" // 􀛯
+            case .allowance: "envelope" // 􀍕
             }
         }
         
