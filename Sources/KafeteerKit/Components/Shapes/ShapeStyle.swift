@@ -33,17 +33,22 @@ public extension ShapeStyle where Self == Color {
     static var secondaryForeground: Color { Config.shared.colors.secondaryForeground }
     static var tertiaryForeground: Color { Config.shared.colors.tertiaryForeground }
     
+    // Input Backgrounds
+    static var primaryInputBackground: Color { Config.shared.colors.primaryInputBackground }
+    static var secondaryInputBackground: Color { Config.shared.colors.secondaryInputBackground }
+    static var tertiaryInputBackground: Color { Config.shared.colors.tertiaryInputBackground }
+    
+    // Input Foregrounds
+    static var primaryInputForeground: Color { Config.shared.colors.primaryInputForeground }
+    static var secondaryInputForeground: Color { Config.shared.colors.secondaryInputForeground }
+    static var tertiaryInputForeground: Color { Config.shared.colors.tertiaryInputForeground }
+    
     // Lines
     static var borderColor: Color { Config.shared.colors.borderColor }
     static var dividerColor: Color { Config.shared.colors.dividerColor }
     
     // Shadows
     static var shadowColor: Color { Config.shared.colors.borderColor }
-
-    // Inputs
-    static var primaryInputBackground: Color { Config.shared.colors.primaryInputBackground }
-    static var secondaryInputBackground: Color { Config.shared.colors.secondaryInputBackground }
-    static var tertiaryInputBackground: Color { Config.shared.colors.tertiaryInputBackground }
     
     // Bars
     static var barBackground: Color { Config.shared.colors.barBackground }

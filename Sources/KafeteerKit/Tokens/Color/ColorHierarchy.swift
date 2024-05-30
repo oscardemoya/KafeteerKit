@@ -47,4 +47,12 @@ public extension Hierarchy {
         case .tertiary: .tertiaryInputBackground
         }
     }
+    
+    var inputForegroundColor: Color {
+        switch self {
+        case .primary: .primaryInputForeground
+        case .secondary: .secondaryInputForeground
+        case .tertiary: .tertiaryInputForeground
+        }
+    }
 }

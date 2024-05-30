@@ -10,12 +10,17 @@ import SwiftUI
 public struct OptionalDateField: View {
     @State public var titleKey: LocalizedStringKey = ""
     @Binding public var date: OptionalDate
+    var displayedComponents: DatePicker<Label>.Components = [.hourAndMinute, .date]
     @Binding public var isExpanded: Bool
     @State private var internalDate: Date = .today
     
-    public init(_ titleKey: LocalizedStringKey, selection date: Binding<OptionalDate>, isExpanded: Binding<Bool>) {
+    public init(_ titleKey: LocalizedStringKey,
+                selection date: Binding<OptionalDate>,
+                displayedComponents: DatePicker.Components = [.hourAndMinute, .date],
+                isExpanded: Binding<Bool>) {
         self.titleKey = titleKey
         self._date = date
+        self.displayedComponents = displayedComponents
         self._isExpanded = isExpanded
     }
     

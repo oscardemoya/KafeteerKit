@@ -33,17 +33,22 @@ public protocol ColorConfiguration {
     var secondaryForeground: Color { get }
     var tertiaryForeground: Color { get }
     
+    // Input Backgrounds
+    var primaryInputBackground: Color { get }
+    var secondaryInputBackground: Color { get }
+    var tertiaryInputBackground: Color { get }
+    
+    // Input Foregrounds
+    var primaryInputForeground: Color { get }
+    var secondaryInputForeground: Color { get }
+    var tertiaryInputForeground: Color { get }
+    
     // Lines
     var borderColor: Color { get }
     var dividerColor: Color { get }
     
     // Shadows
     var shadowColor: Color { get }
-    
-    // Inputs
-    var primaryInputBackground: Color { get }
-    var secondaryInputBackground: Color { get }
-    var tertiaryInputBackground: Color { get }
     
     // Bars
     var barBackground: Color { get }
@@ -75,6 +80,16 @@ struct DefaultColorConfiguration: ColorConfiguration {
     var secondaryForeground: Color { Color(.foreground300) }
     var tertiaryForeground: Color { Color(.foreground500) }
     
+    // Input Backgrounds
+    var primaryInputBackground: Color { Color(.background500) }
+    var secondaryInputBackground: Color { Color(.background700) }
+    var tertiaryInputBackground: Color { Color(.background700) }
+        
+    // Input Foregrounds
+    var primaryInputForeground: Color { Color(.foreground100) }
+    var secondaryInputForeground: Color { Color(.foreground100) }
+    var tertiaryInputForeground: Color { Color(.foreground100) }
+
     // Lines
     var borderColor: Color { Color(.foreground500).opacity(0.25) }
     var dividerColor: Color { Color(.foreground500).opacity(0.25) }
@@ -84,9 +99,4 @@ struct DefaultColorConfiguration: ColorConfiguration {
 
     // Shadows
     var shadowColor: Color { Color(.foreground100) }
-    
-    // Inputs
-    var primaryInputBackground: Color { Color(.background500) }
-    var secondaryInputBackground: Color { Color(.background700) }
-    var tertiaryInputBackground: Color { Color(.background700) }
 }

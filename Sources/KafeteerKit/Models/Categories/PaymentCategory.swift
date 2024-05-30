@@ -72,6 +72,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         public var id: Self { self }
         public var categoryName: String { categoryClass.categoryName }
         public var iconName: String { categoryClass.categoryIcon.iconName }
+        public var categories: [PaymentCategory] { categoryClass.allValues }
         
         public var categoryClass: any CategoryRepresentable.Type {
             switch self {
@@ -104,12 +105,20 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
             case .subscription: Subscription.self
             }
         }
-        
-        public var categories: [PaymentCategory] { categoryClass.allValues }
     }
     
     public init(rawValue: String) {
         self = Self.value(for: rawValue).asPaymentCategory
+    }
+    
+    public init(containing string: String) {
+        self = Kind.allCases.reduce(into: []) { results, kind in
+            results.append(contentsOf: kind.categories)
+        }.sorted {
+            $0.name.count > $1.name.count
+        }.first { category in
+            string.localizedCaseInsensitiveContains(category.name)
+        } ?? .default
     }
     
     private static func value(for rawValue: String) -> any CategoryRepresentable {
