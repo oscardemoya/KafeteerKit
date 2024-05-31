@@ -10,8 +10,8 @@ import SwiftUI
 private struct FixedHeightSheetModifier<Value: View>: ViewModifier {
     @Binding var isPresented: Bool
     var backgroundColor: Color = .primaryBackground
-    var onDismiss: (() -> Void)?
     @ViewBuilder let sheetContent: () -> Value
+    var onDismiss: (() -> Void)?
     @State private var sheetHeight: CGFloat = .zero
     
     func body(content: Content) -> some View {
@@ -34,13 +34,13 @@ private struct FixedHeightSheetModifier<Value: View>: ViewModifier {
 public extension View {
     func fixedHeightSheet<Content>(isPresented: Binding<Bool>,
                                    backgroundColor: Color = .primaryBackground,
-                                   onDismiss: (() -> Void)? = nil,
-                                   @ViewBuilder content: @escaping () -> Content) -> some View where Content : View {
+                                   @ViewBuilder content: @escaping () -> Content,
+                                   onDismiss: (() -> Void)? = nil) -> some View where Content : View {
         modifier(FixedHeightSheetModifier(
             isPresented: isPresented,
             backgroundColor: backgroundColor,
-            onDismiss: onDismiss,
-            sheetContent: content)
+            sheetContent: content,
+            onDismiss: onDismiss)
         )
     }
 }

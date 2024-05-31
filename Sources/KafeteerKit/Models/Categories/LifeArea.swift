@@ -19,5 +19,5 @@ public enum LifeArea: String, Identifiable, CaseIterable {
     
     public var id: Self { self }
     public var name: String { rawValue.titlecased }
-    public var order: Int { Self.allCases.firstIndex(of: self) ?? .max }
+    public var index: Int { Self.allCases.firstIndex(of: self) ?? .max }
 }

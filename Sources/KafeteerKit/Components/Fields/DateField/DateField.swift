@@ -29,7 +29,7 @@ public struct DateField: View {
 }
 
 #Preview {
-    @State var date: Date = .today
+    @State var date: Date = .now
     @State var isExpanded: Bool = false
     return DateField("Date", selection: $date, isExpanded: $isExpanded)
 }

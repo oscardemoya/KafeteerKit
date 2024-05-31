@@ -13,7 +13,7 @@ public struct BaseDateField: View {
     @Binding var date: Date
     var displayedComponents: DatePicker<Label>.Components = [.hourAndMinute, .date]
     var isOptional: Bool = false
-    @State var internalDate: Date? = .today
+    @State var internalDate: Date? = .now
     @Binding public var isExpanded: Bool
 
     public init(_ titleKey: LocalizedStringKey,
@@ -45,8 +45,11 @@ public struct BaseDateField: View {
         }
         .padding(.medium)
         .containerShape(.rect)
+        .onChange(of: date) { _, newValue in
+            internalDate = date
+        }
         .onTapGesture {
-            date = internalDate ?? .today
+            date = internalDate ?? .now
             withAnimation {
                 isExpanded.toggle()
             }
@@ -96,7 +99,7 @@ public struct BaseDateField: View {
 }
 
 #Preview {
-    @State var date: Date = .today
+    @State var date: Date = .now
     @State var isExpanded1: Bool = false
     @State var isExpanded2: Bool = false
     @State var isExpanded3: Bool = false

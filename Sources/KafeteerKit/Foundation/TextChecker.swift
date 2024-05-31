@@ -29,11 +29,12 @@ public struct TextChecker {
             .omitOther,
             .joinNames
         ]
-        let tags = tagger.tags(in: range, unit: .word, scheme: .nameTypeOrLexicalClass, options: options)
+        let tags = tagger
+            .tags(in: range, unit: .word, scheme: .nameTypeOrLexicalClass, options: options)
             .compactMap { (tag, range) -> TagValue? in
             guard let tag else { return nil }
             let value = String(text[range])
-                return (tag: tag, value: value)
+            return (tag: tag, value: value)
         }
         result.name = tags.name
         result.category = tags.category

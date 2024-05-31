@@ -60,7 +60,7 @@ public struct CircularCloseButton: View {
                 .padding(.horizontal, size.horizontalPadding)
                 .padding(.vertical, size.verticalPadding)
         }
-        .foregroundColor(.secondaryForeground)
+        .foregroundColor(.tertiaryForeground)
     }
 }
 

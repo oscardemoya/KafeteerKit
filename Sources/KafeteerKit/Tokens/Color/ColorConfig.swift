@@ -7,7 +7,12 @@
 
 import SwiftUI
 
-public protocol ColorConfiguration {    
+public protocol ColorConfiguration {
+    // Accent
+    var primaryAccent: Color { get }
+    var secondaryAccent: Color { get }
+    var tertiaryAccent: Color { get }
+    
     // Brand
     var primaryBrand: Color { get }
     var secondaryBrand: Color { get }
@@ -54,7 +59,12 @@ public protocol ColorConfiguration {
     var barBackground: Color { get }
 }
 
-struct DefaultColorConfiguration: ColorConfiguration {    
+struct DefaultColorConfiguration: ColorConfiguration {
+    // Accent
+    var primaryAccent: Color { Color(.primary500) }
+    var secondaryAccent: Color { Color(.primary700) }
+    var tertiaryAccent: Color { Color(.secondary500) }
+    
     // Brand
     var primaryBrand: Color { Color(.primary500) }
     var secondaryBrand: Color { Color(.secondary500) }

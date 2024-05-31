@@ -12,7 +12,7 @@ public struct OptionalDateField: View {
     @Binding public var date: OptionalDate
     var displayedComponents: DatePicker<Label>.Components = [.hourAndMinute, .date]
     @Binding public var isExpanded: Bool
-    @State private var internalDate: Date = .today
+    @State private var internalDate: Date = .now
     
     public init(_ titleKey: LocalizedStringKey,
                 selection date: Binding<OptionalDate>,

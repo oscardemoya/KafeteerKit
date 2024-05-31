@@ -8,6 +8,11 @@
 import SwiftUI
 
 public extension ShapeStyle where Self == Color {
+    // Accent
+    static var primaryAccent: Color { Config.shared.colors.primaryAccent }
+    static var secondaryAccent: Color { Config.shared.colors.secondaryAccent }
+    static var tertiaryAccent: Color { Config.shared.colors.tertiaryAccent }
+    
     // Brand
     static var primaryBrand: Color { Config.shared.colors.primaryBrand }
     static var secondaryBrand: Color { Config.shared.colors.secondaryBrand }

@@ -52,10 +52,17 @@ public extension Date {
         return formatter.string(from: self)
     }
     
-    var medium: String {
+    var mediumDate: String {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .none
+        return formatter.string(from: self)
+    }
+    
+    var shortTime: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
         return formatter.string(from: self)
     }
     
