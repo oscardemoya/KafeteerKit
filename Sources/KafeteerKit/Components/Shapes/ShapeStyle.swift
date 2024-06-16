@@ -32,6 +32,7 @@ public extension ShapeStyle where Self == Color {
     static var primaryBackground: Color { Config.shared.colors.primaryBackground }
     static var secondaryBackground: Color { Config.shared.colors.secondaryBackground }
     static var tertiaryBackground: Color { Config.shared.colors.tertiaryBackground }
+    static var quatertiaryBackground: Color { Config.shared.colors.quatertiaryBackground }
     
     // Foregrounds
     static var primaryForeground: Color { Config.shared.colors.primaryForeground }

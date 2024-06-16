@@ -32,6 +32,7 @@ public protocol ColorConfiguration {
     var primaryBackground: Color { get }
     var secondaryBackground: Color { get }
     var tertiaryBackground: Color { get }
+    var quatertiaryBackground: Color { get }
     
     // Foregrounds
     var primaryForeground: Color { get }
@@ -61,29 +62,30 @@ public protocol ColorConfiguration {
 
 struct DefaultColorConfiguration: ColorConfiguration {
     // Accent
-    var primaryAccent: Color { Color(.primary500) }
-    var secondaryAccent: Color { Color(.primary700) }
-    var tertiaryAccent: Color { Color(.secondary500) }
+    var primaryAccent: Color { Color(.blue500) }
+    var secondaryAccent: Color { Color(.blue700) }
+    var tertiaryAccent: Color { Color(.yellow500) }
     
     // Brand
-    var primaryBrand: Color { Color(.primary500) }
-    var secondaryBrand: Color { Color(.secondary500) }
-    var tertiaryBrand: Color { Color(.tertiary500) }
+    var primaryBrand: Color { Color(.blue500) }
+    var secondaryBrand: Color { Color(.yellow500) }
+    var tertiaryBrand: Color { Color(.purple500) }
     
     // Semantic
-    var successColor: Color { Color(.success500) }
-    var warningColor: Color { Color(.warning500) }
-    var dangerColor: Color { Color(.danger500) }
+    var successColor: Color { Color(.green500) }
+    var warningColor: Color { Color(.orange500) }
+    var dangerColor: Color { Color(.red500) }
     
     // Tint
-    var primaryTint: Color { Color(.primary200) }
-    var secondaryTint: Color { Color(.secondary200) }
-    var tertiaryTint: Color { Color(.tertiary200) }
+    var primaryTint: Color { Color(.blue200) }
+    var secondaryTint: Color { Color(.blue300) }
+    var tertiaryTint: Color { Color(.yellow200) }
     
     // Backgrounds
     var primaryBackground: Color { Color(.background300) }
     var secondaryBackground: Color { Color(.background500) }
     var tertiaryBackground: Color { Color(.background700) }
+    var quatertiaryBackground: Color { Color(.background900) }
     
     // Foregrounds
     var primaryForeground: Color { Color(.foreground100) }

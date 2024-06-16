@@ -52,7 +52,7 @@ public extension PaymentCategory {
             case .soccer: "soccerball" // 􀦥
             case .basketball: "basketball" // 􁗉
             case .baseball: "baseball" // 􀡵
-            case .football: "basketball" // 􁗉
+            case .football: "football" // 􁗋
             case .tennis: "tennisball" // 􁜦
             case .volleyball: "volleyball" // 􁜪
             case .hockey: "hockey.puck" // 􁛽
