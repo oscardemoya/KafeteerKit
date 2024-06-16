@@ -26,7 +26,7 @@ public struct FloatingButton: View {
                 .animation(.easeOut, value: isOn)
                 .padding(8)
         }
-        .tint(.primaryBrand)
+        .tint(.primaryAccent)
         .buttonStyle(.borderedProminent)
         .clipShape(.circle)
         .frame(width: 40, height: 40)

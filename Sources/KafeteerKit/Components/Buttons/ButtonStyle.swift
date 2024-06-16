@@ -8,6 +8,7 @@
 import SwiftUI
 
 public struct HierarchicalButtonStyle: ButtonStyle {
+    @Environment(\.isEnabled) private var isEnabled: Bool
     var hierarchy: Hierarchy = .primary
     
     public func makeBody(configuration: Configuration) -> some View {
@@ -16,8 +17,8 @@ public struct HierarchicalButtonStyle: ButtonStyle {
             .fontWeight(.medium)
             .frame(maxWidth: .infinity)
             .padding(.small)
-            .background(backgroundColor)
-            .foregroundColor(foregroundColor)
+            .background(isEnabled ? backgroundColor : disabledBackgroundColor)
+            .foregroundColor(isEnabled ? foregroundColor : disabledForegroundColor)
             .cornerStyle(.rounded(.medium))
             .scaleEffect(configuration.isPressed ? 0.99 : 1.0)
             .transition(.opacity)
@@ -25,17 +26,33 @@ public struct HierarchicalButtonStyle: ButtonStyle {
     
     var backgroundColor: Color {
         switch hierarchy {
-        case .primary: .primaryBrand
+        case .primary: .primaryAccent
         case .secondary: .primaryTint.opacity(0.4)
-        case .tertiary: .primaryForeground.shade(.shade2).opacity(0.15)
+        case .tertiary: .primaryForeground.shade(.shade3).opacity(0.25)
         }
     }
     
     var foregroundColor: Color {
         switch hierarchy {
         case .primary: Color(.lightOverlay)
-        case .secondary: .primaryBrand
-        case .tertiary: .primaryBrand
+        case .secondary: .primaryAccent
+        case .tertiary: .secondaryAccent
+        }
+    }
+    
+    var disabledBackgroundColor: Color {
+        switch hierarchy {
+        case .primary: .primaryForeground.shade(.shade2).opacity(0.5)
+        case .secondary: .primaryForeground.shade(.shade3).opacity(0.5)
+        case .tertiary: .primaryForeground.shade(.shade4).opacity(0.5)
+        }
+    }
+    
+    var disabledForegroundColor: Color {
+        switch hierarchy {
+        case .primary: .primaryForeground.shade(.shade6).opacity(0.5)
+        case .secondary: .primaryForeground.shade(.shade7).opacity(0.5)
+        case .tertiary: .primaryForeground.shade(.shade8).opacity(0.5)
         }
     }
 }

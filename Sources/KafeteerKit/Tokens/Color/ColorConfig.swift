@@ -38,6 +38,7 @@ public protocol ColorConfiguration {
     var primaryForeground: Color { get }
     var secondaryForeground: Color { get }
     var tertiaryForeground: Color { get }
+    var quatertiaryForeground: Color { get }
     
     // Input Backgrounds
     var primaryInputBackground: Color { get }
@@ -91,6 +92,7 @@ struct DefaultColorConfiguration: ColorConfiguration {
     var primaryForeground: Color { Color(.foreground100) }
     var secondaryForeground: Color { Color(.foreground300) }
     var tertiaryForeground: Color { Color(.foreground500) }
+    var quatertiaryForeground: Color { Color(.foreground700) }
     
     // Input Backgrounds
     var primaryInputBackground: Color { Color(.background500) }

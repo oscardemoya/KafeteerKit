@@ -55,11 +55,16 @@ public struct ImageButton: View {
     }
     
     var image: Image?
-    @State var color: Color = .primaryBrand
+    @State var color: Color = .primaryAccent
     var size: Size = .regular
     var action: Action
 
-    public init(image: Image? = nil, color: Color = .primaryBrand, size: Size = .regular, action: @escaping Action) {
+    public init(
+        image: Image? = nil,
+        color: Color = .primaryAccent,
+        size: Size = .regular,
+        action: @escaping Action
+    ) {
         self.image = image
         self.color = color
         self.size = size
