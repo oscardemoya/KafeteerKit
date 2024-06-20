@@ -20,7 +20,7 @@ extension PaymentCategory {
         case gas
         case trash
         case internet
-        case cable
+        case tvProvider
         case phone
         case cellphone
         
@@ -34,7 +34,7 @@ extension PaymentCategory {
             case trash
             case internet
             case broadband
-            case cable
+            case tvProvider
             case phone
             case cellphone
             case cell
@@ -48,7 +48,7 @@ extension PaymentCategory {
                 case .gas: .gas
                 case .trash: .trash
                 case .internet, .broadband: .internet
-                case .cable: .cable
+                case .tvProvider: .tvProvider
                 case .phone: .phone
                 case .cell, .cellphone, .mobile: .cellphone
                 }
@@ -63,7 +63,7 @@ extension PaymentCategory {
             case .gas: "flame" // 􀙬
             case .trash: "trash" // 􀈑
             case .internet: "wifi" // 􀙇
-            case .cable: "tv" // 􀎲
+            case .tvProvider: "cable.coaxial" // 􁊒
             case .phone: "phone" // 􀌾
             case .cellphone: "cellularbars" // 􀭧
             }
@@ -77,7 +77,7 @@ extension PaymentCategory {
             case .gas: String(localized: "Gas")
             case .trash: String(localized: "Trash")
             case .internet: String(localized: "Internet")
-            case .cable: String(localized: "Cable")
+            case .tvProvider: String(localized: "TV Provider")
             case .phone: String(localized: "Phone")
             case .cellphone: String(localized: "Cellphone")
             }

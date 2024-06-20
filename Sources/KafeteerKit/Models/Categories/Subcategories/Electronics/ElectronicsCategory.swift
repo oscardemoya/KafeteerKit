@@ -14,6 +14,7 @@ public extension PaymentCategory {
         
         case computer
         case peripheral
+        case cable
         case smartphone
         case television
         case videoGameConsole
@@ -25,6 +26,7 @@ public extension PaymentCategory {
         public enum Keyword: String, KeywordRepresentable {
             case computer
             case peripheral
+            case cable
             case smartphone
             case television
             case tv
@@ -39,6 +41,7 @@ public extension PaymentCategory {
                 switch self {
                 case .computer: .computer
                 case .peripheral: .peripheral
+                case .cable: .cable
                 case .smartphone: .smartphone
                 case .television, .tv: .television
                 case .videoGameConsole, .console: .videoGameConsole
@@ -54,6 +57,7 @@ public extension PaymentCategory {
             switch self {
             case .computer: "desktopcomputer" // 􀙗
             case .peripheral: "computermouse" // 􀺣
+            case .cable: "cable.connector" // 􀺦
             case .smartphone: "smartphone" // 􁤫
             case .television: "tv" // 􀎲
             case .videoGameConsole: "arcade.stick.console" // 􂁠
@@ -68,6 +72,7 @@ public extension PaymentCategory {
             switch self {
             case .computer: String(localized: "Computer")
             case .peripheral: String(localized: "Peripheral")
+            case .cable: String(localized: "Cable")
             case .smartphone: String(localized: "Smartphone")
             case .television: String(localized: "TV")
             case .videoGameConsole: String(localized: "Gaming Console")
