@@ -15,7 +15,7 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
     public var status: CLAuthorizationStatus?
     private var locationManager = CLLocationManager()
     
-    public override init() {
+    public init(onLocationChange: ValueAction<CLLocationCoordinate2D>? = nil) {
         super.init()
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest

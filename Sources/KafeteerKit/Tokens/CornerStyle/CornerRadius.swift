@@ -10,7 +10,8 @@ import Foundation
 // TODO: Move values to a Config file
 public enum CornerRadius: CGFloat {
     case nano = 4
-    case small = 8
+    case extraSmall = 8
+    case small = 12
     case medium = 16
     case large = 32
     case extraLarge = 64

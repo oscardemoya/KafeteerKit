@@ -52,6 +52,14 @@ public struct ImageButton: View {
             case .large: return 12
             }
         }
+        
+        var cornerRadius: CornerRadius {
+            switch self {
+            case .compact: return .small
+            case .regular: return .medium
+            case .large: return .medium
+            }
+        }
     }
     
     var image: Image?
@@ -84,7 +92,7 @@ public struct ImageButton: View {
             }
         }
         .tint(color)
-        .cornerStyle(.rounded(.medium))
+        .cornerStyle(.rounded(size.cornerRadius))
     }
 }
 
