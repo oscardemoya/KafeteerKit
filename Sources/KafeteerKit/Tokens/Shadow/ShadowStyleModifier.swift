@@ -23,7 +23,8 @@ private struct ShadowStyleModifier: ViewModifier {
     var shadowColor: Color
     
     func body(content: Content) -> some View {
-        content.shadow(color: shadowColor.opacity(shadowStyle.opacity),
+        content
+            .shadow(color: shadowColor.opacity(shadowStyle.opacity),
                        radius: shadowStyle.radius,
                        x: shadowStyle.offset.x,
                        y: shadowStyle.offset.y)

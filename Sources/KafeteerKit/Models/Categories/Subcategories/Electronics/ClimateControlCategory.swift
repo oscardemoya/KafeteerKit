@@ -8,10 +8,10 @@
 import Foundation
 
 public extension PaymentCategory {
-    public enum ClimateControl: String, CategoryRepresentable {
+    enum ClimateControl: String, CategoryRepresentable {
         public static var lifeArea: LifeArea = .electronics
         public static var categoryIcon: Self = .airConditioner
-        public static var categoryName = String(localized: "Climate Control")
+        public static var categoryName = String(localized: "Climate Control", bundle: .module)
         public var asPaymentCategory: PaymentCategory { .climateControl(self) }
         
         case thermostat
@@ -58,13 +58,13 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .thermostat: String(localized: "Thermostat")
-            case .airConditioner: String(localized: "Air Cooler")
-            case .heater: String(localized: "Heater")
-            case .fan: String(localized: "Fan")
-            case .airPurifier: String(localized: "Air Purifier")
-            case .humidifier: String(localized: "Humidifier")
-            case .dehumidifier: String(localized: "Dehumidifier")
+            case .thermostat: String(localized: "Thermostat", bundle: .module)
+            case .airConditioner: String(localized: "Air Cooler", bundle: .module)
+            case .heater: String(localized: "Heater", bundle: .module)
+            case .fan: String(localized: "Fan", bundle: .module)
+            case .airPurifier: String(localized: "Air Purifier", bundle: .module)
+            case .humidifier: String(localized: "Humidifier", bundle: .module)
+            case .dehumidifier: String(localized: "Dehumidifier", bundle: .module)
             }
         }
         

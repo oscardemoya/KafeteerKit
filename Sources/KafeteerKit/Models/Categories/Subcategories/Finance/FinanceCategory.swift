@@ -8,10 +8,10 @@
 import Foundation
 
 public extension PaymentCategory {
-    public enum Finance: String, CategoryRepresentable {
+    enum Finance: String, CategoryRepresentable {
         public static var lifeArea: LifeArea = .finance
         public static var categoryIcon: Self = .savings
-        public static var categoryName = String(localized: "Personal Finance")
+        public static var categoryName = String(localized: "Personal Finance", bundle: .module)
         public var asPaymentCategory: PaymentCategory { .finance(self) }
         
         case creditCard
@@ -67,15 +67,15 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .creditCard: String(localized: "Credit Card")
-            case .loan: String(localized: "Loan")
-            case .bankFee: String(localized: "Bank Fee")
-            case .bankCheck: String(localized: "Bank Check")
-            case .digitalCurrency: String(localized: "Digital Currency")
-            case .taxes: String(localized: "Taxes")
-            case .insurance: String(localized: "Insurance")
-            case .savings: String(localized: "Savings")
-            case .retirement: String(localized: "Retirement")
+            case .creditCard: String(localized: "Credit Card", bundle: .module)
+            case .loan: String(localized: "Loan", bundle: .module)
+            case .bankFee: String(localized: "Bank Fee", bundle: .module)
+            case .bankCheck: String(localized: "Bank Check", bundle: .module)
+            case .digitalCurrency: String(localized: "Digital Currency", bundle: .module)
+            case .taxes: String(localized: "Taxes", bundle: .module)
+            case .insurance: String(localized: "Insurance", bundle: .module)
+            case .savings: String(localized: "Savings", bundle: .module)
+            case .retirement: String(localized: "Retirement", bundle: .module)
             }
         }
     }

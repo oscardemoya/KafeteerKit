@@ -8,10 +8,10 @@
 import Foundation
 
 public extension PaymentCategory {
-    public enum Sports: String, CategoryRepresentable {
+    enum Sports: String, CategoryRepresentable {
         public static var lifeArea: LifeArea = .leisure
         public static var categoryIcon: Self = .soccer
-        public static var categoryName = String(localized: "Sports")
+        public static var categoryName = String(localized: "Sports", bundle: .module)
         public var asPaymentCategory: PaymentCategory { .sports(self) }
         
         case soccer
@@ -62,14 +62,14 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .soccer: String(localized: "Soccer")
-            case .basketball: String(localized: "Basketball")
-            case .baseball: String(localized: "Baseball")
-            case .football: String(localized: "Football")
-            case .tennis: String(localized: "Tennis")
-            case .volleyball: String(localized: "Volleyball")
-            case .hockey: String(localized: "Hockey")
-            case .cricket: String(localized: "Cricket")
+            case .soccer: String(localized: "Soccer", bundle: .module)
+            case .basketball: String(localized: "Basketball", bundle: .module)
+            case .baseball: String(localized: "Baseball", bundle: .module)
+            case .football: String(localized: "Football", bundle: .module)
+            case .tennis: String(localized: "Tennis", bundle: .module)
+            case .volleyball: String(localized: "Volleyball", bundle: .module)
+            case .hockey: String(localized: "Hockey", bundle: .module)
+            case .cricket: String(localized: "Cricket", bundle: .module)
             }
         }
     }

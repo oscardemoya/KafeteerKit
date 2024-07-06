@@ -8,10 +8,10 @@
 import Foundation
 
 public extension PaymentCategory {
-    public enum Appliance: String, CategoryRepresentable {
+    enum Appliance: String, CategoryRepresentable {
         public static var lifeArea: LifeArea = .electronics
         public static var categoryIcon: Self = .refrigerator
-        public static var categoryName = String(localized: "Appliance")
+        public static var categoryName = String(localized: "Appliance", bundle: .module)
         public var asPaymentCategory: PaymentCategory { .appliance(self) }
         
         case refrigerator
@@ -71,16 +71,16 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .refrigerator: String(localized: "Refrigerator")
-            case .stove: String(localized: "Stove")
-            case .oven: String(localized: "Oven")
-            case .microwave: String(localized: "Microwave")
-            case .dishwasher: String(localized: "Dishwasher")
-            case .washer: String(localized: "Washer")
-            case .dryer: String(localized: "Dryer")
-            case .securityCamera: String(localized: "Security Camera")
-            case .sensor: String(localized: "Sensor")
-            case .powerOutlet: String(localized: "Power Outlet")
+            case .refrigerator: String(localized: "Refrigerator", bundle: .module)
+            case .stove: String(localized: "Stove", bundle: .module)
+            case .oven: String(localized: "Oven", bundle: .module)
+            case .microwave: String(localized: "Microwave", bundle: .module)
+            case .dishwasher: String(localized: "Dishwasher", bundle: .module)
+            case .washer: String(localized: "Washer", bundle: .module)
+            case .dryer: String(localized: "Dryer", bundle: .module)
+            case .securityCamera: String(localized: "Security Camera", bundle: .module)
+            case .sensor: String(localized: "Sensor", bundle: .module)
+            case .powerOutlet: String(localized: "Power Outlet", bundle: .module)
             }
         }
         

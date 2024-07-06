@@ -8,10 +8,10 @@
 import Foundation
 
 public extension PaymentCategory {
-    public enum Knowledge: String, CategoryRepresentable {
+    enum Knowledge: String, CategoryRepresentable {
         public static var lifeArea: LifeArea = .growth
         public static var categoryIcon: Self = .education
-        public static var categoryName = String(localized: "Knowledge")
+        public static var categoryName = String(localized: "Knowledge", bundle: .module)
         public var asPaymentCategory: PaymentCategory { .education(self) }
         
         case education
@@ -41,10 +41,10 @@ public extension PaymentCategory {
                 case .education, .school, .university: .education
                 case .schoolSupplies: .schoolSupplies
                 case .books, .eBooks: .books
-                case .newspaper, .eBooks: .newspaper
+                case .newspaper: .newspaper
                 case .magazine: .magazine
                 case .course: .course
-                case .learning, .course: .learning
+                case .learning: .learning
                 case .tutors: .tutor
                 }
             }
@@ -65,14 +65,14 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .education: String(localized: "Education")
-            case .schoolSupplies: String(localized: "School Supplies")
-            case .books: String(localized: "Books")
-            case .newspaper: String(localized: "Newspaper")
-            case .magazine: String(localized: "Magazine")
-            case .course: String(localized: "Course")
-            case .learning: String(localized: "Learning Platform")
-            case .tutor: String(localized: "Tutor")
+            case .education: String(localized: "Education", bundle: .module)
+            case .schoolSupplies: String(localized: "School Supplies", bundle: .module)
+            case .books: String(localized: "Books", bundle: .module)
+            case .newspaper: String(localized: "Newspaper", bundle: .module)
+            case .magazine: String(localized: "Magazine", bundle: .module)
+            case .course: String(localized: "Course", bundle: .module)
+            case .learning: String(localized: "Learning Platform", bundle: .module)
+            case .tutor: String(localized: "Tutor", bundle: .module)
             }
         }
     }

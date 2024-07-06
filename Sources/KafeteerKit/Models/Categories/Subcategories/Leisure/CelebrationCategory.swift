@@ -8,10 +8,10 @@
 import Foundation
 
 public extension PaymentCategory {
-    public enum Celebration: String, CategoryRepresentable {
+    enum Celebration: String, CategoryRepresentable {
         public static var lifeArea: LifeArea = .leisure
         public static var categoryIcon: Self = .celebration
-        public static var categoryName = String(localized: "Celebration")
+        public static var categoryName = String(localized: "Celebration", bundle: .module)
         public var asPaymentCategory: PaymentCategory { .celebration(self) }
         
         case celebration
@@ -50,11 +50,11 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .celebration: String(localized: "Celebration")
-            case .party: String(localized: "Party")
-            case .birthday: String(localized: "Birthday")
-            case .wedding: String(localized: "Wedding")
-            case .festival: String(localized: "Festival")
+            case .celebration: String(localized: "Celebration", bundle: .module)
+            case .party: String(localized: "Party", bundle: .module)
+            case .birthday: String(localized: "Birthday", bundle: .module)
+            case .wedding: String(localized: "Wedding", bundle: .module)
+            case .festival: String(localized: "Festival", bundle: .module)
             }
         }
     }

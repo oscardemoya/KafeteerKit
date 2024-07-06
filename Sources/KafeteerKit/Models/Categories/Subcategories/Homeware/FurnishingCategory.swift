@@ -8,10 +8,10 @@
 import Foundation
 
 public extension PaymentCategory {
-    public enum Furnishing: String, CategoryRepresentable {
+    enum Furnishing: String, CategoryRepresentable {
         public static var lifeArea: LifeArea = .homeware
         public static var categoryIcon: Self = .curtain
-        public static var categoryName = String(localized: "Furnishing")
+        public static var categoryName = String(localized: "Furnishing", bundle: .module)
         public var asPaymentCategory: PaymentCategory { .furnishing(self) }
         
         case curtain
@@ -54,11 +54,11 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .curtain: String(localized: "Curtain")
-            case .blinds: String(localized: "Blinds")
-            case .rollerShades: String(localized: "Roller Shades")
-            case .wallDecor: String(localized: "Wall Decor")
-            case .homeDecor: String(localized: "Home Decor")
+            case .curtain: String(localized: "Curtain", bundle: .module)
+            case .blinds: String(localized: "Blinds", bundle: .module)
+            case .rollerShades: String(localized: "Roller Shade", bundle: .module)
+            case .wallDecor: String(localized: "Wall Decor", bundle: .module)
+            case .homeDecor: String(localized: "Home Decor", bundle: .module)
             }
         }
     }

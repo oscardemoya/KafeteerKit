@@ -20,7 +20,7 @@ public enum RepeatInterval: Codable, RawRepresentable, Equatable {
     public var label: String? {
         switch self {
         case .preset(let value): return value.rawValue.capitalized
-        case .custom(let value): return String(localized: "Every \(value.description)")
+        case .custom(let value): return String(localized: "Every \(value.description)", bundle: .module)
         }
     }
     
@@ -75,13 +75,13 @@ public enum RepeatIntervalFrequency: String, Hashable, Codable, Identifiable, Ca
     
     public var name: String {
         switch self {
-        case .never: return String(localized: "Never")
-        case .weekly: return String(localized: "Weekly")
-        case .halfmonthly: return String(localized: "Twice Per Month")
-        case .monthly: return String(localized: "Monthly")
-        case .quarterly: return String(localized: "Quarterly")
-        case .semiannual: return String(localized: "Every 6 Months")
-        case .yearly: return String(localized: "Yearly")
+        case .never: return String(localized: "Never", bundle: .module)
+        case .weekly: return String(localized: "Weekly", bundle: .module)
+        case .halfmonthly: return String(localized: "Twice Per Month", bundle: .module)
+        case .monthly: return String(localized: "Monthly", bundle: .module)
+        case .quarterly: return String(localized: "Quarterly", bundle: .module)
+        case .semiannual: return String(localized: "Every 6 Months", bundle: .module)
+        case .yearly: return String(localized: "Yearly", bundle: .module)
         }
     }
 }

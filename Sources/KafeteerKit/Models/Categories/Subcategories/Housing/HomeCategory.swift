@@ -8,10 +8,10 @@
 import Foundation
 
 public extension PaymentCategory {
-    public enum Home: String, CategoryRepresentable {
+    enum Home: String, CategoryRepresentable {
         public static var lifeArea: LifeArea = .housing
         public static var categoryIcon: Self = .mortgage
-        public static var categoryName = String(localized: "Home")
+        public static var categoryName = String(localized: "Home", bundle: .module)
         public var asPaymentCategory: PaymentCategory { .home(self) }
         
         case rent
@@ -70,14 +70,14 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .rent: String(localized: "Rent")
-            case .mortgage: String(localized: "Mortgage")
-            case .condoFee: String(localized: "Condo Fee")
-            case .plumber: String(localized: "Plumber")
-            case .renovation: String(localized: "Renovation")
-            case .homeSupplies: String(localized: "Home Supplies")
-            case .cleaningSupplies: String(localized: "Cleaning Supplies")
-            case .storage: String(localized: "Storage")
+            case .rent: String(localized: "Rent", bundle: .module)
+            case .mortgage: String(localized: "Mortgage", bundle: .module)
+            case .condoFee: String(localized: "Condo Fee", bundle: .module)
+            case .plumber: String(localized: "Plumber", bundle: .module)
+            case .renovation: String(localized: "Renovation", bundle: .module)
+            case .homeSupplies: String(localized: "Home Supplies", bundle: .module)
+            case .cleaningSupplies: String(localized: "Cleaning Supplies", bundle: .module)
+            case .storage: String(localized: "Storage", bundle: .module)
             }
         }
     }

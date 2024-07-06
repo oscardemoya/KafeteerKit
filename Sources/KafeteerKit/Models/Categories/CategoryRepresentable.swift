@@ -31,7 +31,7 @@ public extension CategoryRepresentable where Self.RawValue == String, Keyword.Ra
     }
     
     static var allValues: [PaymentCategory] {
-        allCases.compactMap { $0 as? Self }.map(\.asPaymentCategory)
+        allCases.map(\.asPaymentCategory)
     }
     
     var keywords: [String] {

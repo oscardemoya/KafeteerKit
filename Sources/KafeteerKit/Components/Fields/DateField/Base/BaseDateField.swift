@@ -73,7 +73,7 @@ public struct BaseDateField: View {
     
     @ViewBuilder
     var trailingView: some View {
-        if isOptional, let internalDate {
+        if isOptional, internalDate != nil {
             CircularCloseButton {
                 self.internalDate = nil
                 withAnimation {
@@ -90,7 +90,7 @@ public struct BaseDateField: View {
                 Divider().background(.dividerColor)
                 DatePicker(titleKey, selection: $date, displayedComponents: displayedComponents)
                     .datePickerStyle(.graphical)
-                    .onChange(of: date) { newValue in
+                    .onChange(of: date) {
                         internalDate = date
                     }
             }

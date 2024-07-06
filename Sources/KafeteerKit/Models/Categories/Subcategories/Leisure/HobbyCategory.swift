@@ -8,10 +8,10 @@
 import Foundation
 
 public extension PaymentCategory {
-    public enum Hobby: String, CategoryRepresentable {
+    enum Hobby: String, CategoryRepresentable {
         public static var lifeArea: LifeArea = .leisure
         public static var categoryIcon: Self = .artSupplies
-        public static var categoryName = String(localized: "Hobby")
+        public static var categoryName = String(localized: "Hobby", bundle: .module)
         public var asPaymentCategory: PaymentCategory { .hobby(self) }
         
         case cookware
@@ -38,7 +38,7 @@ public extension PaymentCategory {
             case jigsaw
             case gardenTools
             case lawn
-            case plants
+            case plant
             case camera
             case photography
             case piano
@@ -50,8 +50,8 @@ public extension PaymentCategory {
                 case .artSupplies, .painting, .drawing, .crafting: .artSupplies
                 case .boardGame, .chess: .boardGame
                 case .puzzle, .jigsaw: .puzzle
-                case .gardenTools, .plants, .lawn: .gardenTools
-                case .plants: .plant
+                case .gardenTools, .lawn: .gardenTools
+                case .plant: .plant
                 case .camera, .photography: .camera
                 case .piano: .piano
                 case .guitar: .guitar
@@ -75,15 +75,15 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .cookware: String(localized: "Cookware")
-            case .artSupplies: String(localized: "Art Supplies")
-            case .boardGame: String(localized: "Board Game")
-            case .puzzle: String(localized: "Puzzle")
-            case .gardenTools: String(localized: "Garden Tools")
-            case .plant: String(localized: "Plant")
-            case .camera: String(localized: "Camera")
-            case .piano: String(localized: "Piano")
-            case .guitar: String(localized: "Guitar")
+            case .cookware: String(localized: "Cookware", bundle: .module)
+            case .artSupplies: String(localized: "Art Supplies", bundle: .module)
+            case .boardGame: String(localized: "Board Game", bundle: .module)
+            case .puzzle: String(localized: "Puzzle", bundle: .module)
+            case .gardenTools: String(localized: "Garden Tools", bundle: .module)
+            case .plant: String(localized: "Plant", bundle: .module)
+            case .camera: String(localized: "Camera", bundle: .module)
+            case .piano: String(localized: "Piano", bundle: .module)
+            case .guitar: String(localized: "Guitar", bundle: .module)
             }
         }
     }

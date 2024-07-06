@@ -8,10 +8,10 @@
 import Foundation
 
 public extension PaymentCategory {
-    public enum Entertainment: String, CategoryRepresentable {
+    enum Entertainment: String, CategoryRepresentable {
         public static var lifeArea: LifeArea = .leisure
         public static var categoryIcon: Self = .movie
-        public static var categoryName = String(localized: "Entertainment")
+        public static var categoryName = String(localized: "Entertainment", bundle: .module)
         public var asPaymentCategory: PaymentCategory { .entertainment(self) }
         
         case movie
@@ -51,7 +51,7 @@ public extension PaymentCategory {
                 case .travel: .travel
                 case .tour: .tour
                 case .museum: .museum
-                case .event, .concert, .festival: .event
+                case .event, .festival: .event
                 case .sportingEvent: .sportingEvent
                 case .concert: .concert
                 case .theater: .theater
@@ -76,16 +76,16 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .movie: String(localized: "Movie")
-            case .videogame: String(localized: "Video Game")
-            case .vacation: String(localized: "Vacation")
-            case .travel: String(localized: "Travel")
-            case .tour: String(localized: "Tour")
-            case .museum: String(localized: "Museum")
-            case .event: String(localized: "Event")
-            case .sportingEvent: String(localized: "Sporting Event")
-            case .concert: String(localized: "Concert")
-            case .theater: String(localized: "Theater")
+            case .movie: String(localized: "Movie", bundle: .module)
+            case .videogame: String(localized: "Video Game", bundle: .module)
+            case .vacation: String(localized: "Vacation", bundle: .module)
+            case .travel: String(localized: "Travel", bundle: .module)
+            case .tour: String(localized: "Tour", bundle: .module)
+            case .museum: String(localized: "Museum", bundle: .module)
+            case .event: String(localized: "Event", bundle: .module)
+            case .sportingEvent: String(localized: "Sporting Event", bundle: .module)
+            case .concert: String(localized: "Concert", bundle: .module)
+            case .theater: String(localized: "Theater", bundle: .module)
             }
         }
     }

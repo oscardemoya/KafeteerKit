@@ -8,13 +8,14 @@
 import Foundation
 
 public extension PaymentCategory {
-    public enum Transportation: String, CategoryRepresentable {
+    enum Transportation: String, CategoryRepresentable {
         public static var lifeArea: LifeArea = .essentials
         public static var categoryIcon: Self = .car
-        public static var categoryName = String(localized: "Transportation")
+        public static var categoryName = String(localized: "Transportation", bundle: .module)
         public var asPaymentCategory: PaymentCategory { .transportation(self) }
         
         case car
+        case parking
         case commute
         case train
         case bike
@@ -27,6 +28,7 @@ public extension PaymentCategory {
 
         public enum Keyword: String, KeywordRepresentable {
             case car
+            case parking
             case commute
             case transit
             case train
@@ -46,12 +48,13 @@ public extension PaymentCategory {
             public var value: Transportation {
                 switch self {
                 case .car: .car
+                case .parking: .parking
                 case .commute, .transit: .commute
                 case .train: .train
                 case .bike, .bicycle, .motorcicle: .bike
                 case .scooter: .scooter
                 case .flight: .flight
-                case .cruise, .boat: .cruise
+                case .cruise: .cruise
                 case .boat, .sailboat, .yatch: .boat
                 case .delivery: .delivery
                 case .move, .courier: .move
@@ -62,6 +65,7 @@ public extension PaymentCategory {
         public var iconName: String {
             switch self {
             case .car: "car" // 􀙘
+            case .parking: "p.square" // 􀂲
             case .commute: "bus" // 􀝈
             case .train: "tram" // 􀝆
             case .bike: "bicycle" // 􀡥
@@ -76,16 +80,17 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .car: String(localized: "Car")
-            case .commute: String(localized: "Commute")
-            case .train: String(localized: "Train")
-            case .bike: String(localized: "Bike")
-            case .scooter: String(localized: "Scooter")
-            case .flight: String(localized: "Flight")
-            case .cruise: String(localized: "Cruise")
-            case .boat: String(localized: "Boat")
-            case .delivery: String(localized: "Delivery")
-            case .move: String(localized: "Move")
+            case .car: String(localized: "Car", bundle: .module)
+            case .parking: String(localized: "Parking", bundle: .module)
+            case .commute: String(localized: "Commute", bundle: .module)
+            case .train: String(localized: "Train", bundle: .module)
+            case .bike: String(localized: "Bike", bundle: .module)
+            case .scooter: String(localized: "Scooter", bundle: .module)
+            case .flight: String(localized: "Flight", bundle: .module)
+            case .cruise: String(localized: "Cruise", bundle: .module)
+            case .boat: String(localized: "Boat", bundle: .module)
+            case .delivery: String(localized: "Delivery", bundle: .module)
+            case .move: String(localized: "Move", bundle: .module)
             }
         }
     }

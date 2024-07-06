@@ -8,10 +8,10 @@
 import Foundation
 
 public extension PaymentCategory {
-    public enum Food: String, CategoryRepresentable {
+    enum Food: String, CategoryRepresentable {
         public static var lifeArea: LifeArea = .essentials
         public static var categoryIcon: Self = .dinner
-        public static var categoryName = String(localized: "Food")
+        public static var categoryName = String(localized: "Food", bundle: .module)
         public var asPaymentCategory: PaymentCategory { .food(self) }
         
         case groceries
@@ -80,16 +80,16 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .groceries: String(localized: "Groceries")
-            case .breakfast: String(localized: "Breakfast")
-            case .lunch: String(localized: "Lunch")
-            case .dinner: String(localized: "Dinner")
-            case .snacks: String(localized: "Snacks")
-            case .healthyFood: String(localized: "Healthy Food")
-            case .fastFood: String(localized: "Fast Food")
-            case .drinks: String(localized: "Drinks")
-            case .water: String(localized: "Water")
-            case .coffee: String(localized: "Coffee")
+            case .groceries: String(localized: "Groceries", bundle: .module)
+            case .breakfast: String(localized: "Breakfast", bundle: .module)
+            case .lunch: String(localized: "Lunch", bundle: .module)
+            case .dinner: String(localized: "Dinner", bundle: .module)
+            case .snacks: String(localized: "Snacks", bundle: .module)
+            case .healthyFood: String(localized: "Healthy Food", bundle: .module)
+            case .fastFood: String(localized: "Fast Food", bundle: .module)
+            case .drinks: String(localized: "Drinks", bundle: .module)
+            case .water: String(localized: "Water", bundle: .module)
+            case .coffee: String(localized: "Coffee", bundle: .module)
             }
         }
     }

@@ -8,10 +8,10 @@
 import Foundation
 
 public extension PaymentCategory {
-    public enum Subscription: String, CategoryRepresentable {
+    enum Subscription: String, CategoryRepresentable {
         public static var lifeArea: LifeArea = .leisure
         public static var categoryIcon: Self = .cloud
-        public static var categoryName = String(localized: "Subscription")
+        public static var categoryName = String(localized: "Subscription", bundle: .module)
         public var asPaymentCategory: PaymentCategory { .subscription(self) }
         
         case membership
@@ -69,14 +69,14 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .membership: String(localized: "Membership")
-            case .music: String(localized: "Music")
-            case .video: String(localized: "Video")
-            case .gamingService: String(localized: "Gaming Service")
-            case .app: String(localized: "In-App Purchase")
-            case .cloud: String(localized: "Cloud Service")
-            case .vpn: String(localized: "VPN")
-            case .dataStorage: String(localized: "Data Storage")
+            case .membership: String(localized: "Membership", bundle: .module)
+            case .music: String(localized: "Music", bundle: .module)
+            case .video: String(localized: "Video", bundle: .module)
+            case .gamingService: String(localized: "Gaming Service", bundle: .module)
+            case .app: String(localized: "In-App Purchase", bundle: .module)
+            case .cloud: String(localized: "Cloud Service", bundle: .module)
+            case .vpn: String(localized: "VPN", bundle: .module)
+            case .dataStorage: String(localized: "Data Storage", bundle: .module)
             }
         }
     }

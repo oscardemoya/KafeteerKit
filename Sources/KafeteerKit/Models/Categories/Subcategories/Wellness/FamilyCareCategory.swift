@@ -8,10 +8,10 @@
 import Foundation
 
 public extension PaymentCategory {
-    public enum FamilyCare: String, CategoryRepresentable {
+    enum FamilyCare: String, CategoryRepresentable {
         public static var lifeArea: LifeArea = .wellness
         public static var categoryIcon: Self = .babysitting
-        public static var categoryName = String(localized: "Family Care")
+        public static var categoryName = String(localized: "Family Care", bundle: .module)
         public var asPaymentCategory: PaymentCategory { .familyCare(self) }
         
         case babysitting
@@ -79,16 +79,16 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .babysitting: String(localized: "Babysitting")
-            case .babyGear: String(localized: "Baby Gear")
-            case .feeding: String(localized: "Feeding")
-            case .childcare: String(localized: "Childcare")
-            case .toys: String(localized: "Toys")
-            case .petCare: String(localized: "Pet Care")
-            case .dogWalker: String(localized: "Dog Walker")
-            case .houseSitting: String(localized: "House Sitting")
-            case .elderySitting: String(localized: "Eldery Sitter")
-            case .protectiveEquipment: String(localized: "Protective Equipment")
+            case .babysitting: String(localized: "Babysitting", bundle: .module)
+            case .babyGear: String(localized: "Baby Gear", bundle: .module)
+            case .feeding: String(localized: "Feeding", bundle: .module)
+            case .childcare: String(localized: "Childcare", bundle: .module)
+            case .toys: String(localized: "Toys", bundle: .module)
+            case .petCare: String(localized: "Pet Care", bundle: .module)
+            case .dogWalker: String(localized: "Dog Walker", bundle: .module)
+            case .houseSitting: String(localized: "House Sitting", bundle: .module)
+            case .elderySitting: String(localized: "Eldery Sitter", bundle: .module)
+            case .protectiveEquipment: String(localized: "Protective Equipment", bundle: .module)
             }
         }
     }

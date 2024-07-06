@@ -13,6 +13,11 @@ public protocol ColorConfiguration {
     var secondaryAccent: Color { get }
     var tertiaryAccent: Color { get }
     
+    // Accent Foreground
+    var primaryAccentForeground: Color { get }
+    var secondaryAccentForeground: Color { get }
+    var tertiaryAccentForeground: Color { get }
+    
     // Brand
     var primaryBrand: Color { get }
     var secondaryBrand: Color { get }
@@ -68,6 +73,11 @@ struct DefaultColorConfiguration: ColorConfiguration {
     var primaryAccent: Color { Color(.blue500) }
     var secondaryAccent: Color { Color(.blue700) }
     var tertiaryAccent: Color { Color(.yellow500) }
+    
+    // Accent Foreground
+    var primaryAccentForeground: Color { Color(.blue050) }
+    var secondaryAccentForeground: Color { Color(.blue050) }
+    var tertiaryAccentForeground: Color { Color(.yellow050) }
     
     // Brand
     var primaryBrand: Color { Color(.blue500) }

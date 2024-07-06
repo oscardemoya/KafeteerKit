@@ -8,10 +8,10 @@
 import Foundation
 
 public extension PaymentCategory {
-    public enum General: String, CategoryRepresentable {
+    enum General: String, CategoryRepresentable {
         public static var lifeArea: LifeArea = .finance
         public static var categoryIcon: Self = .payment
-        public static var categoryName = String(localized: "General")
+        public static var categoryName = String(localized: "General", bundle: .module)
         public var asPaymentCategory: PaymentCategory { .general(self) }
         
         case payment
@@ -75,16 +75,16 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .payment: String(localized: "Payment")
-            case .moneyTransfer: String(localized: "Money Transfer")
-            case .recurringPayment: String(localized: "Recurring Payment")
-            case .shopping: String(localized: "Shopping")
-            case .deal: String(localized: "Deal")
-            case .tip: String(localized: "Tip")
-            case .gift: String(localized: "Gift")
-            case .giftcard: String(localized: "Gift Card")
-            case .donation: String(localized: "Donation")
-            case .reward: String(localized: "Reward")
+            case .payment: String(localized: "Payment", bundle: .module)
+            case .moneyTransfer: String(localized: "Money Transfer", bundle: .module)
+            case .recurringPayment: String(localized: "Recurring Payment", bundle: .module)
+            case .shopping: String(localized: "Shopping", bundle: .module)
+            case .deal: String(localized: "Deal", bundle: .module)
+            case .tip: String(localized: "Tip", bundle: .module)
+            case .gift: String(localized: "Gift", bundle: .module)
+            case .giftcard: String(localized: "Gift Card", bundle: .module)
+            case .donation: String(localized: "Donation", bundle: .module)
+            case .reward: String(localized: "Reward", bundle: .module)
             }
         }
     }

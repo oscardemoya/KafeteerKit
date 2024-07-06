@@ -8,10 +8,10 @@
 import Foundation
 
 public extension PaymentCategory {
-    public enum Business: String, CategoryRepresentable {
+    enum Business: String, CategoryRepresentable {
         public static var lifeArea: LifeArea = .finance
         public static var categoryIcon: Self = .business
-        public static var categoryName = String(localized: "Business")
+        public static var categoryName = String(localized: "Business", bundle: .module)
         public var asPaymentCategory: PaymentCategory { .business(self) }
         
         case business
@@ -70,16 +70,16 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .business: String(localized: "Business")
-            case .investment: String(localized: "Investment")
-            case .funds: String(localized: "Funds")
-            case .accounting: String(localized: "Accounting")
-            case .lawyer: String(localized: "Lawyer")
-            case .payroll: String(localized: "Payroll")
-            case .officeSupplies: String(localized: "Office Supplies")
-            case .hardware: String(localized: "Hardware")
-            case .branding: String(localized: "Branding")
-            case .marketing: String(localized: "Marketing")
+            case .business: String(localized: "Business", bundle: .module)
+            case .investment: String(localized: "Investment", bundle: .module)
+            case .funds: String(localized: "Funds", bundle: .module)
+            case .accounting: String(localized: "Accounting", bundle: .module)
+            case .lawyer: String(localized: "Lawyer", bundle: .module)
+            case .payroll: String(localized: "Payroll", bundle: .module)
+            case .officeSupplies: String(localized: "Office Supplies", bundle: .module)
+            case .hardware: String(localized: "Hardware", bundle: .module)
+            case .branding: String(localized: "Branding", bundle: .module)
+            case .marketing: String(localized: "Marketing", bundle: .module)
             }
         }
     }

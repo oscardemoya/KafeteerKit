@@ -8,10 +8,10 @@
 import Foundation
 
 public extension PaymentCategory {
-    public enum Activity: String, CategoryRepresentable {
+    enum Activity: String, CategoryRepresentable {
         public static var lifeArea: LifeArea = .growth
         public static var categoryIcon: Self = .fitness
-        public static var categoryName = String(localized: "Activity")
+        public static var categoryName = String(localized: "Activity", bundle: .module)
         public var asPaymentCategory: PaymentCategory { .activity(self) }
         
         case gym
@@ -71,16 +71,16 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .gym: String(localized: "Gym")
-            case .fitness: String(localized: "Fitness")
-            case .yoga: String(localized: "Yoga")
-            case .meditation: String(localized: "Meditation")
-            case .swimming: String(localized: "Swimming")
-            case .outdoor: String(localized: "Outdoor")
-            case .hiking: String(localized: "Hiking")
-            case .fishing: String(localized: "Fishing")
-            case .cycling: String(localized: "Cycling")
-            case .club: String(localized: "Club")
+            case .gym: String(localized: "Gym", bundle: .module)
+            case .fitness: String(localized: "Fitness", bundle: .module)
+            case .yoga: String(localized: "Yoga", bundle: .module)
+            case .meditation: String(localized: "Meditation", bundle: .module)
+            case .swimming: String(localized: "Swimming", bundle: .module)
+            case .outdoor: String(localized: "Outdoor", bundle: .module)
+            case .hiking: String(localized: "Hiking", bundle: .module)
+            case .fishing: String(localized: "Fishing", bundle: .module)
+            case .cycling: String(localized: "Cycling", bundle: .module)
+            case .club: String(localized: "Club", bundle: .module)
             }
         }
     }

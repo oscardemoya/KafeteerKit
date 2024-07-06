@@ -8,10 +8,10 @@
 import Foundation
 
 public extension PaymentCategory {
-    public enum Fixture: String, CategoryRepresentable {
+    enum Fixture: String, CategoryRepresentable {
         public static var lifeArea: LifeArea = .homeware
         public static var categoryIcon: Self = .fixture
-        public static var categoryName = String(localized: "Fixture")
+        public static var categoryName = String(localized: "Fixture", bundle: .module)
         public var asPaymentCategory: PaymentCategory { .fixture(self) }
         
         case fixture
@@ -67,15 +67,15 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .fixture: String(localized: "Fixture")
-            case .lightning: String(localized: "Lightning")
-            case .ceilingFan: String(localized: "Ceiling Fan")
-            case .door: String(localized: "Door")
-            case .window: String(localized: "Window")
-            case .toilet: String(localized: "Toilet")
-            case .sink: String(localized: "Sink")
-            case .bathtub: String(localized: "Bathtub")
-            case .shower: String(localized: "Shower")
+            case .fixture: String(localized: "Fixture", bundle: .module)
+            case .lightning: String(localized: "Lightning", bundle: .module)
+            case .ceilingFan: String(localized: "Ceiling Fan", bundle: .module)
+            case .door: String(localized: "Door", bundle: .module)
+            case .window: String(localized: "Window", bundle: .module)
+            case .toilet: String(localized: "Toilet", bundle: .module)
+            case .sink: String(localized: "Sink", bundle: .module)
+            case .bathtub: String(localized: "Bathtub", bundle: .module)
+            case .shower: String(localized: "Shower", bundle: .module)
             }
         }
     }

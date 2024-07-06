@@ -11,7 +11,7 @@ extension PaymentCategory {
     public enum Utility: String, CategoryRepresentable {
         public static var lifeArea: LifeArea = .housing
         public static var categoryIcon: Self = .waterSupply
-        public static var categoryName = String(localized: "Utility")
+        public static var categoryName = String(localized: "Utility", bundle: .module)
         public var asPaymentCategory: PaymentCategory { .utility(self) }
         
         case waterSupply
@@ -71,15 +71,15 @@ extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .waterSupply: String(localized: "Water Supply")
-            case .sewer: String(localized: "Sewer")
-            case .electricity: String(localized: "Electricity")
-            case .gas: String(localized: "Gas")
-            case .trash: String(localized: "Trash")
-            case .internet: String(localized: "Internet")
-            case .tvProvider: String(localized: "TV Provider")
-            case .phone: String(localized: "Phone")
-            case .cellphone: String(localized: "Cellphone")
+            case .waterSupply: String(localized: "Water Supply", bundle: .module)
+            case .sewer: String(localized: "Sewer", bundle: .module)
+            case .electricity: String(localized: "Electricity", bundle: .module)
+            case .gas: String(localized: "Gas", bundle: .module)
+            case .trash: String(localized: "Trash", bundle: .module)
+            case .internet: String(localized: "Internet", bundle: .module)
+            case .tvProvider: String(localized: "TV Provider", bundle: .module)
+            case .phone: String(localized: "Phone", bundle: .module)
+            case .cellphone: String(localized: "Cellphone", bundle: .module)
             }
         }
     }

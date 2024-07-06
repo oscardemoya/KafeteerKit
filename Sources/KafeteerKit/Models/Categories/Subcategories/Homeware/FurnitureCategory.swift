@@ -8,10 +8,10 @@
 import Foundation
 
 public extension PaymentCategory {
-    public enum Furniture: String, CategoryRepresentable {
+    enum Furniture: String, CategoryRepresentable {
         public static var lifeArea: LifeArea = .homeware
         public static var categoryIcon: Self = .furniture
-        public static var categoryName = String(localized: "Furniture")
+        public static var categoryName = String(localized: "Furniture", bundle: .module)
         public var asPaymentCategory: PaymentCategory { .furniture(self) }
         
         case furniture
@@ -65,14 +65,14 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .furniture: String(localized: "Furniture")
-            case .sofa: String(localized: "Sofa")
-            case .chairs: String(localized: "Chairs")
-            case .table: String(localized: "Table")
-            case .bed: String(localized: "Bed")
-            case .desk: String(localized: "Desk")
-            case .bookshelf: String(localized: "Bookshelf")
-            case .cabinet: String(localized: "Cabinet")
+            case .furniture: String(localized: "Furniture", bundle: .module)
+            case .sofa: String(localized: "Sofa", bundle: .module)
+            case .chairs: String(localized: "Chairs", bundle: .module)
+            case .table: String(localized: "Table", bundle: .module)
+            case .bed: String(localized: "Bed", bundle: .module)
+            case .desk: String(localized: "Desk", bundle: .module)
+            case .bookshelf: String(localized: "Bookshelf", bundle: .module)
+            case .cabinet: String(localized: "Cabinet", bundle: .module)
             }
         }
     }

@@ -13,6 +13,11 @@ public extension ShapeStyle where Self == Color {
     static var secondaryAccent: Color { Config.shared.colors.secondaryAccent }
     static var tertiaryAccent: Color { Config.shared.colors.tertiaryAccent }
     
+    // Accent Foreground
+    static var primaryAccentForeground: Color { Config.shared.colors.primaryAccentForeground }
+    static var secondaryAccentForeground: Color { Config.shared.colors.secondaryAccentForeground }
+    static var tertiaryAccentForeground: Color { Config.shared.colors.tertiaryAccentForeground }
+    
     // Brand
     static var primaryBrand: Color { Config.shared.colors.primaryBrand }
     static var secondaryBrand: Color { Config.shared.colors.secondaryBrand }

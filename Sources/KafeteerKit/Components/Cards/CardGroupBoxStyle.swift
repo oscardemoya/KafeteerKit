@@ -17,7 +17,6 @@ public struct CardGroupBoxStyle: GroupBoxStyle {
         .frame(maxWidth: .infinity)
         .background(.secondaryBackground)
         .borderStyle(.stroke(.nano), borderColor: .borderColor, cornerStyle: .rounded(.medium))
-        .shadowStyle(.subtle)
     }
 }
 

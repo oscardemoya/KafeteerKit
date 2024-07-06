@@ -8,10 +8,10 @@
 import Foundation
 
 public extension PaymentCategory {
-    public enum Clothing: String, CategoryRepresentable {
+    enum Clothing: String, CategoryRepresentable {
         public static var lifeArea: LifeArea = .essentials
         public static var categoryIcon: Self = .clothing
-        public static var categoryName = String(localized: "Clothing")
+        public static var categoryName = String(localized: "Clothing", bundle: .module)
         public var asPaymentCategory: PaymentCategory { .clothing(self) }
         
         case clothing
@@ -75,16 +75,16 @@ public extension PaymentCategory {
         
         public var name: String {
             switch self {
-            case .clothing: String(localized: "Clothing")
-            case .shirt: String(localized: "Shirt")
-            case .shoes: String(localized: "Shoes")
-            case .accessory: String(localized: "Accessory")
-            case .watch: String(localized: "Watch")
-            case .jewelry: String(localized: "Jewelry")
-            case .sunglasses: String(localized: "Sunglasses")
-            case .bag: String(localized: "Bag")
-            case .handbag: String(localized: "Handbag")
-            case .suitcase: String(localized: "Suitcase")
+            case .clothing: String(localized: "Clothing", bundle: .module)
+            case .shirt: String(localized: "Shirt", bundle: .module)
+            case .shoes: String(localized: "Shoes", bundle: .module)
+            case .accessory: String(localized: "Accessory", bundle: .module)
+            case .watch: String(localized: "Watch", bundle: .module)
+            case .jewelry: String(localized: "Jewelry", bundle: .module)
+            case .sunglasses: String(localized: "Sunglasses", bundle: .module)
+            case .bag: String(localized: "Bag", bundle: .module)
+            case .handbag: String(localized: "Handbag", bundle: .module)
+            case .suitcase: String(localized: "Suitcase", bundle: .module)
             }
         }
     }
