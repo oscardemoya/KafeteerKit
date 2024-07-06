@@ -11,4 +11,5 @@ public enum Hierarchy {
     case primary
     case secondary
     case tertiary
+    case quaternary
 }

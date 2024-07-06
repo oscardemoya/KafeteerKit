@@ -29,6 +29,7 @@ public struct HierarchicalButtonStyle: ButtonStyle {
         case .primary: .primaryAccent
         case .secondary: .primaryTint.opacity(0.4)
         case .tertiary: .quinaryForeground.opacity(0.3)
+        case .quaternary: .clear
         }
     }
     
@@ -37,6 +38,7 @@ public struct HierarchicalButtonStyle: ButtonStyle {
         case .primary: Color(.lightOverlay)
         case .secondary: .primaryAccent
         case .tertiary: .secondaryAccent
+        case .quaternary: .primaryAccent
         }
     }
     
@@ -45,6 +47,7 @@ public struct HierarchicalButtonStyle: ButtonStyle {
         case .primary: .primaryForeground.shade(.shade2).opacity(0.5)
         case .secondary: .primaryForeground.shade(.shade3).opacity(0.5)
         case .tertiary: .primaryForeground.shade(.shade4).opacity(0.5)
+        case .quaternary: .primaryForeground.shade(.shade5).opacity(0.5)
         }
     }
     
@@ -53,6 +56,7 @@ public struct HierarchicalButtonStyle: ButtonStyle {
         case .primary: .primaryForeground.shade(.shade6).opacity(0.5)
         case .secondary: .primaryForeground.shade(.shade7).opacity(0.5)
         case .tertiary: .primaryForeground.shade(.shade8).opacity(0.5)
+        case .quaternary: .primaryForeground.shade(.shade9).opacity(0.5)
         }
     }
 }
@@ -62,13 +66,15 @@ public extension ButtonStyle where Self == HierarchicalButtonStyle {
     static var primary: Self { .init(hierarchy: .primary) }
     static var secondary: Self { .init(hierarchy: .secondary) }
     static var tertiary: Self { .init(hierarchy: .tertiary) }
+    static var quaternary: Self { .init(hierarchy: .quaternary) }
 }
 
 #Preview {
     VStack {
-        Button("Primary", action: {}).buttonStyle(.primary)
-        Button("Secondary", action: {}).buttonStyle(.secondary)
-        Button("Tertiary", action: {}).buttonStyle(.tertiary)
+        Button(String("Title"), action: {}).buttonStyle(.primary)
+        Button(String("Title"), action: {}).buttonStyle(.secondary)
+        Button(String("Title"), action: {}).buttonStyle(.tertiary)
+        Button(String("Title"), action: {}).buttonStyle(.quaternary)
     }
     .padding()
 }

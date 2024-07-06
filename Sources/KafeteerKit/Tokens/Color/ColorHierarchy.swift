@@ -13,6 +13,7 @@ public extension Hierarchy {
         case .primary: .primaryBrand
         case .secondary: .secondaryBrand
         case .tertiary: .tertiaryBrand
+        case .quaternary: .quaternaryBrand
         }
     }
     
@@ -21,6 +22,7 @@ public extension Hierarchy {
         case .primary: .primaryTint
         case .secondary: .secondaryTint
         case .tertiary: .tertiaryTint
+        case .quaternary: .quaternaryTint
         }
     }
         
@@ -29,6 +31,7 @@ public extension Hierarchy {
         case .primary: .primaryBackground
         case .secondary: .secondaryBackground
         case .tertiary: .tertiaryBackground
+        case .quaternary: .quaternaryBackground
         }
     }
     
@@ -37,6 +40,7 @@ public extension Hierarchy {
         case .primary: .primaryForeground
         case .secondary: .secondaryForeground
         case .tertiary: .tertiaryForeground
+        case .quaternary: .quaternaryForeground
         }
     }
     
@@ -45,6 +49,7 @@ public extension Hierarchy {
         case .primary: .primaryInputBackground
         case .secondary: .secondaryInputBackground
         case .tertiary: .tertiaryInputBackground
+        case .quaternary: .quaternaryInputBackground
         }
     }
     
@@ -53,6 +58,7 @@ public extension Hierarchy {
         case .primary: .primaryInputForeground
         case .secondary: .secondaryInputForeground
         case .tertiary: .tertiaryInputForeground
+        case .quaternary: .quaternaryInputForeground
         }
     }
 }

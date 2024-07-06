@@ -23,6 +23,7 @@ public extension TextFieldStyle where Self == HierarchicalTextFieldStyle {
     static var primary: HierarchicalTextFieldStyle { .init(hierarchy: .primary) }
     static var secondary: HierarchicalTextFieldStyle { .init(hierarchy: .secondary) }
     static var tertiary: HierarchicalTextFieldStyle { .init(hierarchy: .tertiary) }
+    static var quaternary: HierarchicalTextFieldStyle { .init(hierarchy: .quaternary) }
 }
 
 public extension Hierarchy {
@@ -31,6 +32,7 @@ public extension Hierarchy {
         case .primary: .primary
         case .secondary: .secondary
         case .tertiary: .tertiary
+        case .quaternary: .quaternary
         }
     }
 }
@@ -38,9 +40,10 @@ public extension Hierarchy {
 #Preview {
     @State var text: String = ""
     return VStack {
-        TextField("Primary", text: $text).textFieldStyle(.primary)
-        TextField("Secondary", text: $text).textFieldStyle(.secondary)
-        TextField("Tertiary", text: $text).textFieldStyle(.tertiary)
+        TextField(String("Placeholder"), text: $text).textFieldStyle(.primary)
+        TextField(String("Placeholder"), text: $text).textFieldStyle(.secondary)
+        TextField(String("Placeholder"), text: $text).textFieldStyle(.tertiary)
+        TextField(String("Placeholder"), text: $text).textFieldStyle(.quaternary)
     }
     .padding()
 }
