@@ -8,6 +8,17 @@
 import Foundation
 
 public extension NumberFormatter {
+    static func currency(decimalSeparator: Separator) -> NumberFormatter {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.currencyDecimalSeparator = decimalSeparator.rawValue
+        formatter.currencyGroupingSeparator = decimalSeparator.groupingSeparator.rawValue
+        formatter.maximumFractionDigits = 2
+        formatter.minimumFractionDigits = 0
+        formatter.isLenient = true
+        return formatter
+    }
+    
     static var currency: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.locale = Locale.current

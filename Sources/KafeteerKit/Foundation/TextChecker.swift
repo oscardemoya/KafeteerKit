@@ -53,8 +53,12 @@ public struct TextChecker {
     // Amount
     public static func amountData(from text: String) -> AmountData {
         var result = AmountData()
-        guard let value = text.currency else { return result }
-        result.amount = NumberFormatter.currency.number(from: value)?.doubleValue ?? 0
+        guard let value = text.currencyValues.first(where: {
+            guard let regex = try? Regex(".*\\\($0.symbol)\\s?\($0.amount)(\\s.*|$)") else { return false }
+            return text.contains(regex)
+        }) else { return result }
+        let formatter = NumberFormatter.currency(decimalSeparator: value.separator)
+        result.amount = formatter.number(from: value.amount)?.doubleValue ?? 0
         return result
     }
     

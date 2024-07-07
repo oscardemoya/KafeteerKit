@@ -8,19 +8,31 @@
 import Foundation
 
 extension String {
-    var currency: String? {
-        matches(of: Regex.currencyAmount).compactMap { match -> String? in
-            String(match.output.currency)
-        }.first
+    var currencyValues: [(separator: Separator, symbol: String, amount: String)] {
+        Separator.allCases.compactMap { separator in
+            var regex: Regex<(Substring, symbol: Substring, amount: Substring, Substring?, Substring?, Substring?)>
+            switch separator {
+            case .dot:
+                regex = #/(?<symbol>[$|€|£|¥|₣|₹])(?<amount>\s?([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)?(\.[0-9][0-9])?)/#
+            case .comma:
+                regex = #/(?<symbol>[$|€|£|¥|₣|₹])(?<amount>\s?([0-9]{1,3}\.([0-9]{3}\.)*[0-9]{3}|[0-9]+)?(,[0-9][0-9])?)/#
+            }
+            regex = regex.ignoresCase().dotMatchesNewlines()
+            return matches(of: regex).compactMap {
+                (separator: separator, symbol: String($0.output.symbol), amount: String($0.output.amount))
+            }.first
+        }
     }
 }
 
-// TODO: Detect repeat interval
-enum Regex {
-    static let decimalSeparator = Locale.current.decimalSeparator
-    static let currencyAmount = decimalSeparator == "." ?
-    #/(?<currency>[$|£|€|¥]\s?([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)?(\.[0-9][0-9])?)/# :
-    #/(?<currency>[$|£|€|¥]\s?([0-9]{1,3}\.([0-9]{3}\.)*[0-9]{3}|[0-9]+)?(,[0-9][0-9])?)/#
-        .ignoresCase()
-        .dotMatchesNewlines()
+public enum Separator: String, CaseIterable {
+    case dot = "."
+    case comma = ","
+    
+    var groupingSeparator: Separator {
+        switch self {
+        case .dot: .comma
+        case .comma: .dot
+        }
+    }
 }
