@@ -42,14 +42,12 @@ public protocol ColorConfiguration {
     var secondaryBackground: Color { get }
     var tertiaryBackground: Color { get }
     var quaternaryBackground: Color { get }
-    var quinaryBackground: Color { get }
     
     // Foregrounds
     var primaryForeground: Color { get }
     var secondaryForeground: Color { get }
     var tertiaryForeground: Color { get }
     var quaternaryForeground: Color { get }
-    var quinaryForeground: Color { get }
     
     // Input Backgrounds
     var primaryInputBackground: Color { get }
@@ -106,17 +104,15 @@ struct DefaultColorConfiguration: ColorConfiguration {
     
     // Backgrounds
     var primaryBackground: Color { Color(.background100) }
-    var secondaryBackground: Color { Color(.background300) }
-    var tertiaryBackground: Color { Color(.background500) }
-    var quaternaryBackground: Color { Color(.background700) }
-    var quinaryBackground: Color { Color(.background900) }
+    var secondaryBackground: Color { Color(.background400) }
+    var tertiaryBackground: Color { Color(.background600) }
+    var quaternaryBackground: Color { Color(.background900) }
     
     // Foregrounds
     var primaryForeground: Color { Color(.foreground100) }
-    var secondaryForeground: Color { Color(.foreground300) }
-    var tertiaryForeground: Color { Color(.foreground500) }
-    var quaternaryForeground: Color { Color(.foreground700) }
-    var quinaryForeground: Color { Color(.foreground900) }
+    var secondaryForeground: Color { Color(.foreground400) }
+    var tertiaryForeground: Color { Color(.foreground600) }
+    var quaternaryForeground: Color { Color(.foreground900) }
     
     // Input Backgrounds
     var primaryInputBackground: Color { Color(.background500) }

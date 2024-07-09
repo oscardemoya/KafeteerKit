@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum LifeArea: String, Identifiable, CaseIterable {
+public enum LifeArea: String, Codable, Identifiable, CaseIterable {
     case finance
     case essentials
     case wellness
@@ -30,6 +30,19 @@ public enum LifeArea: String, Identifiable, CaseIterable {
         case .electronics: String(localized: "Electronics", bundle: .module)
         case .growth: String(localized: "Growth", bundle: .module)
         case .leisure: String(localized: "Leisure", bundle: .module)
+        }
+    }
+    
+    public var iconName: String {
+        switch self {
+        case .finance: PaymentCategory.Finance.categoryIcon.iconName
+        case .essentials: PaymentCategory.Food.breakfast.iconName
+        case .wellness: PaymentCategory.Healthcare.healthcare.iconName
+        case .housing: PaymentCategory.Home.mortgage.iconName
+        case .homeware: PaymentCategory.Furniture.furniture.iconName
+        case .electronics: PaymentCategory.Electronics.gadgets.iconName
+        case .growth: PaymentCategory.Knowledge.education.iconName
+        case .leisure: PaymentCategory.Entertainment.movie.iconName
         }
     }
 }

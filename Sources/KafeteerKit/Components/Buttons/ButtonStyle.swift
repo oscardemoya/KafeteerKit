@@ -28,8 +28,8 @@ public struct HierarchicalButtonStyle: ButtonStyle {
         switch hierarchy {
         case .primary: .primaryAccent
         case .secondary: .primaryTint.opacity(0.4)
-        case .tertiary: .quinaryForeground.opacity(0.3)
-        case .quaternary: .clear
+        case .tertiary: .quaternaryForeground.opacity(0.3)
+        case .quaternary: .tertiaryBackground
         }
     }
     

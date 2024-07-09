@@ -9,15 +9,10 @@ import SwiftUI
 
 public struct CloseableModifier: ViewModifier {
     @Environment(\.dismiss) private var dismiss
-    @State var navigationTitle: LocalizedStringKey
     
     public func body(content: Content) -> some View {
         content
-            .background(.tertiaryBackground)
-            .navigationTitle(navigationTitle)
 #if !os(macOS)
-            .toolbarBackground(.barBackground, for: .navigationBar)
-            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
@@ -27,7 +22,7 @@ public struct CloseableModifier: ViewModifier {
                             .font(.system(size: 20))
                             .symbolRenderingMode(.hierarchical)
                     }
-                    .foregroundColor(.primaryForeground)
+                    .foregroundColor(.secondaryForeground)
                 }
             }
 #endif
@@ -35,7 +30,7 @@ public struct CloseableModifier: ViewModifier {
 }
 
 public extension View {
-    func closeable(navigationTitle: LocalizedStringKey) -> some View {
-        modifier(CloseableModifier(navigationTitle: navigationTitle))
+    func closeable() -> some View {
+        modifier(CloseableModifier())
     }
 }

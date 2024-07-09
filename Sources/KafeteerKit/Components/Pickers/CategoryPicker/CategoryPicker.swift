@@ -33,9 +33,14 @@ public struct CategoryPicker: View {
                     }
                 }
             }
-            .closeable(navigationTitle: "Select Category")
+            .closeable()
+            .navigationTitle("Select Category")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(.primaryBackground, for: .navigationBar)
+            .scrollContentBackground(.hidden)
+            .background(.secondaryBackground)
         }
-        .searchable(text: $searchText, placement: .navigationBarDrawer)
+        .searchable(text: $searchText)
         .onAppear {
             self.selectedCategory = selectedCategory // Force update the grid to avoid default to be selected
         }

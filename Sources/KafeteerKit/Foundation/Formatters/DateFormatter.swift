@@ -71,6 +71,18 @@ public extension Date {
         formatter.dateFormat = DateFormat.shortMonth.rawValue
         return formatter.string(from: self)
     }
+    
+    var fullMonth: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = DateFormat.fullMonth.rawValue
+        return formatter.string(from: self)
+    }
+    
+    var yearString: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = DateFormat.year.rawValue
+        return formatter.string(from: self)
+    }
 
     var year: Int {
         let formatter = DateFormatter()
@@ -127,6 +139,7 @@ public enum DateFormat: String, CaseIterable {
     case yearMonthDaySlashed = "yyyy/MM/dd"
     case monthYear = "MMMM yyyy"
     case shortMonth = "MMM"
+    case fullMonth = "MMMM"
     case year = "yyyy"
     case month = "MM"
     case day = "d"

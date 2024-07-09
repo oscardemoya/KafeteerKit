@@ -29,15 +29,15 @@ public struct TagView: View {
                 case .compact:
                     Capsule()
                         .frame(width: 12, height: 4)
-                        .foregroundColor(tag.color.background(for: .base))
+                        .foregroundColor(tag.color.backgroundColor)
                 case .regular:
                     Text(tag.name.uppercased())
                         .font(.systemDefault(.caption2))
                         .fontWeight(.regular)
                         .padding(.vertical, 2)
                         .padding(.horizontal, 6)
-                        .foregroundColor(tag.color.foreground(for: .base))
-                        .background(tag.color.background(for: .base))
+                        .foregroundColor(tag.color.foregroundColor)
+                        .background(tag.color.backgroundColor)
                         .clipShape(.capsule)
                 case .large:
                     Text(tag.name.uppercased())
@@ -45,8 +45,8 @@ public struct TagView: View {
                         .fontWeight(.regular)
                         .padding(.vertical, 4)
                         .padding(.horizontal, 12)
-                        .foregroundColor(tag.color.foreground(for: .base))
-                        .background(tag.color.background(for: .base))
+                        .foregroundColor(tag.color.foregroundColor)
+                        .background(tag.color.backgroundColor)
                         .clipShape(.capsule)
                 }
             }
