@@ -40,14 +40,14 @@ public struct ImageButton: View {
         var horizontalPadding: CGFloat {
             switch self {
             case .compact: return 0
-            case .regular: return 2
-            case .large: return 4
+            case .regular: return 4
+            case .large: return 8
             }
         }
         
         var verticalPadding: CGFloat {
             switch self {
-            case .compact: return 6
+            case .compact: return 4
             case .regular: return 8
             case .large: return 12
             }

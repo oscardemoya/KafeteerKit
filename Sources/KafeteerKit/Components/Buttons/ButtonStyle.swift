@@ -35,7 +35,7 @@ public struct HierarchicalButtonStyle: ButtonStyle {
     
     var foregroundColor: Color {
         switch hierarchy {
-        case .primary: Color(.lightOverlay)
+        case .primary: .primaryAccentForeground
         case .secondary: .primaryAccent
         case .tertiary: .secondaryAccent
         case .quaternary: .primaryAccent
