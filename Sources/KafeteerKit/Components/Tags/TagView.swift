@@ -29,15 +29,15 @@ public struct TagView: View {
                 case .compact:
                     Capsule()
                         .frame(width: 12, height: 4)
-                        .foregroundColor(tag.color.backgroundColor)
+                        .foregroundColor(tag.colorVariant.backgroundColor)
                 case .regular:
                     Text(tag.name.uppercased())
                         .font(.systemDefault(.caption2))
                         .fontWeight(.regular)
                         .padding(.vertical, 2)
                         .padding(.horizontal, 6)
-                        .foregroundColor(tag.color.foregroundColor)
-                        .background(tag.color.backgroundColor)
+                        .foregroundColor(tag.colorVariant.foregroundColor)
+                        .background(tag.colorVariant.backgroundColor)
                         .clipShape(.capsule)
                 case .large:
                     Text(tag.name.uppercased())
@@ -45,8 +45,8 @@ public struct TagView: View {
                         .fontWeight(.regular)
                         .padding(.vertical, 4)
                         .padding(.horizontal, 12)
-                        .foregroundColor(tag.color.foregroundColor)
-                        .background(tag.color.backgroundColor)
+                        .foregroundColor(tag.colorVariant.foregroundColor)
+                        .background(tag.colorVariant.backgroundColor)
                         .clipShape(.capsule)
                 }
             }
@@ -57,8 +57,8 @@ public struct TagView: View {
 
 #Preview {
     List {
-        ForEach(TagColor.allCases) { tagColor in
-            TagView(tag: Tag(name: "Tag", colorName: tagColor.rawValue), size: .large)
+        ForEach(TagColorVariant.allCases) { colorVariant in
+            TagView(tag: Tag(name: "Tag", colorVariant: colorVariant), size: .large)
                 .previewLayout(.sizeThatFits)
         }
     }

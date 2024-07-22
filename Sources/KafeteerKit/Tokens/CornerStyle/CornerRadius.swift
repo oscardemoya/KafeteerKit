@@ -13,6 +13,7 @@ public enum CornerRadius: CGFloat {
     case extraSmall = 8
     case small = 12
     case medium = 16
-    case large = 32
-    case extraLarge = 64
+    case large = 24
+    case extraLarge = 32
+    case huge = 64
 }

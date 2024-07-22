@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  Tag.swift
+//
 //
 //  Created by Oscar De Moya on 15/06/24.
 //
@@ -11,33 +11,23 @@ import SwiftUI
 public class Tag: Codable, Identifiable {
     public var id: String = UUID().uuidString
     public var name: String = ""
-    public var colorName: String?
+    public var colorVariant: TagColorVariant = .default
     public var orderIndex: Int = 0
 
     // Local Fields
     public var canBeSaved: Bool { !name.isBlank }
     
-    public var color: TagColor {
-        get {
-            guard let colorName else { return .default }
-            return TagColor(rawValue: colorName) ?? .default
-        }
-        set {
-            colorName = newValue.rawValue
-        }
-    }
-    
-    public init(id: String? = nil, name: String = "", colorName: String? = nil, orderIndex: Int = 0) {
+    public init(id: String? = nil, name: String = "", colorVariant: TagColorVariant = .default, orderIndex: Int = 0) {
         self.id = id ?? UUID().uuidString
         self.name = name
-        self.colorName = colorName ?? TagColor.purple.rawValue
+        self.colorVariant = colorVariant
         self.orderIndex = orderIndex
     }
     
     enum CodingKeys: String, CodingKey {
         case id
         case name
-        case colorName
+        case colorVariant
         case orderIndex
     }
     
@@ -45,7 +35,7 @@ public class Tag: Codable, Identifiable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(String.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
-        colorName = try container.decodeIfPresent(String.self, forKey: .colorName)
+        colorVariant = try container.decode(TagColorVariant.self, forKey: .colorVariant)
         orderIndex = try container.decode(Int.self, forKey: .orderIndex)
     }
     
@@ -53,7 +43,7 @@ public class Tag: Codable, Identifiable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(id, forKey: .id)
         try container.encode(name, forKey: .name)
-        try container.encodeIfPresent(colorName, forKey: .colorName)
+        try container.encodeIfPresent(colorVariant, forKey: .colorVariant)
         try container.encodeIfPresent(orderIndex, forKey: .orderIndex)
     }
 }
@@ -63,7 +53,7 @@ extension Tag: Hashable {
         var hasher = hasher
         hasher.combine(id)
         hasher.combine(name)
-        hasher.combine(color)
+        hasher.combine(colorVariant)
         hasher.combine(orderIndex)
     }
 }
@@ -71,7 +61,7 @@ extension Tag: Hashable {
 extension Tag: Equatable {
     public static func == (lhs: Tag, rhs: Tag) -> Bool {
         guard lhs.name.uppercased() == rhs.name.uppercased() else { return false }
-        return lhs.color == rhs.color
+        return lhs.name == rhs.name
     }
 }
 
