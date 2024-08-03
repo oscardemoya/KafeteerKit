@@ -12,6 +12,7 @@ public extension Date {
     var startOfYear: Date { startOf(.year) }
     var startOfQuarter: Date { startOf(.quarter) }
     var startOfMonth: Date { startOf(.month) }
+    var startOfDay: Date { startOf(.day) }
     
     func startOf(_ component: Calendar.Component) -> Date {
         Calendar.current.dateInterval(of: component, for: self)?.start ?? self
