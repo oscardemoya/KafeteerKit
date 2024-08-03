@@ -57,7 +57,7 @@ public extension PaymentCategory {
                 case .healthyFood: .healthyFood
                 case .fastFood, .pizza, .burger: .fastFood
                 case .drinks, .beverages, .soda, .beer: .drinks
-                case .water, .juice: .drinks
+                case .water, .juice: .water
                 case .coffee, .tea: .coffee
                 }
             }
