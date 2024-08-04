@@ -14,7 +14,7 @@ public struct TagColorVariant: Identifiable, Codable, RawRepresentable {
     var tagColor: TagColor
     var variant: TagColor.Variant
     
-    init(tagColor: TagColor, variant: TagColor.Variant) {
+    public init(tagColor: TagColor, variant: TagColor.Variant) {
         self.tagColor = tagColor
         self.variant = variant
     }

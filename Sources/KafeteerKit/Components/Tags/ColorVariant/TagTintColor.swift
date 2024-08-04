@@ -8,7 +8,7 @@
 import SwiftUI
 
 public extension TagColor {
-    public func tintColor(_ variant: Variant) -> Color {
+    func tintColor(_ variant: Variant) -> Color {
         switch self {
         case .blue:
             switch variant {
