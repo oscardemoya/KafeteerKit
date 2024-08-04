@@ -93,10 +93,10 @@ extension TagColorVariant: Hashable {
 }
 
 public extension TagColor {
-    public enum Variant: String, Codable, CaseIterable, Identifiable {
+    enum Variant: String, Codable, CaseIterable, Identifiable {
+        case light
         case base
         case dark
-        case light
 
         public var id: Self { self }
     }
