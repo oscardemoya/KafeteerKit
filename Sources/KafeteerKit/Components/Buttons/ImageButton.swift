@@ -40,14 +40,14 @@ public struct ImageButton: View {
         var horizontalPadding: CGFloat {
             switch self {
             case .compact: return 0
-            case .regular: return 4
-            case .large: return 8
+            case .regular: return 0
+            case .large: return 0
             }
         }
         
         var verticalPadding: CGFloat {
             switch self {
-            case .compact: return 4
+            case .compact: return 8
             case .regular: return 8
             case .large: return 12
             }
@@ -97,5 +97,10 @@ public struct ImageButton: View {
 }
 
 #Preview {
-    ImageButton(image: Image(systemName: "star")) {}
+    VStack {
+        ImageButton(image: Image(systemName: "star"), size: .compact) {}
+        ImageButton(image: Image(systemName: "star"), size: .regular) {}
+        ImageButton(image: Image(systemName: "star"), size: .large) {}
+    }
+    .buttonStyle(.borderedProminent)
 }
