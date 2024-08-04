@@ -88,7 +88,7 @@ struct CategoryPickerSection: View {
     }
     
     func backgroundColor(selected: Bool) -> Color {
-        selected ? hierarchy.brandColor : hierarchy.tintColor.opacity(0.4)
+        selected ? hierarchy.brandColor : hierarchy.tintColor.opacity(0.3)
     }
     
     func foregroundColor(selected: Bool) -> Color {
@@ -96,6 +96,13 @@ struct CategoryPickerSection: View {
     }
 }
 
-//#Preview {
-//    CategoryPickerSection()
-//}
+#Preview {
+    ScrollView {
+        CategoryPickerSection(
+            selectedCategory: .constant(.finance(.taxes)),
+            searchText: "",
+            area: .finance,
+            list: [.finance]
+        )
+    }
+}

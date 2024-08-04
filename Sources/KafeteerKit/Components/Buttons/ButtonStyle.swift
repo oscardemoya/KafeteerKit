@@ -27,7 +27,7 @@ public struct HierarchicalButtonStyle: ButtonStyle {
     var backgroundColor: Color {
         switch hierarchy {
         case .primary: .primaryAccent
-        case .secondary: .primaryTint.opacity(0.4)
+        case .secondary: .primaryTint.opacity(0.3)
         case .tertiary: .quaternaryForeground.opacity(0.3)
         case .quaternary: .tertiaryBackground
         }
