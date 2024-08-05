@@ -62,18 +62,18 @@ public struct ImageButton: View {
         }
     }
     
-    var image: Image?
+    var systemName: String
     @State var color: Color = .primaryAccent
     var size: Size = .regular
     var action: Action
 
     public init(
-        image: Image? = nil,
+        systemName: String,
         color: Color = .primaryAccent,
         size: Size = .regular,
         action: @escaping Action
     ) {
-        self.image = image
+        self.systemName = systemName
         self.color = color
         self.size = size
         self.action = action
@@ -84,7 +84,7 @@ public struct ImageButton: View {
             action()
         } label: {
             VStack {
-                image?
+                Image(systemName: systemName)
                     .font(.system(size: size.fontSize, weight: .regular))
                     .frame(minWidth: size.minWidth, maxHeight: size.maxHeight)
                     .padding(.horizontal, size.horizontalPadding)
@@ -98,9 +98,9 @@ public struct ImageButton: View {
 
 #Preview {
     VStack {
-        ImageButton(image: Image(systemName: "star"), size: .compact) {}
-        ImageButton(image: Image(systemName: "star"), size: .regular) {}
-        ImageButton(image: Image(systemName: "star"), size: .large) {}
+        ImageButton(systemName: "star", size: .compact) {}
+        ImageButton(systemName: "star", size: .regular) {}
+        ImageButton(systemName: "star", size: .large) {}
     }
     .buttonStyle(.borderedProminent)
 }
