@@ -54,7 +54,7 @@ public struct TextChecker {
     public static func amountData(from text: String) -> AmountData {
         var result = AmountData()
         guard let value = text.currencyValues.first(where: {
-            guard let regex = try? Regex(".*\\\($0.symbol)\\s?\($0.amount)(\\s.*|$)") else { return false }
+            guard let regex = try? Regex(".*\($0.identifier.regexSubstring)\\s?\($0.amount)(\\s.*|$)") else { return false }
             return text.contains(regex)
         }) else { return result }
         let formatter = NumberFormatter.currency(decimalSeparator: value.separator)
