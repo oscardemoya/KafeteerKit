@@ -35,6 +35,6 @@ public extension CategoryRepresentable where Self.RawValue == String, Keyword.Ra
     }
     
     var keywords: [String] {
-        Self.Keyword.allCases.filter({ $0.rawValue == self.rawValue }).map(\.rawValue)
+        Self.Keyword.allCases.filter({ $0.value.asPaymentCategory == self.asPaymentCategory }).map(\.rawValue)
     }
 }

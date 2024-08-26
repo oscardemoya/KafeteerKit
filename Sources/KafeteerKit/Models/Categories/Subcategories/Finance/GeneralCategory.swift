@@ -19,11 +19,6 @@ public extension PaymentCategory {
         case recurringPayment
         case shopping
         case deal
-        case tip
-        case gift
-        case giftcard
-        case donation
-        case reward
 
         public enum Keyword: String, KeywordRepresentable {
             case payment
@@ -35,12 +30,6 @@ public extension PaymentCategory {
             case clearance
             case outlet
             case sale
-            case tip
-            case gift
-            case present
-            case giftcard
-            case donation
-            case reward
 
             public var value: General {
                 switch self {
@@ -49,11 +38,6 @@ public extension PaymentCategory {
                 case .recurringPayment, .recurring: .recurringPayment
                 case .shopping: .shopping
                 case .deal, .clearance, .outlet, .sale: .deal
-                case .tip: .tip
-                case .gift, .present: .gift
-                case .giftcard: .giftcard
-                case .donation: .donation
-                case .reward: .reward
                 }
             }
         }
@@ -65,11 +49,6 @@ public extension PaymentCategory {
             case .recurringPayment: "dollarsign.arrow.circlepath" // 􁎣
             case .shopping: "cart" // 􀍩
             case .deal: "tag" // 􀋡
-            case .tip: "banknote" // 􀭿
-            case .gift: "gift" // 􀑉
-            case .giftcard: "giftcard" // 􀦠
-            case .donation: "heart.rectangle" // 􁃪
-            case .reward: "medal" // 􁏋
             }
         }
         
@@ -80,11 +59,6 @@ public extension PaymentCategory {
             case .recurringPayment: String(localized: "Recurring Payment", bundle: .module)
             case .shopping: String(localized: "Shopping", bundle: .module)
             case .deal: String(localized: "Deal", bundle: .module)
-            case .tip: String(localized: "Tip", bundle: .module)
-            case .gift: String(localized: "Gift", bundle: .module)
-            case .giftcard: String(localized: "Gift Card", bundle: .module)
-            case .donation: String(localized: "Donation", bundle: .module)
-            case .reward: String(localized: "Reward", bundle: .module)
             }
         }
     }

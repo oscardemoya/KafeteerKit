@@ -24,6 +24,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
     case healthcare(Healthcare)
     case personalCare(PersonalCare)
     case familyCare(FamilyCare)
+    case giving(Giving)
     case entertainment(Entertainment)
     case education(Knowledge)
     case professional(Professional)
@@ -57,6 +58,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         case healthcare
         case personalCare
         case familyCare
+        case giving
         case entertainment
         case education
         case professional
@@ -92,6 +94,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
             case .healthcare: Healthcare.self
             case .personalCare: PersonalCare.self
             case .familyCare: FamilyCare.self
+            case .giving: Giving.self
             case .entertainment: Entertainment.self
             case .education: Knowledge.self
             case .professional: Professional.self
@@ -117,7 +120,9 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         }.sorted {
             $0.name.count > $1.name.count
         }.first { category in
-            string.localizedCaseInsensitiveContains(category.name)
+            category.keywords.contains {
+                string.replacingOccurrences(of: " ", with: "").localizedCaseInsensitiveContains($0)
+            }
         } ?? .default
     }
     
@@ -138,6 +143,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         if let value = Healthcare(keyword: rawValue) { return value }
         if let value = PersonalCare(keyword: rawValue) { return value }
         if let value = FamilyCare(keyword: rawValue) { return value }
+        if let value = Giving(keyword: rawValue) { return value }
         if let value = Entertainment(keyword: rawValue) { return value }
         if let value = Knowledge(keyword: rawValue) { return value }
         if let value = Professional(keyword: rawValue) { return value }
@@ -189,6 +195,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         case .healthcare(let value): value
         case .personalCare(let value): value
         case .familyCare(let value): value
+        case .giving(let value): value
         case .entertainment(let value): value
         case .education(let value): value
         case .professional(let value): value
@@ -225,6 +232,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         case .healthcare: .healthcare
         case .personalCare: .personalCare
         case .familyCare: .familyCare
+        case .giving: .giving
         case .activity: .activity
         case .sports: .sports
         case .hobby: .hobby

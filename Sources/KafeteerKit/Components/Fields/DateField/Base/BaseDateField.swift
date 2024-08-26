@@ -44,7 +44,7 @@ public struct BaseDateField: View {
             trailingView
         }
         .padding(.medium)
-        .containerShape(.rect)
+        .contentShape(.rect)
         .onChange(of: date) { _, newValue in
             internalDate = date
         }
@@ -80,6 +80,9 @@ public struct BaseDateField: View {
                     isExpanded = false
                 }
             }
+        } else {
+            Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
+                .foregroundStyle(.borderColor)
         }
     }
     

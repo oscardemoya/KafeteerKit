@@ -14,7 +14,7 @@ struct CategoryPickerSection: View {
     var list: [PaymentCategory.Kind]
     @State private var isExpanded: Bool = true
     private var columns = [GridItem(.adaptive(minimum: 60), spacing: 12)]
-    private var hierarchy: Hierarchy = .primary
+    private var hierarchy: Hierarchy = .secondary
     
     init(selectedCategory: Binding<PaymentCategory>, searchText: String, area: LifeArea, list: [PaymentCategory.Kind]) {
         self._selectedCategory = selectedCategory
@@ -39,7 +39,7 @@ struct CategoryPickerSection: View {
                 .font(.title)
                 .fontWeight(.bold)
                 .fontDesign(.rounded)
-                .foregroundStyle(.primary)
+                .foregroundStyle(.secondaryForeground)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
         .animation(.easeInOut(duration: 0.1), value: !isExpanded)
@@ -52,7 +52,7 @@ struct CategoryPickerSection: View {
             Text(title)
                 .font(.systemDefault(.headline))
                 .fontWeight(.semibold)
-                .foregroundColor(.primaryForeground)
+                .foregroundColor(.tertiaryForeground)
                 .frame(maxWidth: .infinity, alignment: .leading)
             Divider().background(.dividerColor)
         }
@@ -88,11 +88,11 @@ struct CategoryPickerSection: View {
     }
     
     func backgroundColor(selected: Bool) -> Color {
-        selected ? hierarchy.brandColor : hierarchy.tintColor.opacity(0.3)
+        selected ? hierarchy.accentColor : hierarchy.tintColor.opacity(0.25)
     }
     
     func foregroundColor(selected: Bool) -> Color {
-        selected ? .lightOverlay : hierarchy.brandColor
+        selected ? hierarchy.accentForegroundColor : hierarchy.accentColor
     }
 }
 

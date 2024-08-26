@@ -36,7 +36,7 @@ public struct HierarchicalButtonStyle: ButtonStyle {
     var foregroundColor: Color {
         switch hierarchy {
         case .primary: .primaryAccentForeground
-        case .secondary: .primaryAccent
+        case .secondary: .secondaryAccent
         case .tertiary: .secondaryAccent
         case .quaternary: .primaryAccent
         }
@@ -67,14 +67,4 @@ public extension ButtonStyle where Self == HierarchicalButtonStyle {
     static var secondary: Self { .init(hierarchy: .secondary) }
     static var tertiary: Self { .init(hierarchy: .tertiary) }
     static var quaternary: Self { .init(hierarchy: .quaternary) }
-}
-
-#Preview {
-    VStack {
-        Button(String("Title"), action: {}).buttonStyle(.primary)
-        Button(String("Title"), action: {}).buttonStyle(.secondary)
-        Button(String("Title"), action: {}).buttonStyle(.tertiary)
-        Button(String("Title"), action: {}).buttonStyle(.quaternary)
-    }
-    .padding()
 }

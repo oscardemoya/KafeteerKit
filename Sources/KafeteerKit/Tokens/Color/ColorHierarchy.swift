@@ -17,6 +17,24 @@ public extension Hierarchy {
         }
     }
     
+    var accentColor: Color {
+        switch self {
+        case .primary: .primaryAccent
+        case .secondary: .secondaryAccent
+        case .tertiary: .tertiaryAccent
+        case .quaternary: .quaternaryAccent
+        }
+    }
+    
+    var accentForegroundColor: Color {
+        switch self {
+        case .primary: .primaryAccentForeground
+        case .secondary: .secondaryAccentForeground
+        case .tertiary: .tertiaryAccentForeground
+        case .quaternary: .quaternaryAccentForeground
+        }
+    }
+    
     var tintColor: Color {
         switch self {
         case .primary: .primaryTint
