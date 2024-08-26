@@ -19,10 +19,18 @@ public struct TagColorVariant: Identifiable, Codable, RawRepresentable {
         self.variant = variant
     }
     
-    public static var allCases: [Self] {
+    public static var allCasesMixed: [Self] {
         TagColor.Variant.allCases.reduce(into: []) { result, variant in
-            result.append(contentsOf: TagColor.allCases.map {
+            result.append(contentsOf: TagColor.allCasesMixed.map {
                 TagColorVariant(tagColor: $0, variant: variant)
+            })
+        }
+    }
+    
+    public static var allCasesByColor: [Self] {
+        TagColor.allCases.reduce(into: []) { result, color in
+            result.append(contentsOf: TagColor.Variant.allCases.map {
+                TagColorVariant(tagColor: color, variant: $0)
             })
         }
     }
@@ -104,7 +112,7 @@ public extension TagColor {
 
 #Preview {
     List {
-        ForEach(TagColorVariant.allCases) { colorVariant in
+        ForEach(TagColorVariant.allCasesMixed) { colorVariant in
             TagView(tag: Tag(name: "Tag", colorVariant: colorVariant), size: .large)
                 .listRowBackground(colorVariant.tintColor)
         }

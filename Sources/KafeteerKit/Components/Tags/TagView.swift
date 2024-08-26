@@ -57,7 +57,7 @@ public struct TagView: View {
 
 #Preview {
     List {
-        ForEach(TagColorVariant.allCases) { colorVariant in
+        ForEach(TagColorVariant.allCasesMixed) { colorVariant in
             TagView(tag: Tag(name: "Tag", colorVariant: colorVariant), size: .large)
                 .listRowBackground(colorVariant.tintColor)
         }

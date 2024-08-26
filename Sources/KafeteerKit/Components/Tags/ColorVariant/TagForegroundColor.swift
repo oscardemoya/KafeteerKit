@@ -10,6 +10,12 @@ import SwiftUI
 public extension TagColor {
     func foregroundColor(_ variant: Variant) -> Color {
         switch self {
+        case .navy:
+            switch variant {
+            case .light: Color(.navy800)
+            case .base: Color(.navy900)
+            case .dark: Color(.navy050)
+            }
         case .blue:
             switch variant {
             case .light: Color(.blue800)
@@ -33,6 +39,12 @@ public extension TagColor {
             case .light: Color(.pink800)
             case .base: Color(.pink900)
             case .dark: Color(.pink050)
+            }
+        case .magenta:
+            switch variant {
+            case .light: Color(.magenta800)
+            case .base: Color(.magenta900)
+            case .dark: Color(.magenta050)
             }
         case .red:
             switch variant {
@@ -70,17 +82,29 @@ public extension TagColor {
             case .base: Color(.green900)
             case .dark: Color(.green050)
             }
+        case .mint:
+            switch variant {
+            case .light: Color(.mint800)
+            case .base: Color(.mint900)
+            case .dark: Color(.mint050)
+            }
         case .teal:
             switch variant {
             case .light: Color(.teal800)
             case .base: Color(.teal900)
             case .dark: Color(.teal050)
             }
-        case .mint:
+        case .cyan:
             switch variant {
-            case .light: Color(.mint800)
-            case .base: Color(.mint900)
-            case .dark: Color(.mint050)
+            case .light: Color(.cyan800)
+            case .base: Color(.cyan900)
+            case .dark: Color(.cyan050)
+            }
+        case .gray:
+            switch variant {
+            case .light: Color(.gray800)
+            case .base: Color(.gray900)
+            case .dark: Color(.gray050)
             }
         }
     }
@@ -88,7 +112,7 @@ public extension TagColor {
 
 #Preview {
     List {
-        ForEach(TagColorVariant.allCases) { colorVariant in
+        ForEach(TagColorVariant.allCasesMixed) { colorVariant in
             TagView(tag: Tag(name: "Tag", colorVariant: colorVariant), size: .large)
                 .listRowBackground(colorVariant.tintColor)
         }

@@ -44,6 +44,7 @@ struct CategoryPickerSection: View {
         }
         .animation(.easeInOut(duration: 0.1), value: !isExpanded)
         .padding(.medium)
+        .accentColor(.dividerColor)
     }
     
     @ViewBuilder
