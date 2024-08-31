@@ -8,7 +8,7 @@
 import SwiftUI
 
 public struct TagColorVariant: Identifiable, Codable, RawRepresentable {
-    public static let `default` = Self(tagColor: TagColor.default, variant: .base)
+    public static let `default` = Self(tagColor: TagColor.default, variant: .mid)
     public var id: String { "\(tagColor.id)-\(variant.rawValue)" }
     
     var tagColor: TagColor
@@ -19,9 +19,9 @@ public struct TagColorVariant: Identifiable, Codable, RawRepresentable {
         self.variant = variant
     }
     
-    public static var allCasesMixed: [Self] {
+    public static var allCasesAlternated: [Self] {
         TagColor.Variant.allCases.reduce(into: []) { result, variant in
-            result.append(contentsOf: TagColor.allCasesMixed.map {
+            result.append(contentsOf: TagColor.allCasesAlternated.map {
                 TagColorVariant(tagColor: $0, variant: variant)
             })
         }
@@ -103,7 +103,7 @@ extension TagColorVariant: Hashable {
 public extension TagColor {
     enum Variant: String, Codable, CaseIterable, Identifiable {
         case light
-        case base
+        case mid
         case dark
 
         public var id: Self { self }
@@ -112,7 +112,7 @@ public extension TagColor {
 
 #Preview {
     List {
-        ForEach(TagColorVariant.allCasesMixed) { colorVariant in
+        ForEach(TagColorVariant.allCasesByColor) { colorVariant in
             TagView(tag: Tag(name: "Tag", colorVariant: colorVariant), size: .large)
                 .listRowBackground(colorVariant.tintColor)
         }

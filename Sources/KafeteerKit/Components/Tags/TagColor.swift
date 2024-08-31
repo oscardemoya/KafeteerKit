@@ -28,7 +28,7 @@ public enum TagColor: String, Codable, CaseIterable, Identifiable {
     case mint
     case gray
     
-    public static var allCasesMixed: [Self] {
+    public static var allCasesAlternated: [Self] {
         [
             .teal,
             .red,
