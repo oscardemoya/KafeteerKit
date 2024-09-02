@@ -631,6 +631,9 @@
         }
       }
     },
+    "Dark Tones First" : {
+
+    },
     "Data Storage" : {
       "localizations" : {
         "es" : {
@@ -642,6 +645,7 @@
       }
     },
     "Date" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -1454,6 +1458,9 @@
         }
       }
     },
+    "Light Tones First" : {
+
+    },
     "Lightning" : {
       "localizations" : {
         "es" : {
@@ -1563,6 +1570,9 @@
           }
         }
       }
+    },
+    "Mid Tones First" : {
+
     },
     "Money Transfer" : {
       "localizations" : {
@@ -1825,7 +1835,6 @@
       }
     },
     "Primary" : {
-      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -1874,6 +1883,9 @@
           }
         }
       }
+    },
+    "Quaternary" : {
+
     },
     "Recurring Payment" : {
       "localizations" : {
@@ -1986,7 +1998,6 @@
       }
     },
     "Secondary" : {
-      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -2257,7 +2268,6 @@
       }
     },
     "Tertiary" : {
-      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {

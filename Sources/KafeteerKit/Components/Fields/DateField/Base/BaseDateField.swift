@@ -61,6 +61,7 @@ public struct BaseDateField: View {
             if let internalDate {
                 HStack {
                     Text(internalDate, style: .date)
+                        .fixedSize()
                     Text(internalDate, style: .time)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }

@@ -108,6 +108,22 @@ public extension TagColor {
 
         public var id: Self { self }
     }
+    
+    enum Order: String, CaseIterable, Identifiable {
+        case lightFirst
+        case midTonesFirst
+        case darkFirst
+        
+        public var id: Self { self }
+        
+        public var name: String {
+            switch self {
+            case .lightFirst: String(localized: "Light Tones First")
+            case .midTonesFirst: String(localized: "Mid Tones First")
+            case .darkFirst: String(localized: "Dark Tones First")
+            }
+        }
+    }
 }
 
 #Preview {
