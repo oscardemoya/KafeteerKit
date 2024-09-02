@@ -13,7 +13,7 @@ public struct BaseDateField: View {
     @Binding var date: Date
     var displayedComponents: DatePicker<Label>.Components = [.hourAndMinute, .date]
     var isOptional: Bool = false
-    @State var internalDate: Date? = .now
+    @State var internalDate: Date?
     @Binding public var isExpanded: Bool
 
     public init(_ titleKey: LocalizedStringKey,

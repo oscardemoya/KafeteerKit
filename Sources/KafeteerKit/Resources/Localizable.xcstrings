@@ -1835,6 +1835,7 @@
       }
     },
     "Primary" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -1883,9 +1884,6 @@
           }
         }
       }
-    },
-    "Quaternary" : {
-
     },
     "Recurring Payment" : {
       "localizations" : {
@@ -1998,6 +1996,7 @@
       }
     },
     "Secondary" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -2268,6 +2267,7 @@
       }
     },
     "Tertiary" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
