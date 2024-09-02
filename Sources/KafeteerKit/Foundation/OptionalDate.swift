@@ -25,6 +25,15 @@ public enum OptionalDate: Equatable, CustomDebugStringConvertible {
         }
     }
     
+    public init(_ date: Date?) {
+        switch date {
+        case .some(let date):
+            self = .some(date)
+        case .none:
+            self = .none
+        }
+    }
+    
     public static func == (lhs: OptionalDate, rhs: OptionalDate) -> Bool {
         switch (lhs, rhs) {
         case (.none, .none): return true

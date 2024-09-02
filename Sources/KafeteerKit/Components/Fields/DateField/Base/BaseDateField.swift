@@ -43,7 +43,6 @@ public struct BaseDateField: View {
             labelText
             trailingView
         }
-        .padding(.medium)
         .contentShape(.rect)
         .onChange(of: date) { _, newValue in
             internalDate = date
@@ -58,17 +57,20 @@ public struct BaseDateField: View {
     
     @ViewBuilder
     var labelText: some View {
-        if let internalDate {
-            HStack {
-                Text(internalDate, style: .date)
-                Text(internalDate, style: .time)
+        Group {
+            if let internalDate {
+                HStack {
+                    Text(internalDate, style: .date)
+                    Text(internalDate, style: .time)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+            } else {
+                Text(titleKey)
+                    .foregroundColor(.universalPlaceholderText)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
-        } else {
-            Text(titleKey)
-                .foregroundColor(.universalPlaceholderText)
-                .frame(maxWidth: .infinity, alignment: .leading)
         }
+        .padding(.medium)
     }
     
     @ViewBuilder
@@ -83,6 +85,7 @@ public struct BaseDateField: View {
         } else {
             Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
                 .foregroundStyle(.borderColor)
+                .padding(.medium)
         }
     }
     

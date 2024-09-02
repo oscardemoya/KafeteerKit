@@ -8,14 +8,6 @@
 import SwiftUI
 import Combine
 
-public extension View {
-    func debounce<V: Equatable>(_ value: Binding<V>,
-                                after debounceTime: TimeInterval,
-                                perform action: @escaping (V) -> Void) -> some View {
-        self.modifier(DebounceModifier(value: value, debounceTime: debounceTime, action: action))
-    }
-}
-
 public struct DebounceModifier<Value: Equatable>: ViewModifier {
     @Binding var value: Value
     let debounceTime: TimeInterval
@@ -33,5 +25,13 @@ public struct DebounceModifier<Value: Equatable>: ViewModifier {
             ) { debouncedValue in
                 action?(debouncedValue)
             }
+    }
+}
+
+public extension View {
+    func debounce<V: Equatable>(_ value: Binding<V>,
+                                after debounceTime: TimeInterval,
+                                perform action: @escaping (V) -> Void) -> some View {
+        self.modifier(DebounceModifier(value: value, debounceTime: debounceTime, action: action))
     }
 }
