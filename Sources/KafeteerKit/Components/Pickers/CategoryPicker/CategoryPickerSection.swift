@@ -36,7 +36,7 @@ struct CategoryPickerSection: View {
             }
         } label: {
             Text(area.name)
-                .font(.title)
+                .font(.systemDefault(.title))
                 .fontWeight(.bold)
                 .fontDesign(.rounded)
                 .foregroundStyle(.secondaryForeground)

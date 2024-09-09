@@ -1,5 +1,5 @@
 //
-//  ButtonStyle.swift
+//  HierarchicalButtonStyle.swift
 //
 //
 //  Created by Oscar De Moya on 18/05/24.
@@ -27,7 +27,7 @@ public struct HierarchicalButtonStyle: ButtonStyle {
     var backgroundColor: Color {
         switch hierarchy {
         case .primary: .primaryAccent
-        case .secondary: .primaryTint.opacity(0.3)
+        case .secondary: .primaryTint
         case .tertiary: .tertiaryBackground
         case .quaternary: .clear
         }
@@ -36,9 +36,9 @@ public struct HierarchicalButtonStyle: ButtonStyle {
     var foregroundColor: Color {
         switch hierarchy {
         case .primary: .primaryAccentForeground
-        case .secondary: .secondaryAccent
-        case .tertiary: .primaryAccent
-        case .quaternary: .secondaryAccent
+        case .secondary: .primaryTintForeground
+        case .tertiary: .primaryTintForeground
+        case .quaternary: .primaryTintForeground
         }
     }
     
@@ -62,11 +62,13 @@ public struct HierarchicalButtonStyle: ButtonStyle {
 }
 
 public extension ButtonStyle where Self == HierarchicalButtonStyle {
-    static func hierarchical(_ hierarchy: Hierarchy) -> Self { .init(hierarchy: hierarchy) }
     static var primary: Self { .init(hierarchy: .primary) }
     static var secondary: Self { .init(hierarchy: .secondary) }
     static var tertiary: Self { .init(hierarchy: .tertiary) }
     static var quaternary: Self { .init(hierarchy: .quaternary) }
+    static func hierarchical(_ hierarchy: Hierarchy) -> Self {
+        .init(hierarchy: hierarchy)
+    }
 }
 
 #Preview {

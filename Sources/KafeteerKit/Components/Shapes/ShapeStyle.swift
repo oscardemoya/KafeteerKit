@@ -31,11 +31,22 @@ public extension ShapeStyle where Self == Color {
     static var warningColor: Color { Config.shared.colors.warningColor }
     static var dangerColor: Color { Config.shared.colors.dangerColor }
     
+    // Semantic Foreground
+    static var successForeground: Color { Config.shared.colors.successForeground }
+    static var warningForeground: Color { Config.shared.colors.warningForeground }
+    static var dangerForeground: Color { Config.shared.colors.dangerForeground }
+    
     // Tint
     static var primaryTint: Color { Config.shared.colors.primaryTint }
     static var secondaryTint: Color { Config.shared.colors.secondaryTint }
     static var tertiaryTint: Color { Config.shared.colors.tertiaryTint }
     static var quaternaryTint: Color { Config.shared.colors.quaternaryTint }
+    
+    // Tint Foreground
+    static var primaryTintForeground: Color { Config.shared.colors.primaryTintForeground }
+    static var secondaryTintForeground: Color { Config.shared.colors.secondaryTintForeground }
+    static var tertiaryTintForeground: Color { Config.shared.colors.tertiaryTintForeground }
+    static var quaternaryTintForeground: Color { Config.shared.colors.quaternaryTintForeground }
     
     // Backgrounds
     static var primaryBackground: Color { Config.shared.colors.primaryBackground }

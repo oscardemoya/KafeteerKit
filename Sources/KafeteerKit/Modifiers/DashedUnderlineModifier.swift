@@ -11,7 +11,7 @@ import KafeteerKit
 public extension View {
     func dashedUnderline(borderWidth: BorderWidth = .nano,
                          borderColor: Color = .borderColor,
-                         dash: [CGFloat] = [Spacing.quark.value]) -> some View {
+                         dash: [CGFloat] = [Spacing.nano.value, Spacing.quark.value]) -> some View {
         modifier(
             DashedUnderlineModifier(
                 borderWidth: borderWidth,

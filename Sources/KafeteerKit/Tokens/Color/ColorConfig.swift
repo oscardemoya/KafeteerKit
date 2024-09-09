@@ -31,11 +31,22 @@ public protocol ColorConfiguration {
     var warningColor: Color { get }
     var dangerColor: Color { get }
     
+    // Semantic Foreground
+    var successForeground: Color { get }
+    var warningForeground: Color { get }
+    var dangerForeground: Color { get }
+    
     // Tint
     var primaryTint: Color { get }
     var secondaryTint: Color { get }
     var tertiaryTint: Color { get }
     var quaternaryTint: Color { get }
+    
+    // Tint Foreground
+    var primaryTintForeground: Color { get }
+    var secondaryTintForeground: Color { get }
+    var tertiaryTintForeground: Color { get }
+    var quaternaryTintForeground: Color { get }
     
     // Backgrounds
     var primaryBackground: Color { get }
@@ -96,11 +107,22 @@ struct DefaultColorConfiguration: ColorConfiguration {
     var warningColor: Color { Color(.orange500) }
     var dangerColor: Color { Color(.red500) }
     
+    // Semantic Foreground
+    var successForeground: Color { Color(.green050) }
+    var warningForeground: Color { Color(.orange050) }
+    var dangerForeground: Color { Color(.red050) }
+    
     // Tint
-    var primaryTint: Color { Color(.blue200) }
-    var secondaryTint: Color { Color(.blue300) }
-    var tertiaryTint: Color { Color(.yellow200) }
-    var quaternaryTint: Color { Color(.yellow300) }
+    var primaryTint: Color { Color(.blue100) }
+    var secondaryTint: Color { Color(.blue200) }
+    var tertiaryTint: Color { Color(.yellow100) }
+    var quaternaryTint: Color { Color(.yellow200) }
+    
+    // Tint Foreground
+    var primaryTintForeground: Color { Color(.blue800) }
+    var secondaryTintForeground: Color { Color(.blue900) }
+    var tertiaryTintForeground: Color { Color(.yellow800) }
+    var quaternaryTintForeground: Color { Color(.yellow900) }
     
     // Backgrounds
     var primaryBackground: Color { Color(.background100) }
