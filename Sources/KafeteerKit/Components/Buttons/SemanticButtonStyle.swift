@@ -51,9 +51,9 @@ public struct SemanticButtonStyle: ButtonStyle {
     
     var disabledForegroundColor: Color {
         switch feedback {
-        case .success: .successColor.shade(.shade9).opacity(0.5)
-        case .warning: .warningColor.shade(.shade9).opacity(0.5)
-        case .failure: .dangerColor.shade(.shade9).opacity(0.5)
+        case .success: .primaryForeground.shade(.shade8).opacity(0.5)
+        case .warning: .primaryForeground.shade(.shade8).opacity(0.5)
+        case .failure: .primaryForeground.shade(.shade8).opacity(0.5)
         }
     }
 }

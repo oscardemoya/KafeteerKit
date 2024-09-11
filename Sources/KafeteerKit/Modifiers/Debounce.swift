@@ -21,7 +21,7 @@ public struct DebounceModifier<Value: Equatable>: ViewModifier {
             }
             .onReceive(
                 debouncePublisher
-                    .debounce(for:.seconds(debounceTime), scheduler: DispatchQueue.main)
+                    .debounce(for: .seconds(debounceTime), scheduler: RunLoop.main)
             ) { debouncedValue in
                 action?(debouncedValue)
             }
