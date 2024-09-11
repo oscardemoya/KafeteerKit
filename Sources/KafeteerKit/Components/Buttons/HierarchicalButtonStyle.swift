@@ -44,7 +44,7 @@ public struct HierarchicalButtonStyle: ButtonStyle {
     
     var disabledBackgroundColor: Color {
         switch hierarchy {
-        case .primary: .primaryForeground.shade(.shade4).opacity(0.5)
+        case .primary: .primaryForeground.shade(.shade3).opacity(0.5)
         case .secondary: .primaryForeground.shade(.shade2).opacity(0.5)
         case .tertiary: .primaryForeground.shade(.shade1).opacity(0.5)
         case .quaternary: .clear
