@@ -10,7 +10,8 @@ import SwiftUI
 public struct SquaredCheckboxStyle: CheckboxStyle {
     @ViewBuilder
     public func makeBody(configuration: Configuration) -> some View {
-        Image(systemName: configuration.isChecked ? "checkmark.square.fill" : "square")
+        Image(systemName: configuration.checkedState.showCheck ? "checkmark.square.fill" : "square")
+            .opacity(configuration.checkedState == .checking ? 0.5 : 1)
             .foregroundColor(.primaryAccent)
             .font(.systemDefault(.title))
             .padding(.small)

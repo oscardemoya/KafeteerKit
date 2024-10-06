@@ -19,10 +19,10 @@ public extension CheckboxStyle where Self == SquaredCheckboxStyle {
 }
 
 public struct CheckboxStyleConfiguration {
-    @Binding var isChecked: Bool
+    @Binding var checkedState: Checkbox.CheckedState
     
-    public init(isChecked: Binding<Bool>) {
-        self._isChecked = isChecked
+    public init(checkedState: Binding<Checkbox.CheckedState>) {
+        self._checkedState = checkedState
     }
 }
 
