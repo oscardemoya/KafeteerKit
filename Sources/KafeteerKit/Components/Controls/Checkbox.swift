@@ -51,9 +51,7 @@ public struct Checkbox: View {
         .onAppear {
             checkedState = isChecked ? .checked : .unchecked
         }
-        .onTapGesture {
-            handleCheckState()
-        }
+        .simultaneousGesture(TapGesture().onEnded(handleCheckState))
         .onChange(of: checkedState) {
             isChecked = checkedState.isChecked
         }
