@@ -33,7 +33,7 @@ public struct CategoryPicker: View {
                     }
                 }
             }
-            .closeable()
+            .closable()
             .navigationTitle("Select Category")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(.primaryBackground, for: .navigationBar)

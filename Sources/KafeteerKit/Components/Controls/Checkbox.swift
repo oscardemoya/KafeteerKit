@@ -17,6 +17,10 @@ public struct Checkbox: View {
             if case .checked = self { true } else { false }
         }
         
+        var isChecking: Bool {
+            if case .checking = self { true } else { false }
+        }
+        
         var showCheck: Bool {
             if case .unchecked = self { false } else { true }
         }
@@ -25,11 +29,12 @@ public struct Checkbox: View {
     public enum CheckDelay: Double {
         case none = 0
         case short = 1
-        case medium = 3
-        case long = 5
+        case medium = 2
+        case long = 3
     }
     
-    @Environment(\.checkboxStyle) var style
+    @Environment(\.isEnabled) private var isEnabled: Bool
+    @Environment(\.checkboxStyle) private var style
     @Binding var isChecked: Bool
     public var checkDelay: CheckDelay = .none
     
@@ -45,19 +50,21 @@ public struct Checkbox: View {
     public var body: some View {
         style.makeBody(
             configuration: CheckboxStyleConfiguration(
-                checkedState: $checkedState
+                checkedState: $checkedState,
+                isEnabled: isEnabled
             )
         )
         .onAppear {
             checkedState = isChecked ? .checked : .unchecked
         }
-        .simultaneousGesture(TapGesture().onEnded(handleCheckState))
+        .highPriorityGesture(TapGesture().onEnded(onTapAction))
         .onChange(of: checkedState) {
             isChecked = checkedState.isChecked
         }
     }
     
-    func handleCheckState() {
+    func onTapAction() {
+        guard isEnabled else { return }
         checkWorkItem?.cancel()
         switch checkedState {
         case .unchecked:

@@ -12,7 +12,7 @@ public struct RoundedCheckboxStyle: CheckboxStyle {
     public func makeBody(configuration: Configuration) -> some View {
         Image(systemName: configuration.checkedState.showCheck ? "checkmark.circle.fill" : "circle")
             .opacity(configuration.checkedState == .checking ? 0.5 : 1)
-            .foregroundColor(.primaryAccent)
+            .foregroundColor(configuration.isEnabled ? .primaryAccent : .borderColor)
             .font(.systemDefault(.title))
             .padding(.small)
     }

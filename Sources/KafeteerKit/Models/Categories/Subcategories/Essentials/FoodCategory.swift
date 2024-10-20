@@ -38,6 +38,7 @@ public extension PaymentCategory {
             case fastFood
             case pizza
             case burger
+            case hotdog
             case drinks
             case beverages
             case water
@@ -55,7 +56,7 @@ public extension PaymentCategory {
                 case .dinner, .restaurant, .meals: .dinner
                 case .snacks: .snacks
                 case .healthyFood: .healthyFood
-                case .fastFood, .pizza, .burger: .fastFood
+                case .fastFood, .pizza, .burger, .hotdog: .fastFood
                 case .drinks, .beverages, .soda, .beer: .drinks
                 case .water, .juice: .water
                 case .coffee, .tea: .coffee

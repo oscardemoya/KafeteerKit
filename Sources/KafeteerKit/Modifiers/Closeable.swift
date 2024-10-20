@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-public struct CloseableModifier: ViewModifier {
+public struct ClosableModifier: ViewModifier {
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.dismissAction) private var dismissAction
     
     public func body(content: Content) -> some View {
         content
@@ -16,7 +17,11 @@ public struct CloseableModifier: ViewModifier {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        dismiss()
+                        if let dismissAction {
+                            dismissAction()
+                        } else {
+                            dismiss()
+                        }
                     } label: {
                         Image(systemName: "xmark.circle.fill")
                             .font(.system(size: 20))
@@ -30,7 +35,7 @@ public struct CloseableModifier: ViewModifier {
 }
 
 public extension View {
-    func closeable() -> some View {
-        modifier(CloseableModifier())
+    func closable() -> some View {
+        modifier(ClosableModifier())
     }
 }

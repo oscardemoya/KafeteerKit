@@ -13,7 +13,7 @@ public struct CardGroupBoxStyle: GroupBoxStyle {
             configuration.label
             configuration.content
         }
-        .padding()
+        .padding(.extraSmall)
         .frame(maxWidth: .infinity)
         .background(.secondaryBackground)
         .borderStyle(.stroke(.nano), borderColor: .borderColor, cornerStyle: .rounded(.medium))

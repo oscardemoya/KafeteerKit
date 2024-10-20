@@ -12,7 +12,7 @@ public struct SquaredCheckboxStyle: CheckboxStyle {
     public func makeBody(configuration: Configuration) -> some View {
         Image(systemName: configuration.checkedState.showCheck ? "checkmark.square.fill" : "square")
             .opacity(configuration.checkedState == .checking ? 0.5 : 1)
-            .foregroundColor(.primaryAccent)
+            .foregroundColor(configuration.isEnabled ? .primaryAccent : .borderColor)
             .font(.systemDefault(.title))
             .padding(.small)
     }

@@ -37,7 +37,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
     case maintenance(Automotive)
     case subscription(Subscription)
     
-    public static let `default`: PaymentCategory = .general(.payment)
+    public static let `default`: PaymentCategory = .general(.general)
     
     public var id: Self { self }
     

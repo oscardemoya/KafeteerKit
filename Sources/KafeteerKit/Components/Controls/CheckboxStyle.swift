@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public protocol CheckboxStyle {
+@MainActor @preconcurrency public protocol CheckboxStyle {
     associatedtype Body: View
     typealias Configuration = CheckboxStyleConfiguration
     
@@ -20,9 +20,11 @@ public extension CheckboxStyle where Self == SquaredCheckboxStyle {
 
 public struct CheckboxStyleConfiguration {
     @Binding var checkedState: Checkbox.CheckedState
+    var isEnabled: Bool
     
-    public init(checkedState: Binding<Checkbox.CheckedState>) {
+    public init(checkedState: Binding<Checkbox.CheckedState>, isEnabled: Bool) {
         self._checkedState = checkedState
+        self.isEnabled = isEnabled
     }
 }
 
