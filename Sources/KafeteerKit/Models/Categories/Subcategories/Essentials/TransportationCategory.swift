@@ -20,6 +20,7 @@ public extension PaymentCategory {
         case train
         case bike
         case scooter
+        case motorcycle
         case flight
         case cruise
         case boat
@@ -34,7 +35,7 @@ public extension PaymentCategory {
             case train
             case bike
             case bicycle
-            case motorcicle
+            case motorcycle
             case scooter
             case flight
             case cruise
@@ -51,8 +52,9 @@ public extension PaymentCategory {
                 case .parking: .parking
                 case .commute, .transit: .commute
                 case .train: .train
-                case .bike, .bicycle, .motorcicle: .bike
+                case .bike, .bicycle: .bike
                 case .scooter: .scooter
+                case .motorcycle: .motorcycle
                 case .flight: .flight
                 case .cruise: .cruise
                 case .boat, .sailboat, .yatch: .boat
@@ -70,6 +72,7 @@ public extension PaymentCategory {
             case .train: "tram" // 􀝆
             case .bike: "bicycle" // 􀡥
             case .scooter: "scooter" // 􁈌
+            case .motorcycle: "motorcycle" // 􂓴
             case .flight: "airplane" // 􀑓
             case .cruise: "ferry" // 􀸅
             case .boat: "sailboat" // 􁋴
@@ -86,6 +89,7 @@ public extension PaymentCategory {
             case .train: String(localized: "Train", bundle: .module)
             case .bike: String(localized: "Bike", bundle: .module)
             case .scooter: String(localized: "Scooter", bundle: .module)
+            case .motorcycle: String(localized: "Motorcycle", bundle: .module)
             case .flight: String(localized: "Flight", bundle: .module)
             case .cruise: String(localized: "Cruise", bundle: .module)
             case .boat: String(localized: "Boat", bundle: .module)

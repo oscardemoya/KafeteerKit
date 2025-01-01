@@ -94,7 +94,7 @@ public struct BaseDateField: View {
     var datePicker: some View {
         if isExpanded {
             VStack(spacing: 0) {
-                Divider().background(.dividerColor)
+                Divider().overlay(.dividerColor)
                 DatePicker(titleKey, selection: $date, displayedComponents: displayedComponents)
                     .datePickerStyle(.graphical)
                     .onChange(of: date) {

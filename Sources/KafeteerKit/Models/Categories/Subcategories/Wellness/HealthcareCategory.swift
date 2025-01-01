@@ -44,7 +44,7 @@ public extension PaymentCategory {
         public var iconName: String {
             switch self {
             case .healthcare: "cross.case" // 􀯙
-            case .dentalCare: "face.smiling" // 􀎸
+            case .dentalCare: "mouth" // 􀦩
             case .mentalHealth: "brain.head.profile" // 􀯏
             case .medication: "pill" // 􁚭
             case .firstAid: "bandage" // 􀎓

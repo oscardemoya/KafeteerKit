@@ -19,7 +19,11 @@ public extension Date {
     }
     
     var endOfMonth: Date {
-        Calendar.current.dateInterval(of: .month, for: self)?.end.addingTimeInterval(-1) ?? self
+        let calendar = Calendar.current
+        guard let range = calendar.range(of: .day, in: .month, for: self), let day = range.last else { return self }
+        var components = calendar.dateComponents([.year, .month], from: self)
+        components.day = day
+        return calendar.date(from: components) ?? self
     }
     
     var endOfHalfMonth: Date {
@@ -38,7 +42,7 @@ public extension Date {
     var isYesterday: Bool { Calendar.current.isDateInYesterday(self) }
     var isThisYear: Bool { Calendar.current.isDate(self, equalTo: Date(), toGranularity: .year) }
     
-    var relative: String {
+    var relativeString: String {
         if isToday { return String(localized: "Today", bundle: .module) }
         if isTomorrow { return String(localized: "Tomorrow", bundle: .module) }
         if isYesterday { return String(localized: "Yesterday", bundle: .module) }
@@ -47,109 +51,40 @@ public extension Date {
         return formatter.localizedString(from: components)
     }
     
-    var yearMonthDaySlashed: String {
+    var mediumDateString: String { string(dateStyle: .medium, timeStyle: .none) }
+    var shortDateString: String { string(dateStyle: .short, timeStyle: .none) }
+    var shortTimeString: String { string(dateStyle: .none, timeStyle: .short) }
+    
+    func string(dateStyle: DateFormatter.Style, timeStyle: DateFormatter.Style) -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = DateFormat.yearMonthDaySlashed.rawValue
+        formatter.dateStyle = dateStyle
+        formatter.timeStyle = timeStyle
         return formatter.string(from: self)
     }
     
-    var mediumDate: String {
+    var iso8601String: String { string(withFormat: .iso8601) }
+    var yearMonthDaySlashedString: String { string(withFormat: .yearMonthDaySlashed) }
+    var shortMonthString: String { string(withFormat: .shortMonth) }
+    var shortMonthYearString: String { string(withFormat: .shortMonthYear) }
+    var fullMonthString: String { string(withFormat: .fullMonth) }
+    var yearString: String { string(withFormat: .year) }
+    var monthOfYearString: String { string(withFormat: .monthYear) }
+    var hourMinuteString: String { string(withFormat: .hourMinute) }
+    
+    func string(withFormat dateFormat: DateFormat) -> String {
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        return formatter.string(from: self)
+        formatter.dateFormat = dateFormat.rawValue
+        return formatter.string(from: self).capitalized
     }
     
-    var shortTime: String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .none
-        formatter.timeStyle = .short
-        return formatter.string(from: self)
-    }
+    var year: Int { value(for: .year) }
+    var month: Int { value(for: .month) }
+    var day: Int { value(for: .day) }
+    var hour: Int { value(for: .hour) }
+    var minute: Int { value(for: .minute) }
+    var second: Int { value(for: .second) }
     
-    var shortMonth: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = DateFormat.shortMonth.rawValue
-        return formatter.string(from: self)
-    }
-    
-    var fullMonth: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = DateFormat.fullMonth.rawValue
-        return formatter.string(from: self)
-    }
-    
-    var yearString: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = DateFormat.year.rawValue
-        return formatter.string(from: self)
-    }
-
-    var year: Int {
-        let formatter = DateFormatter()
-        formatter.dateFormat = DateFormat.year.rawValue
-        return Int(formatter.string(from: self)) ?? 0
-    }
-    
-    var month: Int {
-        let formatter = DateFormatter()
-        formatter.dateFormat = DateFormat.month.rawValue
-        return Int(formatter.string(from: self)) ?? 0
-    }
-    
-    var day: Int {
-        let formatter = DateFormatter()
-        formatter.dateFormat = DateFormat.day.rawValue
-        return Int(formatter.string(from: self)) ?? 0
-    }
-    
-    var hour: Int {
-        let formatter = DateFormatter()
-        formatter.dateFormat = DateFormat.hour.rawValue
-        return Int(formatter.string(from: self)) ?? 0
-    }
-    
-    var minute: Int {
-        let formatter = DateFormatter()
-        formatter.dateFormat = DateFormat.minute.rawValue
-        return Int(formatter.string(from: self)) ?? 0
-    }
-    
-    var monthOfYear: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = DateFormat.monthYear.rawValue
-        return formatter.string(from: self)
-    }
-    
-    func months(from date: Date) -> Int {
-        return Calendar.current.dateComponents([.month], from: date, to: self).month ?? 0
-    }
-    
-    func quarters(from date: Date) -> Int {
-        return Calendar.current.dateComponents([.quarter], from: date, to: self).quarter ?? 0
-    }
-    
-    func years(from date: Date) -> Int {
-        return Calendar.current.dateComponents([.year], from: date, to: self).year ?? 0
+    func value(for component: Calendar.Component) -> Int {
+        Calendar.current.component(component, from: self)
     }
 }
-
-public enum DateFormat: String, CaseIterable {
-    case iso8601 = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-    case iso8601NoMillis = "yyyy-MM-dd'T'HH:mm:ssZ"
-    case yearMonthDaySlashed = "yyyy/MM/dd"
-    case monthYear = "MMMM yyyy"
-    case shortMonth = "MMM"
-    case fullMonth = "MMMM"
-    case year = "yyyy"
-    case month = "MM"
-    case day = "d"
-    case hour = "HH"
-    case minute = "mm"
-}
-
-public extension Date.ParseStrategy {
-    static var yearMonthDaySlashed = Self(format: "\(year: .defaultDigits)/\(month: .twoDigits)/\(day: .twoDigits)",
-                                          locale: .current, timeZone: .current)
-}
-

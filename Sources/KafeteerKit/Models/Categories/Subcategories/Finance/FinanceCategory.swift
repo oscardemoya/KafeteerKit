@@ -60,7 +60,7 @@ public extension PaymentCategory {
             case .digitalCurrency: "bitcoinsign.circle" // 􀗕
             case .taxes: "percent" // 􀘾
             case .insurance: "umbrella.percent" // 􀸰
-            case .savings: "dollarsign.square" // 􀗗
+            case .savings: "wallet.bifold" // 􂏰
             case .retirement: "signpost.right" // 􀯌
             }
         }

@@ -161,6 +161,9 @@
         }
       }
     },
+    "Barber" : {
+
+    },
     "Baseball" : {
       "localizations" : {
         "es" : {
@@ -200,6 +203,9 @@
           }
         }
       }
+    },
+    "Beach" : {
+
     },
     "Beauty" : {
       "localizations" : {
@@ -351,6 +357,9 @@
         }
       }
     },
+    "Cap" : {
+
+    },
     "Car" : {
       "localizations" : {
         "es" : {
@@ -431,6 +440,9 @@
         }
       }
     },
+    "Chip" : {
+
+    },
     "Cleaning" : {
       "localizations" : {
         "es" : {
@@ -490,6 +502,9 @@
           }
         }
       }
+    },
+    "Coat" : {
+
     },
     "Coffee" : {
       "localizations" : {
@@ -735,6 +750,9 @@
         }
       }
     },
+    "Disk" : {
+
+    },
     "Dog Walker" : {
       "localizations" : {
         "es" : {
@@ -784,6 +802,12 @@
           }
         }
       }
+    },
+    "Drive" : {
+
+    },
+    "Drone" : {
+
     },
     "Dryer" : {
       "localizations" : {
@@ -1208,6 +1232,9 @@
         }
       }
     },
+    "Hat" : {
+
+    },
     "Healthcare" : {
       "localizations" : {
         "es" : {
@@ -1287,6 +1314,12 @@
           }
         }
       }
+    },
+    "Home Protection" : {
+
+    },
+    "Home Security" : {
+
     },
     "Home Supplies" : {
       "localizations" : {
@@ -1388,6 +1421,9 @@
         }
       }
     },
+    "Jacket" : {
+
+    },
     "Jewelry" : {
       "localizations" : {
         "es" : {
@@ -1397,6 +1433,9 @@
           }
         }
       }
+    },
+    "Keyboard" : {
+
     },
     "Knowledge" : {
       "localizations" : {
@@ -1470,6 +1509,9 @@
           }
         }
       }
+    },
+    "List" : {
+
     },
     "Loan" : {
       "localizations" : {
@@ -1603,6 +1645,9 @@
           }
         }
       }
+    },
+    "Motorcycle" : {
+
     },
     "Move" : {
       "localizations" : {
@@ -1845,6 +1890,9 @@
         }
       }
     },
+    "Printer" : {
+
+    },
     "Professional" : {
       "localizations" : {
         "es" : {
@@ -1955,6 +2003,9 @@
         }
       }
     },
+    "Robot" : {
+
+    },
     "Roller Shade" : {
       "localizations" : {
         "es" : {
@@ -1974,6 +2025,9 @@
           }
         }
       }
+    },
+    "Scanner" : {
+
     },
     "School Supplies" : {
       "localizations" : {
@@ -2106,6 +2160,15 @@
         }
       }
     },
+    "Skating" : {
+
+    },
+    "Skiing" : {
+
+    },
+    "Skin Care" : {
+
+    },
     "Smartphone" : {
       "localizations" : {
         "es" : {
@@ -2125,6 +2188,9 @@
           }
         }
       }
+    },
+    "Snowboarding" : {
+
     },
     "Soccer" : {
       "localizations" : {
@@ -2225,6 +2291,9 @@
           }
         }
       }
+    },
+    "Surf" : {
+
     },
     "Swimming" : {
       "localizations" : {

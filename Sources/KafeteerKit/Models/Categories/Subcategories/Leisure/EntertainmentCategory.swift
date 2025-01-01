@@ -17,6 +17,7 @@ public extension PaymentCategory {
         case movie
         case videogame
         case vacation
+        case beach
         case travel
         case tour
         case museum
@@ -34,6 +35,9 @@ public extension PaymentCategory {
             case xbox
             case cinema
             case vacation
+            case beach
+            case pool
+            case sea
             case travel
             case tour
             case museum
@@ -48,6 +52,7 @@ public extension PaymentCategory {
                 case .movie, .cinema: .movie
                 case .videogame, .gaming, .nintendo, .playStation, .xbox: .videogame
                 case .vacation: .vacation
+                case .beach, .sea, .pool: .beach
                 case .travel: .travel
                 case .tour: .tour
                 case .museum: .museum
@@ -63,7 +68,8 @@ public extension PaymentCategory {
             switch self {
             case .movie: "movieclapper" // 􀜤
             case .videogame: "gamecontroller" // 􀛸
-            case .vacation: "water.waves" // 􁎄
+            case .vacation: "beach.umbrella" // 􁋸
+            case .beach: "water.waves" // 􁎄
             case .travel: "globe.europe.africa" // 􀵳
             case .tour: "binoculars" // 􀠍
             case .museum: "building.columns" // 􀤨
@@ -79,6 +85,7 @@ public extension PaymentCategory {
             case .movie: String(localized: "Movie", bundle: .module)
             case .videogame: String(localized: "Video Game", bundle: .module)
             case .vacation: String(localized: "Vacation", bundle: .module)
+            case .beach: String(localized: "Beach", bundle: .module)
             case .travel: String(localized: "Travel", bundle: .module)
             case .tour: String(localized: "Tour", bundle: .module)
             case .museum: String(localized: "Museum", bundle: .module)

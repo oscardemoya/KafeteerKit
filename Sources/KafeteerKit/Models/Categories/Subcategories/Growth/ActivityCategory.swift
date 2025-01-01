@@ -19,10 +19,14 @@ public extension PaymentCategory {
         case yoga
         case meditation
         case swimming
-        case outdoor
         case hiking
         case fishing
         case cycling
+        case surf
+        case skating
+        case skiing
+        case snowboarding
+        case outdoor
         case club
 
         public enum Keyword: String, KeywordRepresentable {
@@ -31,11 +35,15 @@ public extension PaymentCategory {
             case yoga
             case meditation
             case swimming
-            case outdoor
             case camping
             case hiking
             case fishing
             case cycling
+            case surf
+            case skating
+            case skiing
+            case snowboarding
+            case outdoor
             case club
             
             public var value: Activity {
@@ -45,10 +53,14 @@ public extension PaymentCategory {
                 case .yoga: .yoga
                 case .meditation: .meditation
                 case .swimming: .swimming
-                case .outdoor, .camping: .outdoor
                 case .hiking: .hiking
                 case .fishing: .fishing
                 case .cycling: .cycling
+                case .surf: .surf
+                case .skating: .skating
+                case .skiing: .skiing
+                case .snowboarding: .snowboarding
+                case .outdoor, .camping: .outdoor
                 case .club: .club
                 }
             }
@@ -61,10 +73,14 @@ public extension PaymentCategory {
             case .yoga: "figure.yoga" // 􁒌
             case .meditation: "figure.mind.and.body" // 􁔴
             case .swimming: "figure.pool.swim" // 􁌆
-            case .outdoor: "tent" // 􁋨
             case .hiking: "figure.hiking" // 􁔭
             case .fishing: "figure.fishing" // 􁔧
             case .cycling: "figure.outdoor.cycle" // 􁌉
+            case .surf: "surfboard" // 􂂯
+            case .skating: "skateboard" // 􂂩
+            case .skiing: "skis" // 􂂫
+            case .snowboarding: "snowboard" // 􂂭
+            case .outdoor: "tent" // 􁋨
             case .club: "figure.golf" // 􁔩
             }
         }
@@ -76,10 +92,14 @@ public extension PaymentCategory {
             case .yoga: String(localized: "Yoga", bundle: .module)
             case .meditation: String(localized: "Meditation", bundle: .module)
             case .swimming: String(localized: "Swimming", bundle: .module)
-            case .outdoor: String(localized: "Outdoor", bundle: .module)
             case .hiking: String(localized: "Hiking", bundle: .module)
             case .fishing: String(localized: "Fishing", bundle: .module)
             case .cycling: String(localized: "Cycling", bundle: .module)
+            case .surf: String(localized: "Surf", bundle: .module)
+            case .skating: String(localized: "Skating", bundle: .module)
+            case .skiing: String(localized: "Skiing", bundle: .module)                
+            case .snowboarding: String(localized: "Snowboarding", bundle: .module)
+            case .outdoor: String(localized: "Outdoor", bundle: .module)
             case .club: String(localized: "Club", bundle: .module)
             }
         }

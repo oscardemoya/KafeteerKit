@@ -15,6 +15,7 @@ public struct TagView: View {
     }
     
     public var tag: Tag
+    public var icon: Image?
     public var size: Size = .regular
     
     public init(tag: Tag, size: Size = .regular) {
@@ -31,23 +32,29 @@ public struct TagView: View {
                         .frame(width: 12, height: 4)
                         .foregroundColor(tag.colorVariant.backgroundColor)
                 case .regular:
-                    Text(tag.name.uppercased())
-                        .font(.systemDefault(.caption2))
-                        .fontWeight(.regular)
-                        .padding(.vertical, 2)
-                        .padding(.horizontal, 6)
-                        .foregroundColor(tag.colorVariant.foregroundColor)
-                        .background(tag.colorVariant.backgroundColor)
-                        .clipShape(.capsule)
+                    Group {
+                        if let icon { icon }
+                        Text(tag.name.uppercased())
+                    }
+                    .font(.systemDefault(.caption2))
+                    .fontWeight(.regular)
+                    .padding(.vertical, 2)
+                    .padding(.horizontal, 6)
+                    .foregroundColor(tag.colorVariant.foregroundColor)
+                    .background(tag.colorVariant.backgroundColor)
+                    .clipShape(.capsule)
                 case .large:
-                    Text(tag.name.uppercased())
-                        .font(.systemDefault(.body))
-                        .fontWeight(.regular)
-                        .padding(.vertical, 4)
-                        .padding(.horizontal, 12)
-                        .foregroundColor(tag.colorVariant.foregroundColor)
-                        .background(tag.colorVariant.backgroundColor)
-                        .clipShape(.capsule)
+                    Group {
+                        if let icon { icon }
+                        Text(tag.name.uppercased())
+                    }
+                    .font(.systemDefault(.body))
+                    .fontWeight(.regular)
+                    .padding(.vertical, 4)
+                    .padding(.horizontal, 12)
+                    .foregroundColor(tag.colorVariant.foregroundColor)
+                    .background(tag.colorVariant.backgroundColor)
+                    .clipShape(.capsule)
                 }
             }
             .fixedSize()

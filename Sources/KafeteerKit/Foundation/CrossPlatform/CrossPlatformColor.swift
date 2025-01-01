@@ -19,6 +19,7 @@ import SwiftUI
 
 extension Color {
     var cgColor: CGColor { CrossPlatformColor(self).cgColor }
+    var crossPlatform: CrossPlatformColor { .init(self) }
     
     static var universalPlaceholderText: Color {
 #if os(macOS)

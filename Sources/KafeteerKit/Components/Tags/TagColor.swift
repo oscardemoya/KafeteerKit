@@ -26,26 +26,21 @@ public enum TagColor: String, Codable, CaseIterable, Identifiable {
     case lime
     case green
     case mint
+    case white
     case gray
+    case black
     
     public static var allCasesAlternated: [Self] {
         [
-            .teal,
-            .red,
-            .cyan,
-            .orange,
-            .navy,
-            .brown,
-            .blue,
-            .yellow,
-            .indigo,
-            .lime,
-            .green,
-            .purple,
-            .mint,
-            .pink,
-            .gray,
-            .magenta
+            .teal, .red,
+            .cyan, .orange,
+            .navy, .brown,
+            .blue, .yellow,
+            .indigo, .lime,
+            .purple, .green,
+            .pink, .mint,
+            .gray, .magenta,
+            .black, .white
         ]
     }
 

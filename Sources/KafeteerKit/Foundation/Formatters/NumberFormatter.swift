@@ -54,3 +54,14 @@ public extension Double {
     }
 }
 
+//public enum Separator: String, CaseIterable {
+//    case dot = "."
+//    case comma = ","
+//    
+//    var groupingSeparator: Separator {
+//        switch self {
+//        case .dot: .comma
+//        case .comma: .dot
+//        }
+//    }
+//}

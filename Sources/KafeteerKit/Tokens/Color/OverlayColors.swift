@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  OverlayColors.swift
+//  KafeteerKit
 //
 //  Created by Oscar De Moya on 12/03/24.
 //

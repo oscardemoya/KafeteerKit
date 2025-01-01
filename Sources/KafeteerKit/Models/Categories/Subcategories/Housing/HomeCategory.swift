@@ -22,6 +22,8 @@ public extension PaymentCategory {
         case homeSupplies
         case cleaningSupplies
         case storage
+        case homeProtection
+        case homeSecurity
 
         public enum Keyword: String, KeywordRepresentable {
             case rent
@@ -40,6 +42,10 @@ public extension PaymentCategory {
             case trash
             case storage
             case organization
+            case homeProtection
+            case fireProtection
+            case homeSecurity
+            case lock
 
             public var value: Home {
                 switch self {
@@ -51,6 +57,8 @@ public extension PaymentCategory {
                 case .homeSupplies: .homeSupplies
                 case .cleaningSupplies, .broom, .sweeping, .mopping, .trash: .cleaningSupplies
                 case .storage, .organization: .storage
+                case .homeProtection, .fireProtection: .homeProtection
+                case .homeSecurity, .lock: .homeSecurity
                 }
             }
         }
@@ -65,6 +73,8 @@ public extension PaymentCategory {
             case .homeSupplies: "lightbulb" // 􀛭
             case .cleaningSupplies: "trash" // 􀈑
             case .storage: "archivebox" // 􀈭
+            case .homeProtection: "fire.extinguisher" // 􂦈
+            case .homeSecurity: "lock" // 􀎠
             }
         }
         
@@ -78,6 +88,8 @@ public extension PaymentCategory {
             case .homeSupplies: String(localized: "Home Supplies", bundle: .module)
             case .cleaningSupplies: String(localized: "Cleaning Supplies", bundle: .module)
             case .storage: String(localized: "Storage", bundle: .module)
+            case .homeProtection: String(localized: "Home Protection", bundle: .module)
+            case .homeSecurity: String(localized: "Home Security", bundle: .module)
             }
         }
     }

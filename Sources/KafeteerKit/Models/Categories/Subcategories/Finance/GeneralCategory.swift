@@ -19,6 +19,7 @@ public extension PaymentCategory {
         case moneyTransfer
         case recurringPayment
         case shopping
+        case list
         case deal
 
         public enum Keyword: String, KeywordRepresentable {
@@ -28,6 +29,7 @@ public extension PaymentCategory {
             case recurringPayment
             case recurring
             case shopping
+            case list
             case deal
             case clearance
             case outlet
@@ -40,6 +42,7 @@ public extension PaymentCategory {
                 case .moneyTransfer: .moneyTransfer
                 case .recurringPayment, .recurring: .recurringPayment
                 case .shopping: .shopping
+                case .list: .list
                 case .deal, .clearance, .outlet, .sale: .deal
                 }
             }
@@ -52,6 +55,7 @@ public extension PaymentCategory {
             case .moneyTransfer:  "arrow.down.left.arrow.up.right" // 􁽧
             case .recurringPayment: "dollarsign.arrow.circlepath" // 􁎣
             case .shopping: "cart" // 􀍩
+            case .list: "text.page" // 􀉆
             case .deal: "tag" // 􀋡
             }
         }
@@ -63,6 +67,7 @@ public extension PaymentCategory {
             case .moneyTransfer: String(localized: "Money Transfer", bundle: .module)
             case .recurringPayment: String(localized: "Recurring Payment", bundle: .module)
             case .shopping: String(localized: "Shopping", bundle: .module)
+            case .list: String(localized: "List", bundle: .module)
             case .deal: String(localized: "Deal", bundle: .module)
             }
         }

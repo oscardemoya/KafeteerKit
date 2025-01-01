@@ -1,6 +1,6 @@
 //
 //  ColorHierarchy.swift
-//
+//  KafeteerKit
 //
 //  Created by Oscar De Moya on 19/05/24.
 //

@@ -11,6 +11,7 @@ public struct CategoryPicker: View {
     @Environment(\.dismiss) private var dismiss
     @Binding public var selectedCategory: PaymentCategory
     @State private var searchText = ""
+    @State private var selectedItem: PaymentCategory.Kind?
     
     public init(selectedCategory: Binding<PaymentCategory>) {
         self._selectedCategory = selectedCategory
@@ -18,17 +19,20 @@ public struct CategoryPicker: View {
     
     public var body: some View {
         NavigationView {
-            ScrollView {
-                ForEach(filteredAreas) { area in
-                    if let list = filteredResults[area] {
-                        CategoryPickerSection(
-                            selectedCategory: $selectedCategory,
-                            searchText: searchText,
-                            area: area,
-                            list: list
-                        )
-                        .onChange(of: selectedCategory) {
-                            dismiss()
+            VStack {
+                CategoryFilterBar(selectedItem: $selectedItem)
+                ScrollView {
+                    ForEach(filteredAreas) { area in
+                        if let list = filteredResults[area] {
+                            CategoryPickerSection(
+                                selectedCategory: $selectedCategory,
+                                searchText: searchText,
+                                area: area,
+                                list: list
+                            )
+                            .onChange(of: selectedCategory) {
+                                dismiss()
+                            }
                         }
                     }
                 }
@@ -47,7 +51,9 @@ public struct CategoryPicker: View {
     }
     
     private var filteredResults: [LifeArea: [PaymentCategory.Kind]] {
-        let results = PaymentCategory.Kind.allCases.filter { kind in
+        var categories: [PaymentCategory.Kind] = PaymentCategory.Kind.allCases
+        if let selectedItem { categories = [selectedItem] }
+        let results = categories.filter { kind in
             kind.categories.contains { category in
                 if category.name.fuzzyMatch(searchText) { return true }
                 return category.keywords.contains { $0.fuzzyMatch(searchText) }

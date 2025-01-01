@@ -75,7 +75,7 @@ public extension PaymentCategory {
             case .fastFood: "stopwatch" // 􀐯
             case .drinks:  "mug" // 􁞴
             case .water: "waterbottle" // 􁻊
-            case .coffee: "cup.and.saucer" // 􀸘
+            case .coffee: "cup.and.heat.waves" // 􂊬
             }
         }
         

@@ -28,7 +28,7 @@ public struct CircularCloseButton: View {
         var horizontalPadding: CGFloat {
             switch self {
             case .compact: return 8
-            case .regular: return 16
+            case .regular: return 12
             case .large: return 12
             }
         }
@@ -36,7 +36,7 @@ public struct CircularCloseButton: View {
         var verticalPadding: CGFloat {
             switch self {
             case .compact: return 0
-            case .regular: return 16
+            case .regular: return 12
             case .large: return 12
             }
         }

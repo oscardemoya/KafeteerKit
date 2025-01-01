@@ -48,7 +48,7 @@ public extension PaymentCategory {
             case .fuel: "fuelpump" // 􀵞
             case .oil: "oilcan" // 􀿄
             case .battery: "minus.plus.batteryblock" // 􀫬
-            case .tires: "car.side" // 􁎷
+            case .tires: "tire" // 􂥰
             }
         }
         

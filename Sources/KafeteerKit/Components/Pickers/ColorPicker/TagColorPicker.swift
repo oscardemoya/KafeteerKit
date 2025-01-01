@@ -15,8 +15,7 @@ public struct TagColorPicker: View {
     private static var size: CGFloat = 44
     private static var spacing: CGFloat = Spacing.nano.rawValue
     
-    let columns = Array(repeating: GridItem(.fixed(Self.size), spacing: Self.spacing),
-                        count: 6)
+    let columns = Array(repeating: GridItem(.fixed(Self.size), spacing: Self.spacing), count: 3)
     
     public init(
         _ titleKey: LocalizedStringKey,
@@ -29,19 +28,35 @@ public struct TagColorPicker: View {
     }
     
     public var body: some View {
-        DisclosureGroup(isExpanded: $isExpanded) {
-            LazyVGrid(columns: columns, spacing: Self.spacing) {
-                ForEach(TagColorVariant.allCasesByColor) { colorVariant in
-                    iconView(for: colorVariant)
+        VStack(spacing: .zero) {
+            HStack {
+                Text(titleKey)
+                    .tagStyle(selection)
+                Spacer()
+                Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
+                    .foregroundColor(hierarchy.inputForegroundColor)
+            }
+            .padding(.horizontal, .medium)
+            .padding(.vertical, .small)
+            .contentShape(.rect)
+            .onTapGesture {
+                withAnimation {
+                    isExpanded.toggle()
                 }
             }
-            .padding(.medium)
-        } label: {
-            Text(titleKey)
-                .tagStyle(selection)
+            if isExpanded {
+                Divider().overlay(.dividerColor)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHGrid(rows: columns, spacing: Self.spacing) {
+                        ForEach(TagColorVariant.allCasesByColor) { colorVariant in
+                            iconView(for: colorVariant)
+                        }
+                    }
+                    .padding(.medium)
+                }
+                .fixedSize(horizontal: false, vertical: true)
+            }
         }
-        .padding(.horizontal, .medium)
-        .padding(.vertical, .small)
         .background(hierarchy.inputBackgroundColor)
         .foregroundStyle(hierarchy.inputForegroundColor)
         .borderStyle(.stroke(.regular), borderColor: .borderColor, cornerStyle: .rounded(.medium))

@@ -1,6 +1,6 @@
 //
 //  ColorConfig.swift
-//
+//  KafeteerKit
 //
 //  Created by Oscar De Moya on 18/05/24.
 //

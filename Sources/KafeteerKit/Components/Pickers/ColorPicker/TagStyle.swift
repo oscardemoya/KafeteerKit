@@ -17,7 +17,7 @@ public struct TagStyle: ViewModifier {
             switch self {
             case .compact: .systemDefault(.caption)
             case .regular: .systemDefault(.body)
-            case .large: .systemDefault(.headline)
+            case .large: .systemDefault(.title3)
             }
         }
         
@@ -31,17 +31,17 @@ public struct TagStyle: ViewModifier {
         
         var horizontalPadding: Padding {
             switch self {
-            case .compact: .nano
-            case .regular: .extraSmall
-            case .large: .small
+            case .compact: .extraSmall
+            case .regular: .small
+            case .large: .medium
             }
         }
         
         var verticalPadding: Padding {
             switch self {
-            case .compact: .none
-            case .regular: .quark
-            case .large: .nano
+            case .compact: .quark
+            case .regular: .nano
+            case .large: .extraSmall
             }
         }
     }

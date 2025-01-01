@@ -100,11 +100,23 @@ public extension TagColor {
             case .mid: Color(.cyan050)
             case .dark: Color(.cyan100)
             }
+        case .white:
+            switch variant {
+            case .light: Color(.white020)
+            case .mid: Color(.white050)
+            case .dark: Color(.white100)
+            }
         case .gray:
             switch variant {
             case .light: Color(.gray020)
             case .mid: Color(.gray050)
             case .dark: Color(.gray100)
+            }
+        case .black:
+            switch variant {
+            case .light: Color(.black020)
+            case .mid: Color(.black050)
+            case .dark: Color(.black100)
             }
         }
     }

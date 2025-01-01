@@ -12,20 +12,25 @@ public struct DebounceModifier<Value: Equatable>: ViewModifier {
     @Binding var value: Value
     let debounceTime: TimeInterval
     let action: ValueAction<Value>?
-    private let debouncePublisher = PassthroughSubject<Value, Never>()
+    
+    @StateObject private var debouncePublisher = DebouncePublisher<Value>()
 
     public func body(content: Content) -> some View {
         content
-            .onChange(of: value) { _, newValue in
-                debouncePublisher.send(newValue)
+            .onChange(of: value) { newValue in
+                debouncePublisher.subject.send(newValue)
             }
             .onReceive(
-                debouncePublisher
+                debouncePublisher.subject
                     .debounce(for: .seconds(debounceTime), scheduler: RunLoop.main)
             ) { debouncedValue in
                 action?(debouncedValue)
             }
     }
+}
+
+private class DebouncePublisher<Value>: ObservableObject {
+    let subject = PassthroughSubject<Value, Never>()
 }
 
 public extension View {

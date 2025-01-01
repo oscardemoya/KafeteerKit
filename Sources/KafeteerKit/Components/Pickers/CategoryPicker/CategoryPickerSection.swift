@@ -55,7 +55,7 @@ struct CategoryPickerSection: View {
                 .fontWeight(.semibold)
                 .foregroundColor(.tertiaryForeground)
                 .frame(maxWidth: .infinity, alignment: .leading)
-            Divider().background(.dividerColor)
+            Divider().overlay(.dividerColor)
         }
     }
     
@@ -89,7 +89,7 @@ struct CategoryPickerSection: View {
     }
     
     func backgroundColor(selected: Bool) -> Color {
-        selected ? hierarchy.accentColor : hierarchy.tintColor.opacity(0.25)
+        selected ? hierarchy.accentColor : hierarchy.tintColor
     }
     
     func foregroundColor(selected: Bool) -> Color {
