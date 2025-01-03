@@ -22,7 +22,7 @@ public extension PaymentCategory {
         case cable
         case smartphone
         case television
-        case videoGameConsole
+        case gamingConsole
         case speakers
         case gadgets
         case videoProjector
@@ -45,7 +45,7 @@ public extension PaymentCategory {
             case smartphone
             case television
             case tv
-            case videoGameConsole
+            case gamingConsole
             case speakers
             case gadgets
             case console
@@ -69,7 +69,7 @@ public extension PaymentCategory {
                 case .cable: .cable
                 case .smartphone: .smartphone
                 case .television, .tv: .television
-                case .videoGameConsole, .console: .videoGameConsole
+                case .gamingConsole, .console: .gamingConsole
                 case .speakers: .speakers
                 case .gadgets: .gadgets
                 case .videoProjector: .videoProjector
@@ -94,7 +94,7 @@ public extension PaymentCategory {
             case .cable: "cable.connector" // 􀺦
             case .smartphone: "smartphone" // 􁤫
             case .television: "tv" // 􀎲
-            case .videoGameConsole: "arcade.stick.console" // 􂁠
+            case .gamingConsole: "arcade.stick.console" // 􂁠
             case .speakers: "hifispeaker" // 􀝎
             case .gadgets: "headphones" // 􀑈
             case .videoProjector: "videoprojector" // 􁒮
@@ -118,7 +118,7 @@ public extension PaymentCategory {
             case .cable: String(localized: "Cable", bundle: .module)
             case .smartphone: String(localized: "Smartphone", bundle: .module)
             case .television: String(localized: "TV", bundle: .module)
-            case .videoGameConsole: String(localized: "Gaming Console", bundle: .module)
+            case .gamingConsole: String(localized: "Gaming Console", bundle: .module)
             case .speakers: String(localized: "Speakers", bundle: .module)
             case .gadgets: String(localized: "Gadgets", bundle: .module)
             case .videoProjector: String(localized: "Video Projector", bundle: .module)

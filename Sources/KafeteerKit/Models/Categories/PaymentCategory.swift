@@ -115,15 +115,21 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
     }
     
     public init(containing string: String) {
-        self = Kind.allCases.reduce(into: []) { results, kind in
+        let categories = Kind.allCases.reduce(into: []) { results, kind in
             results.append(contentsOf: kind.categories)
-        }.sorted {
-            $0.name.count > $1.name.count
-        }.first { category in
-            category.keywords.contains {
-                string.replacingOccurrences(of: " ", with: "").localizedCaseInsensitiveContains($0)
+        }
+        let keywords = categories.flatMap { category in
+            category.keywords.map { keyword in
+                (keyword: keyword, category: category)
             }
-        } ?? .default
+        }.sorted {
+            $0.keyword.count > $1.keyword.count
+        }
+        let token = string.replacingOccurrences(of: " ", with: "")
+        let matchingKeywords = keywords.filter {
+            token.localizedCaseInsensitiveContains($0.keyword)
+        }
+        self = matchingKeywords.first?.category ?? .default
     }
     
     private static func value(for rawValue: String) -> any CategoryRepresentable {
