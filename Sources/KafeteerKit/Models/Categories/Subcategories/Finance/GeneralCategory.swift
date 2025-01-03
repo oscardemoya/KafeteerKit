@@ -16,6 +16,7 @@ public extension PaymentCategory {
         
         case general
         case payment
+        case personal
         case moneyTransfer
         case recurringPayment
         case shopping
@@ -25,6 +26,7 @@ public extension PaymentCategory {
         public enum Keyword: String, KeywordRepresentable {
             case general
             case payment
+            case personal
             case moneyTransfer
             case recurringPayment
             case recurring
@@ -39,6 +41,7 @@ public extension PaymentCategory {
                 switch self {
                 case .general: .general
                 case .payment: .payment
+                case .personal: .personal
                 case .moneyTransfer: .moneyTransfer
                 case .recurringPayment, .recurring: .recurringPayment
                 case .shopping: .shopping
@@ -52,6 +55,7 @@ public extension PaymentCategory {
             switch self {
             case .general: "circle.dashed" // 􀓞
             case .payment: "dollarsign.circle" // 􀖗
+            case .personal: "person" // 􀉩
             case .moneyTransfer:  "arrow.down.left.arrow.up.right" // 􁽧
             case .recurringPayment: "dollarsign.arrow.circlepath" // 􁎣
             case .shopping: "cart" // 􀍩
@@ -64,6 +68,7 @@ public extension PaymentCategory {
             switch self {
             case .general: String(localized: "General", bundle: .module)
             case .payment: String(localized: "Payment", bundle: .module)
+            case .personal: String(localized: "Personal", bundle: .module)
             case .moneyTransfer: String(localized: "Money Transfer", bundle: .module)
             case .recurringPayment: String(localized: "Recurring Payment", bundle: .module)
             case .shopping: String(localized: "Shopping", bundle: .module)

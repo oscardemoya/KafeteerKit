@@ -14,22 +14,30 @@ struct CategoryFilterBar: View {
 
     var body: some View {
         if items.count > 0 {
-            HStack(spacing: .zero) {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: Spacing.extraSmall.value) {
-                        ForEach(items) { item in
-                            CategoryFilterBarToggle(item: item, selectedItem: $selectedItem)
+            ScrollViewReader { proxy in
+                HStack(spacing: .zero) {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: Spacing.extraSmall.value) {
+                            ForEach(items) { item in
+                                CategoryFilterBarToggle(item: item, selectedItem: $selectedItem)
+                                    .id(item.id)
+                            }
                         }
                     }
-                }
-                .safeAreaPadding(.horizontal, Spacing.nano.value)
-                .safeAreaPadding(.vertical, Spacing.quark.value)
-                .background(.primaryInputBackground)
-                .cornerStyle(.rounded(.extraSmall))
-                if selectedItem != nil {
-                    CircularCloseButton(size: .regular) {
+                    .safeAreaPadding(.horizontal, Spacing.nano.value)
+                    .safeAreaPadding(.vertical, Spacing.quark.value)
+                    .background(.primaryInputBackground)
+                    .cornerStyle(.rounded(.extraSmall))
+                    .onChange(of: selectedItem) { _, newValue in
                         withAnimation {
-                            selectedItem = nil
+                            proxy.scrollTo(newValue, anchor: .center)
+                        }
+                    }
+                    if selectedItem != nil {
+                        CircularCloseButton(size: .regular) {
+                            withAnimation {
+                                selectedItem = nil
+                            }
                         }
                     }
                 }
@@ -38,7 +46,6 @@ struct CategoryFilterBar: View {
             .padding(selectedItem != nil ? .leading: .horizontal, .small)
             .frame(maxWidth: .infinity)
             .fixedSize(horizontal: false, vertical: true)
-            
         }
     }
 }

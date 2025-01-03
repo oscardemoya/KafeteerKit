@@ -10,11 +10,12 @@ import Foundation
 public extension PaymentCategory {
     enum PersonalCare: String, CategoryRepresentable {
         public static var lifeArea: LifeArea = .wellness
-        public static var categoryIcon: Self = .hygiene
+        public static var categoryIcon: Self = .toiletries
         public static var categoryName = String(localized: "Personal Care", bundle: .module)
         public var asPaymentCategory: PaymentCategory { .personalCare(self) }
         
         case toiletries
+        case essentials
         case hygiene
         case hairCare
         case barber
@@ -24,6 +25,7 @@ public extension PaymentCategory {
         
         public enum Keyword: String, KeywordRepresentable {
             case toiletries
+            case essentials
             case hygiene
             case personalCare
             case hairCare
@@ -41,8 +43,9 @@ public extension PaymentCategory {
             
             public var value: PersonalCare {
                 switch self {
-                case .toiletries: .toiletries
-                case .hygiene, .personalCare: .hygiene
+                case .toiletries, .personalCare: .toiletries
+                case .essentials: .essentials
+                case .hygiene: .hygiene
                 case .hairCare, .haircut: .hairCare
                 case .barber, .barberShop, .grooming: .barber
                 case .cosmetics, .makeup: .cosmetics
@@ -54,7 +57,8 @@ public extension PaymentCategory {
         
         public var iconName: String {
             switch self {
-            case .toiletries: "comb" // 􀦈
+            case .toiletries: "cross.vial" // 􀼘
+            case .essentials: "comb" // 􀦈
             case .hygiene: "hands.and.sparkles" // 􀲮
             case .hairCare: "scissors" // 􀉈
             case .barber: "mustache" // 􀥿
@@ -67,6 +71,7 @@ public extension PaymentCategory {
         public var name: String {
             switch self {
             case .toiletries: String(localized: "Toiletries", bundle: .module)
+            case .essentials: String(localized: "Essentials", bundle: .module)
             case .hygiene: String(localized: "Hygiene", bundle: .module)
             case .hairCare: String(localized: "Hair Care", bundle: .module)
             case .barber: String(localized: "Barber", bundle: .module)

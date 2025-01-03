@@ -24,6 +24,7 @@ public extension PaymentCategory {
         case event
         case sportingEvent
         case concert
+        case dancing
         case theater
 
         public enum Keyword: String, KeywordRepresentable {
@@ -42,9 +43,10 @@ public extension PaymentCategory {
             case tour
             case museum
             case event
+            case festival
             case sportingEvent
             case concert
-            case festival
+            case dancing
             case theater
 
             public var value: Entertainment {
@@ -59,6 +61,7 @@ public extension PaymentCategory {
                 case .event, .festival: .event
                 case .sportingEvent: .sportingEvent
                 case .concert: .concert
+                case .dancing: .dancing
                 case .theater: .theater
                 }
             }
@@ -76,6 +79,7 @@ public extension PaymentCategory {
             case .event: "ticket" // 􀪃
             case .sportingEvent: "sportscourt" // 􀝐
             case .concert: "music.mic" // 􀑫
+            case .dancing: "figure.socialdance" // 􁕀
             case .theater: "theatermasks" // 􀺧
             }
         }
@@ -92,6 +96,7 @@ public extension PaymentCategory {
             case .event: String(localized: "Event", bundle: .module)
             case .sportingEvent: String(localized: "Sporting Event", bundle: .module)
             case .concert: String(localized: "Concert", bundle: .module)
+            case .dancing: String(localized: "Dancing", bundle: .module)
             case .theater: String(localized: "Theater", bundle: .module)
             }
         }

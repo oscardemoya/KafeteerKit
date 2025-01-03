@@ -22,6 +22,7 @@ public extension PaymentCategory {
         case course
         case learning
         case tutor
+        case science
         
         public enum Keyword: String, KeywordRepresentable {
             case education
@@ -34,7 +35,9 @@ public extension PaymentCategory {
             case magazine
             case course
             case learning
-            case tutors
+            case tutor
+            case science
+            case experiment
             
             public var value: Knowledge {
                 switch self {
@@ -45,7 +48,8 @@ public extension PaymentCategory {
                 case .magazine: .magazine
                 case .course: .course
                 case .learning: .learning
-                case .tutors: .tutor
+                case .tutor: .tutor
+                case .science, .experiment: .science
                 }
             }
         }
@@ -60,6 +64,7 @@ public extension PaymentCategory {
             case .course: "macwindow.and.cursorarrow" // 􁝸
             case .learning: "brain" // 􀯐
             case .tutor: "rectangle.inset.filled.and.person.filled" // 􁅀
+            case .science: "atom" // 􀬚
             }
         }
         
@@ -73,6 +78,7 @@ public extension PaymentCategory {
             case .course: String(localized: "Course", bundle: .module)
             case .learning: String(localized: "Learning Platform", bundle: .module)
             case .tutor: String(localized: "Tutor", bundle: .module)
+            case .science: String(localized: "Science", bundle: .module)
             }
         }
     }

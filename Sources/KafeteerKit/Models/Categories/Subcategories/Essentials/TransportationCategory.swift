@@ -67,7 +67,7 @@ public extension PaymentCategory {
         public var iconName: String {
             switch self {
             case .car: "car" // 􀙘
-            case .parking: "p.square" // 􀂲
+            case .parking: "parkingsign.square" // 􂨈
             case .commute: "bus" // 􀝈
             case .train: "tram" // 􀝆
             case .bike: "bicycle" // 􀡥

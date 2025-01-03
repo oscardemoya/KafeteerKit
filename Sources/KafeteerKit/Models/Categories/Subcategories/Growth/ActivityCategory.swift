@@ -19,6 +19,7 @@ public extension PaymentCategory {
         case yoga
         case meditation
         case swimming
+        case walking
         case hiking
         case fishing
         case cycling
@@ -36,6 +37,7 @@ public extension PaymentCategory {
             case meditation
             case swimming
             case camping
+            case walking
             case hiking
             case fishing
             case cycling
@@ -53,6 +55,7 @@ public extension PaymentCategory {
                 case .yoga: .yoga
                 case .meditation: .meditation
                 case .swimming: .swimming
+                case .walking: .walking
                 case .hiking: .hiking
                 case .fishing: .fishing
                 case .cycling: .cycling
@@ -73,6 +76,7 @@ public extension PaymentCategory {
             case .yoga: "figure.yoga" // 􁒌
             case .meditation: "figure.mind.and.body" // 􁔴
             case .swimming: "figure.pool.swim" // 􁌆
+            case .walking: "figure.walk" // 􀝢
             case .hiking: "figure.hiking" // 􁔭
             case .fishing: "figure.fishing" // 􁔧
             case .cycling: "figure.outdoor.cycle" // 􁌉
@@ -92,6 +96,7 @@ public extension PaymentCategory {
             case .yoga: String(localized: "Yoga", bundle: .module)
             case .meditation: String(localized: "Meditation", bundle: .module)
             case .swimming: String(localized: "Swimming", bundle: .module)
+            case .walking: String(localized: "Walking", bundle: .module)
             case .hiking: String(localized: "Hiking", bundle: .module)
             case .fishing: String(localized: "Fishing", bundle: .module)
             case .cycling: String(localized: "Cycling", bundle: .module)

@@ -19,12 +19,15 @@ public extension PaymentCategory {
         case lunch
         case dinner
         case snacks
-        case healthyFood
-        case fastFood
         case drinks
         case water
         case coffee
-        
+        case tea
+        case wine
+        case healthyFood
+        case fastFood
+        case candy
+
         public enum Keyword: String, KeywordRepresentable {
             case groceries
             case food
@@ -34,11 +37,6 @@ public extension PaymentCategory {
             case restaurant
             case meals
             case snacks
-            case healthyFood
-            case fastFood
-            case pizza
-            case burger
-            case hotdog
             case drinks
             case beverages
             case water
@@ -47,6 +45,14 @@ public extension PaymentCategory {
             case beer
             case coffee
             case tea
+            case wine
+            case healthyFood
+            case fastFood
+            case pizza
+            case burger
+            case hotdog
+            case candy
+            case sweets
 
             public var value: Food {
                 switch self {
@@ -55,11 +61,14 @@ public extension PaymentCategory {
                 case .lunch: .lunch
                 case .dinner, .restaurant, .meals: .dinner
                 case .snacks: .snacks
-                case .healthyFood: .healthyFood
-                case .fastFood, .pizza, .burger, .hotdog: .fastFood
                 case .drinks, .beverages, .soda, .beer: .drinks
                 case .water, .juice: .water
-                case .coffee, .tea: .coffee
+                case .coffee: .coffee
+                case .tea: .tea
+                case .wine: .wine
+                case .healthyFood: .healthyFood
+                case .fastFood, .pizza, .burger, .hotdog: .fastFood
+                case .candy, .sweets: .candy
                 }
             }
         }
@@ -71,11 +80,14 @@ public extension PaymentCategory {
             case .lunch: "fish" // 􁖐
             case .dinner: "fork.knife" // 􀸩
             case .snacks: "popcorn" // 􁐇
-            case .healthyFood: "carrot" // 􁖎
-            case .fastFood: "stopwatch" // 􀐯
             case .drinks:  "mug" // 􁞴
             case .water: "waterbottle" // 􁻊
             case .coffee: "cup.and.heat.waves" // 􂊬
+            case .tea: "cup.and.saucer" // 􀸘
+            case .wine: "wineglass" // 􁎤
+            case .healthyFood: "carrot" // 􁖎
+            case .fastFood: "stopwatch" // 􀐯
+            case .candy: "square.grid.3x2" // 􀇵
             }
         }
         
@@ -86,11 +98,14 @@ public extension PaymentCategory {
             case .lunch: String(localized: "Lunch", bundle: .module)
             case .dinner: String(localized: "Dinner", bundle: .module)
             case .snacks: String(localized: "Snacks", bundle: .module)
-            case .healthyFood: String(localized: "Healthy Food", bundle: .module)
-            case .fastFood: String(localized: "Fast Food", bundle: .module)
             case .drinks: String(localized: "Drinks", bundle: .module)
             case .water: String(localized: "Water", bundle: .module)
             case .coffee: String(localized: "Coffee", bundle: .module)
+            case .tea: String(localized: "Tea", bundle: .module)
+            case .wine: String(localized: "Wine", bundle: .module)
+            case .healthyFood: String(localized: "Healthy Food", bundle: .module)
+            case .fastFood: String(localized: "Fast Food", bundle: .module)
+            case .candy: String(localized: "Candy", bundle: .module)
             }
         }
     }

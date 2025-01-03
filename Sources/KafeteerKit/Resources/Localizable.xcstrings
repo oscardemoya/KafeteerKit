@@ -101,6 +101,9 @@
         }
       }
     },
+    "Auto Parts" : {
+
+    },
     "Automotive" : {
       "localizations" : {
         "es" : {
@@ -357,6 +360,9 @@
         }
       }
     },
+    "Candy" : {
+
+    },
     "Cap" : {
 
     },
@@ -369,6 +375,9 @@
           }
         }
       }
+    },
+    "Car Wash" : {
+
     },
     "Ceiling Fan" : {
       "localizations" : {
@@ -646,6 +655,9 @@
         }
       }
     },
+    "Dancing" : {
+
+    },
     "Dark Tones First" : {
 
     },
@@ -720,6 +732,9 @@
         }
       }
     },
+    "Detailing" : {
+
+    },
     "Digital Currency" : {
       "localizations" : {
         "es" : {
@@ -740,6 +755,9 @@
         }
       }
     },
+    "Disability Aids" : {
+
+    },
     "Dishwasher" : {
       "localizations" : {
         "es" : {
@@ -751,6 +769,9 @@
       }
     },
     "Disk" : {
+
+    },
+    "Doctor's Visit" : {
 
     },
     "Dog Walker" : {
@@ -909,6 +930,9 @@
         }
       }
     },
+    "Eye Care" : {
+
+    },
     "Family Care" : {
       "localizations" : {
         "es" : {
@@ -938,6 +962,9 @@
           }
         }
       }
+    },
+    "Fatherhood" : {
+
     },
     "Feeding" : {
       "localizations" : {
@@ -1235,6 +1262,9 @@
     "Hat" : {
 
     },
+    "Health Insurance" : {
+
+    },
     "Healthcare" : {
       "localizations" : {
         "es" : {
@@ -1340,6 +1370,9 @@
           }
         }
       }
+    },
+    "Hospital" : {
+
     },
     "House Sitting" : {
       "localizations" : {
@@ -1563,6 +1596,12 @@
         }
       }
     },
+    "Medical Device" : {
+
+    },
+    "Medical Test" : {
+
+    },
     "Medication" : {
       "localizations" : {
         "es" : {
@@ -1646,6 +1685,9 @@
         }
       }
     },
+    "Motherhood" : {
+
+    },
     "Motorcycle" : {
 
     },
@@ -1708,6 +1750,9 @@
           }
         }
       }
+    },
+    "Nursing Service" : {
+
     },
     "Office Supplies" : {
       "localizations" : {
@@ -1799,6 +1844,9 @@
         }
       }
     },
+    "Personal" : {
+
+    },
     "Personal Care" : {
       "localizations" : {
         "es" : {
@@ -1858,6 +1906,9 @@
           }
         }
       }
+    },
+    "Playground" : {
+
     },
     "Plumber" : {
       "localizations" : {
@@ -1953,6 +2004,9 @@
         }
       }
     },
+    "Relationship" : {
+
+    },
     "Renovation" : {
       "localizations" : {
         "es" : {
@@ -2038,6 +2092,9 @@
           }
         }
       }
+    },
+    "Science" : {
+
     },
     "Scooter" : {
       "localizations" : {
@@ -2295,6 +2352,9 @@
     "Surf" : {
 
     },
+    "Surgery" : {
+
+    },
     "Swimming" : {
       "localizations" : {
         "es" : {
@@ -2324,6 +2384,9 @@
           }
         }
       }
+    },
+    "Tea" : {
+
     },
     "Tennis" : {
       "localizations" : {
@@ -2606,6 +2669,9 @@
         }
       }
     },
+    "Walking" : {
+
+    },
     "Wall Decor" : {
       "localizations" : {
         "es" : {
@@ -2705,6 +2771,9 @@
           }
         }
       }
+    },
+    "Wine" : {
+
     },
     "Yearly" : {
       "localizations" : {

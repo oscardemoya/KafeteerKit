@@ -43,7 +43,7 @@ public extension PaymentCategory {
             case .celebration: "fireworks" // 􂁞
             case .party: "party.popper" // 􁓵
             case .birthday: "birthday.cake" // 􁖩
-            case .wedding: "figure.2.arms.open" // 􁗆
+            case .wedding: "heart.circle" // 􀊸
             case .festival: "theatermask.and.paintbrush" // 􁔘
             }
         }
