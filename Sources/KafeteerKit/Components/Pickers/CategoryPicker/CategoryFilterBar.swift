@@ -13,40 +13,38 @@ struct CategoryFilterBar: View {
     var items = PaymentCategory.Kind.allCases
 
     var body: some View {
-        if items.count > 0 {
-            ScrollViewReader { proxy in
-                HStack(spacing: .zero) {
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: Spacing.extraSmall.value) {
-                            ForEach(items) { item in
-                                CategoryFilterBarToggle(item: item, selectedItem: $selectedItem)
-                                    .id(item.id)
-                            }
+        ScrollViewReader { proxy in
+            HStack(spacing: .zero) {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: Spacing.extraSmall.value) {
+                        ForEach(items) { item in
+                            CategoryFilterBarToggle(item: item, selectedItem: $selectedItem)
+                                .id(item.id)
                         }
                     }
-                    .safeAreaPadding(.horizontal, Spacing.nano.value)
-                    .safeAreaPadding(.vertical, Spacing.quark.value)
-                    .background(.primaryInputBackground)
-                    .cornerStyle(.rounded(.extraSmall))
-                    .onChange(of: selectedItem) { _, newValue in
+                }
+                .safeAreaPadding(.horizontal, Spacing.nano.value)
+                .safeAreaPadding(.vertical, Spacing.quark.value)
+                .background(.primaryInputBackground)
+                .cornerStyle(.rounded(.extraSmall))
+                .onChange(of: selectedItem) { _, newValue in
+                    withAnimation {
+                        proxy.scrollTo(newValue, anchor: .center)
+                    }
+                }
+                if selectedItem != nil {
+                    CircularCloseButton(size: .regular) {
                         withAnimation {
-                            proxy.scrollTo(newValue, anchor: .center)
-                        }
-                    }
-                    if selectedItem != nil {
-                        CircularCloseButton(size: .regular) {
-                            withAnimation {
-                                selectedItem = nil
-                            }
+                            selectedItem = nil
                         }
                     }
                 }
             }
-            .padding(.vertical, .nano)
-            .padding(selectedItem != nil ? .leading: .horizontal, .small)
-            .frame(maxWidth: .infinity)
-            .fixedSize(horizontal: false, vertical: true)
         }
+        .padding(.vertical, .nano)
+        .padding(selectedItem != nil ? .leading: .horizontal, .small)
+        .frame(maxWidth: .infinity)
+        .fixedSize(horizontal: false, vertical: true)
     }
 }
 
