@@ -35,7 +35,7 @@ struct CategoryFilterBarToggle: View {
     @ViewBuilder var itemView: some View {
         HStack(spacing: .quark) {
             item.icon
-            Text(item.categoryName.uppercased())
+            Text(item.categoryName)
         }
         .font(.systemDefault(.body))
         .fontWeight(.medium)

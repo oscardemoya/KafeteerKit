@@ -8,47 +8,56 @@
 import SwiftUI
 
 struct CategoryFilterBar: View {
+    var items: [PaymentCategory.Kind]
     @Binding var selectedItem: PaymentCategory.Kind?
     
-    var items = PaymentCategory.Kind.allCases
-
     var body: some View {
         ScrollViewReader { proxy in
             HStack(spacing: .zero) {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: Spacing.extraSmall.value) {
-                        ForEach(items) { item in
-                            CategoryFilterBarToggle(item: item, selectedItem: $selectedItem)
-                                .id(item.id)
+                ZStack {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: Spacing.extraSmall.value) {
+                            ForEach(items) { item in
+                                CategoryFilterBarToggle(item: item, selectedItem: $selectedItem)
+                                    .id(item.id)
+                            }
                         }
                     }
-                }
-                .safeAreaPadding(.horizontal, Spacing.nano.value)
-                .safeAreaPadding(.vertical, Spacing.quark.value)
-                .background(.primaryInputBackground)
-                .cornerStyle(.rounded(.extraSmall))
-                .onChange(of: selectedItem) { _, newValue in
-                    withAnimation {
-                        proxy.scrollTo(newValue, anchor: .center)
+                    .safeAreaPadding(.horizontal, Spacing.small.value)
+                    .safeAreaPadding(.vertical, Spacing.quark.value)
+                    .onChange(of: selectedItem) { _, selectedItem in
+                        withAnimation {
+                            if let selectedItem {
+                                proxy.scrollTo(selectedItem.id, anchor: .center)
+                            } else if let firstItem = items.first {
+                                proxy.scrollTo(firstItem.id, anchor: .leading)
+                            }
+                        }
+                    }
+                    HStack(spacing: .zero) {
+                        Spacer()
+                        LinearGradient(colors: [.clear, .secondaryBackground], startPoint: .leading, endPoint: .trailing)
+                            .frame(width: Spacing.small.value)
                     }
                 }
                 if selectedItem != nil {
-                    CircularCloseButton(size: .regular) {
-                        withAnimation {
-                            selectedItem = nil
+                    HStack {
+                        CircularCloseButton(size: .regular) {
+                            withAnimation {
+                                selectedItem = nil
+                            }
                         }
                     }
                 }
             }
         }
-        .padding(.vertical, .nano)
-        .padding(selectedItem != nil ? .leading: .horizontal, .small)
         .frame(maxWidth: .infinity)
         .fixedSize(horizontal: false, vertical: true)
+        .background(.secondaryBackground)
     }
 }
 
 #Preview {
     @Previewable @State var selectedItem: PaymentCategory.Kind? = .general
-    CategoryFilterBar(selectedItem: $selectedItem)
+    CategoryFilterBar(items: PaymentCategory.Kind.allCases, selectedItem: $selectedItem)
 }

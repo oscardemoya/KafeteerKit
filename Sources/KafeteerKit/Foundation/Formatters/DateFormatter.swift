@@ -14,16 +14,17 @@ public extension Date {
     var startOfMonth: Date { startOf(.month) }
     var startOfDay: Date { startOf(.day) }
     
+    var endOfYear: Date { endOf(.year) }
+    var endOfQuarter: Date { endOf(.quarter) }
+    var endOfMonth: Date { endOf(.month) }
+    var endOfDay: Date { endOf(.day) }
+    
     func startOf(_ component: Calendar.Component) -> Date {
         Calendar.current.dateInterval(of: component, for: self)?.start ?? self
     }
     
-    var endOfMonth: Date {
-        let calendar = Calendar.current
-        guard let range = calendar.range(of: .day, in: .month, for: self), let day = range.last else { return self }
-        var components = calendar.dateComponents([.year, .month], from: self)
-        components.day = day
-        return calendar.date(from: components) ?? self
+    func endOf(_ component: Calendar.Component) -> Date {
+        Calendar.current.dateInterval(of: component, for: self)?.end ?? self
     }
     
     var endOfHalfMonth: Date {

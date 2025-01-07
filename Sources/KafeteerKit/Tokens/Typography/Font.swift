@@ -29,7 +29,7 @@ public extension Font {
         case .callout: return 16
         case .footnote: return 13
         case .caption: return 12
-        case .caption2: return 11
+        case .caption2: return 10
         @unknown default: return 17
         }
     }

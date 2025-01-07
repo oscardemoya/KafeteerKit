@@ -27,11 +27,13 @@ public protocol ColorConfiguration {
     var quaternaryBrand: Color { get }
     
     // Semantic
+    var infoColor: Color { get }
     var successColor: Color { get }
     var warningColor: Color { get }
     var dangerColor: Color { get }
     
     // Semantic Foreground
+    var infoForeground: Color { get }
     var successForeground: Color { get }
     var warningForeground: Color { get }
     var dangerForeground: Color { get }
@@ -103,11 +105,13 @@ struct DefaultColorConfiguration: ColorConfiguration {
     var quaternaryBrand: Color { Color(.pink500) }
     
     // Semantic
+    var infoColor: Color { Color(.blue500) }
     var successColor: Color { Color(.green500) }
     var warningColor: Color { Color(.orange500) }
     var dangerColor: Color { Color(.red500) }
     
     // Semantic Foreground
+    var infoForeground: Color { Color(.blue050) }
     var successForeground: Color { Color(.green050) }
     var warningForeground: Color { Color(.orange050) }
     var dangerForeground: Color { Color(.red050) }
