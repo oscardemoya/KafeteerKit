@@ -41,7 +41,7 @@ public struct TextChecker {
         if let preset = tags.compactMap({ RepeatIntervalFrequency(rawValue: $0.value) }).first {
             result.repeatInterval = .preset(frequency: preset)
         } else {
-            result.repeatInterval = .default
+            result.repeatInterval = .defaultValue
         }
         return result
     }
@@ -103,13 +103,13 @@ public extension [TagValue] {
     }
     
     var category: PaymentCategory {
-        if let name, PaymentCategory(rawValue: name) != .default {
+        if let name, PaymentCategory(rawValue: name) != .defaultValue {
             return PaymentCategory(rawValue: name)
         }
         if let category = filteringNames.compactMap({ PaymentCategory(rawValue: $0.value) }).first {
             return category
         }
-        return .default
+        return .defaultValue
     }
     
     var filteringNames: [TagValue] {

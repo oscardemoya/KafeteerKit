@@ -7,11 +7,11 @@
 
 import Foundation
 
-public enum RepeatInterval: Codable, RawRepresentable, Equatable {
+public enum RepeatInterval: Codable, RawRepresentable, DefaultProviding, Equatable {
     case preset(frequency: RepeatIntervalFrequency)
     case custom(interval: CustomRepeatInterval)
     
-    public static let `default`: RepeatInterval = .preset(frequency: .monthly)
+    public static var defaultValue: RepeatInterval = .preset(frequency: .monthly)
     
     public enum Name: String {
         case never

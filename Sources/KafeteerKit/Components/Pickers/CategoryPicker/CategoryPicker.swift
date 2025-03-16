@@ -96,5 +96,5 @@ extension PaymentCategory.Kind {
 }
 
 #Preview {
-    CategoryPicker(selectedCategory: .constant(PaymentCategory.default))
+    CategoryPicker(selectedCategory: .constant(PaymentCategory.defaultValue))
 }

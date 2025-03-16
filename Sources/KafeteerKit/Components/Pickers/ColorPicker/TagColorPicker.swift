@@ -32,6 +32,7 @@ public struct TagColorPicker: View {
             HStack {
                 Text(titleKey)
                     .tagStyle(selection)
+                    .padding(.vertical, 1)
                 Spacer()
                 Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
                     .foregroundColor(hierarchy.inputForegroundColor)
@@ -83,6 +84,6 @@ public struct TagColorPicker: View {
 }
 
 #Preview {
-    @State var selection: TagColorVariant = .default
+    @State var selection: TagColorVariant = .defaultValue
     return TagColorPicker("Color", selection: $selection)
 }

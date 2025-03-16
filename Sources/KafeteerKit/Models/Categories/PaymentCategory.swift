@@ -7,7 +7,8 @@
 
 import Foundation
 
-public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepresentable, IconRepresentable {
+public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepresentable, IconRepresentable, DefaultProviding {
+    
     case general(General)
     case food(Food)
     case transportation(Transportation)
@@ -37,7 +38,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
     case maintenance(Automotive)
     case subscription(Subscription)
     
-    public static let `default`: PaymentCategory = .general(.general)
+    public static var defaultValue: PaymentCategory = .general(.general)
     
     public var id: Self { self }
     
@@ -129,7 +130,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         let matchingKeywords = keywords.filter {
             token.localizedCaseInsensitiveContains($0.keyword)
         }
-        self = matchingKeywords.first?.category ?? .default
+        self = matchingKeywords.first?.category ?? .defaultValue
     }
     
     private static func value(for rawValue: String) -> any CategoryRepresentable {
@@ -157,6 +158,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         if let value = Business(keyword: rawValue) { return value }
         if let value = Activity(keyword: rawValue) { return value }
         if let value = Sports(keyword: rawValue) { return value }
+        if let value = Hobby(keyword: rawValue) { return value }
         if let value = Celebration(keyword: rawValue) { return value }
         if let value = Automotive(keyword: rawValue) { return value }
         if let value = Subscription(keyword: rawValue) { return value }

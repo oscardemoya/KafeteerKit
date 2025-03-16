@@ -41,7 +41,9 @@ public enum Separator: String, CaseIterable {
     }
 }
 
-public enum CurrencyIdentifier: RawRepresentable {
+public enum CurrencyIdentifier: RawRepresentable, DefaultProviding {
+    public static var defaultValue: CurrencyIdentifier = .symbol(.dollar)
+    
     case symbol(CurrencySymbol)
     case code(String)
     

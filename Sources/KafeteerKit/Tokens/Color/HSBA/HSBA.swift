@@ -7,11 +7,13 @@
 
 import Foundation
 
-public struct HSBA: Codable, RawRepresentable {
+public struct HSBA: Codable, RawRepresentable, DefaultProviding {
     public var hue: CGFloat
     public var saturation: CGFloat
     public var brightness: CGFloat
     public var alpha: CGFloat
+    
+    public static var defaultValue: HSBA = HSBA(hue: 0, saturation: 0, brightness: 0, alpha: 1)
     
     public var rawValue: String {
         if alpha != 1.0 {

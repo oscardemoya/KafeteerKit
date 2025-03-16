@@ -42,7 +42,7 @@ struct CategoryFilterBar: View {
                 }
                 if selectedItem != nil {
                     HStack {
-                        CircularCloseButton(size: .regular) {
+                        CircularButton(size: .regular) {
                             withAnimation {
                                 selectedItem = nil
                             }

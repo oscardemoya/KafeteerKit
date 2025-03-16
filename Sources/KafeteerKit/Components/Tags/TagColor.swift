@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-public enum TagColor: String, Codable, CaseIterable, Identifiable {
+public enum TagColor: String, Codable, DefaultProviding, CaseIterable, Identifiable {
     
-    public static let `default`: Self = .teal
+    public static let defaultValue: Self = .indigo
     
     case blue
     case navy

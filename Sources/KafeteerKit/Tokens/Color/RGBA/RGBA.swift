@@ -7,11 +7,13 @@
 
 import Foundation
 
-public struct RGBA: Codable, RawRepresentable {
+public struct RGBA: Codable, RawRepresentable, DefaultProviding {
     public var red: CGFloat
     public var green: CGFloat
     public var blue: CGFloat
     public var alpha: CGFloat
+    
+    public static var defaultValue: RGBA = RGBA(red: 0, green: 0, blue: 0, alpha: 1)
     
     public var rawValue: String {
         if alpha != 1.0 {

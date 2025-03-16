@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-public struct TagColorVariant: Identifiable, Codable, RawRepresentable {
-    public static let `default` = Self(tagColor: TagColor.default, variant: .mid)
+public struct TagColorVariant: Identifiable, Codable, DefaultProviding {
+    
+    public static var defaultValue = Self(tagColor: .defaultValue, variant: .mid)
     public var id: String { "\(tagColor.id)-\(variant.rawValue)" }
     
     var tagColor: TagColor

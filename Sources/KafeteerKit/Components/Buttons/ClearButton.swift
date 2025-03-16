@@ -15,7 +15,7 @@ public struct ClearButton: ViewModifier {
         ZStack(alignment: .trailing) {
             content
             if !text.isEmpty {
-                CircularCloseButton {
+                CircularButton {
                     text = ""
                 }
                 .onSizeChange { size in

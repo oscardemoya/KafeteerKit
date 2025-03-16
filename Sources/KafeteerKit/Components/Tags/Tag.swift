@@ -11,13 +11,13 @@ import SwiftUI
 public class Tag: Codable, Identifiable {
     public var id: String = UUID().uuidString
     public var name: String = ""
-    public var colorVariant: TagColorVariant = .default
+    public var colorVariant: TagColorVariant = .defaultValue
     public var orderIndex: Int = 0
 
     // Local Fields
     public var canBeSaved: Bool { !name.isBlank }
     
-    public init(id: String? = nil, name: String = "", colorVariant: TagColorVariant = .default, orderIndex: Int = 0) {
+    public init(id: String? = nil, name: String = "", colorVariant: TagColorVariant = .defaultValue, orderIndex: Int = 0) {
         self.id = id ?? UUID().uuidString
         self.name = name
         self.colorVariant = colorVariant

@@ -87,7 +87,7 @@ public extension PaymentCategory {
             case .familyCare: "figure.2.and.child.holdinghands" // 􁗇
             case .fatherhood: "figure.stand" // 􀳾
             case .motherhood: "figure.stand.dress" // 􂡩
-            case .relationship: "figure.2.arms.open" // 􁗆
+            case .relationship: "figure.2.left.holdinghands" // 􂝗
             case .childcare: "figure.and.child.holdinghands" // 􁘁
             case .babysitting: "stroller" // 􁞖
             case .feeding: "cylinder.split.1x2" // 􀡓

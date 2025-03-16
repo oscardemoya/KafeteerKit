@@ -77,7 +77,7 @@ public struct BaseDateField: View {
     @ViewBuilder
     var trailingView: some View {
         if isOptional, internalDate != nil {
-            CircularCloseButton {
+            CircularButton {
                 self.internalDate = nil
                 withAnimation {
                     isExpanded = false
