@@ -8,6 +8,8 @@
 import SwiftUI
 
 public struct LoadingView: View {
+    public init() {}
+    
     public var body: some View {
         ZStack {
             Color.primaryForeground.opacity(0.5)
