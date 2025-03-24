@@ -12,6 +12,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
     case general(General)
     case food(Food)
     case transportation(Transportation)
+    case shopping(Shopping)
     case clothing(Clothing)
     case home(Home)
     case domestic(Domestic)
@@ -31,6 +32,8 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
     case professional(Professional)
     case finance(Finance)
     case business(Business)
+    case work(Work)
+    case investment(Investment)
     case activity(Activity)
     case sports(Sports)
     case hobby(Hobby)
@@ -46,6 +49,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         case general
         case food
         case transportation
+        case shopping
         case clothing
         case home
         case domestic
@@ -65,6 +69,8 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         case professional
         case finance
         case business
+        case work
+        case investment
         case activity
         case sports
         case hobby
@@ -82,6 +88,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
             case .general: General.self
             case .food: Food.self
             case .transportation: Transportation.self
+            case .shopping: Shopping.self
             case .clothing: Clothing.self
             case .home: Home.self
             case .domestic: Domestic.self
@@ -101,6 +108,8 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
             case .professional: Professional.self
             case .finance: Finance.self
             case .business: Business.self
+            case .work: Work.self
+            case .investment: Investment.self
             case .activity: Activity.self
             case .sports: Sports.self
             case .hobby: Hobby.self
@@ -137,6 +146,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         if let value = General(keyword: rawValue) { return value }
         if let value = Food(keyword: rawValue) { return value }
         if let value = Transportation(keyword: rawValue) { return value }
+        if let value = Shopping(keyword: rawValue) { return value }
         if let value = Clothing(keyword: rawValue) { return value }
         if let value = Home(keyword: rawValue) { return value }
         if let value = Domestic(keyword: rawValue) { return value }
@@ -156,6 +166,8 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         if let value = Professional(keyword: rawValue) { return value }
         if let value = Finance(keyword: rawValue) { return value }
         if let value = Business(keyword: rawValue) { return value }
+        if let value = Work(keyword: rawValue) { return value }
+        if let value = Investment(keyword: rawValue) { return value }
         if let value = Activity(keyword: rawValue) { return value }
         if let value = Sports(keyword: rawValue) { return value }
         if let value = Hobby(keyword: rawValue) { return value }
@@ -190,6 +202,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         case .general(let value): value
         case .food(let value): value
         case .transportation(let value): value
+        case .shopping(let value): value
         case .clothing(let value): value
         case .home(let value): value
         case .domestic(let value): value
@@ -209,6 +222,8 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         case .professional(let value): value
         case .finance(let value): value
         case .business(let value): value
+        case .work(let value): value
+        case .investment(let value): value
         case .activity(let value): value
         case .sports(let value): value
         case .hobby(let value): value
@@ -223,6 +238,7 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         case .general: .general
         case .food: .food
         case .transportation: .transportation
+        case .shopping: .shopping
         case .clothing: .clothing
         case .home: .home
         case .domestic: .domestic
@@ -235,6 +251,8 @@ public enum PaymentCategory: Codable, Hashable, Equatable, Identifiable, RawRepr
         case .climateControl: .climateControl
         case .finance: .finance
         case .business: .business
+        case .work: .work
+        case .investment: .investment
         case .education: .education
         case .professional: .professional
         case .healthcare: .healthcare

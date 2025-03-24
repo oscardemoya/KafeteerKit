@@ -1,5 +1,5 @@
 //
-//  FinanceCategory.swift
+//  PersonalFinanceCategory.swift
 //
 //
 //  Created by Oscar De Moya on 8/05/23.
@@ -10,10 +10,11 @@ import Foundation
 public extension PaymentCategory {
     enum Finance: String, CategoryRepresentable {
         public static var lifeArea: LifeArea = .finance
-        public static var categoryIcon: Self = .savings
+        public static var categoryIcon: Self = .personal
         public static var categoryName = String(localized: "Personal Finance", bundle: .module)
         public var asPaymentCategory: PaymentCategory { .finance(self) }
         
+        case personal
         case creditCard
         case loan
         case bankFee
@@ -25,6 +26,7 @@ public extension PaymentCategory {
         case retirement
         
         public enum Keyword: String, KeywordRepresentable {
+            case personal
             case creditCard
             case loan
             case bankFee
@@ -38,6 +40,7 @@ public extension PaymentCategory {
             
             public var value: Finance {
                 switch self {
+                case .personal: .personal
                 case .creditCard: .creditCard
                 case .loan: .loan
                 case .bankFee: .bankFee
@@ -53,6 +56,7 @@ public extension PaymentCategory {
         
         public var iconName: String {
             switch self {
+            case .personal: "person" // 􀉩
             case .creditCard: "creditcard" // 􀍯
             case .loan: "building.columns" // 􀤨
             case .bankFee: "scroll" // 􀤏
@@ -60,13 +64,14 @@ public extension PaymentCategory {
             case .digitalCurrency: "bitcoinsign.circle" // 􀗕
             case .taxes: "percent" // 􀘾
             case .insurance: "umbrella.percent" // 􀸰
-            case .savings: "wallet.bifold" // 􂏰
+            case .savings: "square.and.arrow.down" // 􀈄
             case .retirement: "signpost.right" // 􀯌
             }
         }
         
         public var name: String {
             switch self {
+            case .personal: String(localized: "Personal", bundle: .module)
             case .creditCard: String(localized: "Credit Card", bundle: .module)
             case .loan: String(localized: "Loan", bundle: .module)
             case .bankFee: String(localized: "Bank Fee", bundle: .module)

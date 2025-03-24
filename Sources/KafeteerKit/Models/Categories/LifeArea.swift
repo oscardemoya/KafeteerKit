@@ -17,6 +17,11 @@ public enum LifeArea: String, Codable, Identifiable, CaseIterable {
     case growth
     case leisure
     
+    public enum Order {
+        case index
+        case financeFirst
+    }
+    
     public var id: Self { self }
     public var index: Int { Self.allCases.firstIndex(of: self) ?? .max }
     

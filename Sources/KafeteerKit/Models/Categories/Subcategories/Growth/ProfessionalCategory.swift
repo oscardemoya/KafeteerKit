@@ -41,10 +41,10 @@ public extension PaymentCategory {
         public var iconName: String {
             switch self {
             case .training: "pencil.and.list.clipboard" // 􁕍
-            case .certification: "checkmark.seal" // 􀇺
+            case .certification: "checkmark.seal.text.page" // 􂱅
             case .conference: "person.3" // 􀝊
-            case .accommodation: "building.2" // 􀝒
-            case .allowance: "envelope" // 􀍕
+            case .accommodation: "lamp.table" // 􁏀
+            case .allowance: "envelope.front" // 􂙡
             }
         }
         

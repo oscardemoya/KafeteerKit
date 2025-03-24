@@ -86,12 +86,15 @@ public enum TagColor: String, Codable, DefaultProviding, CaseIterable, Identifia
         case .black: BlackColor.self
         }
     }
-    
-    public static var allCasesAlternated: [Self] {
-        let oddCases = Self.allCases.enumerated().filter { $0.offset % 2 != 0 }.map { $0.element }
-        let evenCases = Self.allCases.enumerated().filter { $0.offset % 2 == 0 }.map { $0.element }
+        
+    public var id: Self { self }
+    public static var allCasesAlternated: [Self] { Self.allCases.alternated }
+}
+
+public extension [TagColor] {
+    var alternated: [TagColor] {
+        let oddCases = self.enumerated().filter { $0.offset % 2 != 0 }.map { $0.element }
+        let evenCases = self.enumerated().filter { $0.offset % 2 == 0 }.map { $0.element }
         return oddCases + evenCases
     }
-
-    public var id: Self { self }
 }

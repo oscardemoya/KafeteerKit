@@ -25,6 +25,7 @@ public extension PaymentCategory {
         case cruise
         case boat
         case delivery
+        case shipping
         case move
 
         public enum Keyword: String, KeywordRepresentable {
@@ -43,6 +44,7 @@ public extension PaymentCategory {
             case sailboat
             case yatch
             case delivery
+            case shipping
             case courier
             case move
 
@@ -59,7 +61,8 @@ public extension PaymentCategory {
                 case .cruise: .cruise
                 case .boat, .sailboat, .yatch: .boat
                 case .delivery: .delivery
-                case .move, .courier: .move
+                case .shipping, .courier: .shipping
+                case .move: .move
                 }
             }
         }
@@ -76,7 +79,8 @@ public extension PaymentCategory {
             case .flight: "airplane" // 􀑓
             case .cruise: "ferry" // 􀸅
             case .boat: "sailboat" // 􁋴
-            case .delivery: "shippingbox" // 􀐚
+            case .delivery: "moped" // 􂏮
+            case .shipping: "shippingbox" // 􀐚
             case .move: "box.truck" // 􁁾
             }
         }
@@ -94,6 +98,7 @@ public extension PaymentCategory {
             case .cruise: String(localized: "Cruise", bundle: .module)
             case .boat: String(localized: "Boat", bundle: .module)
             case .delivery: String(localized: "Delivery", bundle: .module)
+            case .shipping: String(localized: "Shipping", bundle: .module)
             case .move: String(localized: "Move", bundle: .module)
             }
         }

@@ -31,17 +31,21 @@ public struct DateView: View {
     }
     
     public var date: Date
+    public var showDay: Bool = true
     public var size: Size = .regular
     
-    public init(date: Date, size: Size = .regular) {
+    public init(date: Date, showDay: Bool = true, size: Size = .regular) {
         self.date = date
+        self.showDay = showDay
         self.size = size
     }
     
     public var body: some View {
         HStack(spacing: .nano) {
-            dayView
-            Divider().overlay(.dividerColor)
+            if showDay {
+                dayView
+                Divider().overlay(.dividerColor)
+            }
             monthView
         }
         .fixedSize()

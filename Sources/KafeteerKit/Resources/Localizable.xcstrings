@@ -104,6 +104,9 @@
         }
       }
     },
+    "Assets" : {
+
+    },
     "Auto Parts" : {
 
     },
@@ -282,6 +285,12 @@
           }
         }
       }
+    },
+    "Bonds" : {
+
+    },
+    "Bonus" : {
+
     },
     "Books" : {
       "localizations" : {
@@ -598,6 +607,9 @@
         }
       }
     },
+    "Coupon" : {
+
+    },
     "Course" : {
       "localizations" : {
         "es" : {
@@ -659,6 +671,9 @@
       }
     },
     "Dancing" : {
+
+    },
+    "Dark" : {
 
     },
     "Dark Tones First" : {
@@ -748,6 +763,9 @@
         }
       }
     },
+    "Digital Wallet" : {
+
+    },
     "Dinner" : {
       "localizations" : {
         "es" : {
@@ -772,6 +790,9 @@
       }
     },
     "Disk" : {
+
+    },
+    "Dividends" : {
 
     },
     "Doctor's Visit" : {
@@ -1068,6 +1089,9 @@
           }
         }
       }
+    },
+    "Freelance" : {
+
     },
     "Fuel" : {
       "localizations" : {
@@ -1437,6 +1461,9 @@
         }
       }
     },
+    "Interest" : {
+
+    },
     "Internet" : {
       "localizations" : {
         "es" : {
@@ -1533,6 +1560,9 @@
         }
       }
     },
+    "Light" : {
+
+    },
     "Light Tones First" : {
 
     },
@@ -1578,6 +1608,9 @@
           }
         }
       }
+    },
+    "Main" : {
+
     },
     "Maintenance" : {
       "localizations" : {
@@ -1654,6 +1687,9 @@
           }
         }
       }
+    },
+    "Mid" : {
+
     },
     "Mid Tones First" : {
 
@@ -1816,6 +1852,9 @@
           }
         }
       }
+    },
+    "Pastel" : {
+
     },
     "Payment" : {
       "localizations" : {
@@ -1987,6 +2026,9 @@
         }
       }
     },
+    "Real State" : {
+
+    },
     "Recurring Payment" : {
       "localizations" : {
         "es" : {
@@ -2073,6 +2115,12 @@
         }
       }
     },
+    "Royalty Fee" : {
+
+    },
+    "Salary" : {
+
+    },
     "Savings" : {
       "localizations" : {
         "es" : {
@@ -2110,7 +2158,6 @@
       }
     },
     "Secondary" : {
-      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -2169,6 +2216,9 @@
           }
         }
       }
+    },
+    "Shipping" : {
+
     },
     "Shirt" : {
       "localizations" : {
@@ -2302,6 +2352,9 @@
         }
       }
     },
+    "Stocks" : {
+
+    },
     "Storage" : {
       "localizations" : {
         "es" : {
@@ -2402,7 +2455,6 @@
       }
     },
     "Tertiary" : {
-      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -2672,6 +2724,9 @@
         }
       }
     },
+    "Wage" : {
+
+    },
     "Walking" : {
 
     },
@@ -2776,6 +2831,9 @@
       }
     },
     "Wine" : {
+
+    },
+    "Work" : {
 
     },
     "Yearly" : {

@@ -15,7 +15,7 @@ public enum Spacing: CGFloat, Identifiable, Hashable, CaseIterable {
     case extraSmall = 12
     case small = 16
     case medium = 24
-    case large = 32
+    case large = 36
     case extraLarge = 40
     case big = 48
     case huge = 56

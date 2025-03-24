@@ -15,7 +15,6 @@ public extension PaymentCategory {
         public var asPaymentCategory: PaymentCategory { .business(self) }
         
         case business
-        case investment
         case funds
         case accounting
         case lawyer
@@ -27,7 +26,6 @@ public extension PaymentCategory {
 
         public enum Keyword: String, KeywordRepresentable {
             case business
-            case investment
             case funds
             case accounting
             case lawyer
@@ -40,7 +38,6 @@ public extension PaymentCategory {
             public var value: Business {
                 switch self {
                 case .business: .business
-                case .investment: .investment
                 case .funds: .funds
                 case .accounting: .accounting
                 case .lawyer: .lawyer
@@ -56,14 +53,13 @@ public extension PaymentCategory {
         public var iconName: String {
             switch self {
             case .business: "storefront" // 􁽇
-            case .investment: "chart.line.uptrend.xyaxis" // 􀑁
             case .funds: "laurel.leading" // 􁊘
             case .accounting: "candybarphone" // 􀪳
-            case .lawyer: "briefcase" // 􀎜
+            case .lawyer: "append.page" // 􀉇
             case .payroll: "lanyardcard" // 􀰵
             case .officeSupplies: "paperclip" // 􀉢
             case .hardware: "printer" // 􀎚
-            case .branding: "rosette" // 􀛯
+            case .branding: "checkmark.seal" // 􀇺
             case .marketing: "burst" // 􀑂
             }
         }
@@ -71,7 +67,6 @@ public extension PaymentCategory {
         public var name: String {
             switch self {
             case .business: String(localized: "Business", bundle: .module)
-            case .investment: String(localized: "Investment", bundle: .module)
             case .funds: String(localized: "Funds", bundle: .module)
             case .accounting: String(localized: "Accounting", bundle: .module)
             case .lawyer: String(localized: "Lawyer", bundle: .module)

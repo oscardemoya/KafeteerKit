@@ -108,6 +108,32 @@ public extension TagColor {
         case dark
 
         public var id: Self { self }
+        
+        public var name: String {
+            switch self {
+            case .light: String(localized: "Light")
+            case .mid: String(localized: "Mid")
+            case .dark: String(localized: "Dark")
+            }
+        }
+    }
+    
+    enum ColorSet: String, Codable, CaseIterable, Identifiable {
+        case main
+        case secondary
+        case tertiary
+        case pastel
+
+        public var id: Self { self }
+        
+        public var name: String {
+            switch self {
+            case .main: String(localized: "Main")
+            case .secondary: String(localized: "Secondary")
+            case .tertiary: String(localized: "Tertiary")
+            case .pastel: String(localized: "Pastel")
+            }
+        }
     }
     
     enum Order: String, CaseIterable, Identifiable {

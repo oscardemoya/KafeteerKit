@@ -10,13 +10,16 @@ import SwiftUI
 public struct CategoryPicker: View {
     @Environment(\.dismiss) private var dismiss
     @Binding public var selectedCategory: PaymentCategory
+    public var order: LifeArea.Order = .index
+    
     @State private var searchText = ""
     @State private var selectedItem: PaymentCategory.Kind?
     @State private var categories = PaymentCategory.Kind.allCases
     @State private var groupedItems = [LifeArea: [PaymentCategory.Kind]]()
     
-    public init(selectedCategory: Binding<PaymentCategory>) {
+    public init(selectedCategory: Binding<PaymentCategory>, order: LifeArea.Order = .index) {
         self._selectedCategory = selectedCategory
+        self.order = order
     }
     
     public var body: some View {
@@ -56,15 +59,14 @@ public struct CategoryPicker: View {
         .onChange(of: selectedItem) { _, newValue in
             reloadData()
         }
-        .onChange(of: matchingResults) { _, newValue in
-            categories = PaymentCategory.Kind.allCases.filter { kind in
-                matchingResults.contains { $0.categoryClass == kind.categoryClass }
-            }
-        }
     }
     
     func reloadData() {
         groupedItems = Dictionary(grouping: filteredResults) { $0.categoryClass.lifeArea }
+        categories = sortedCategories
+            .filter { kind in
+                matchingResults.contains { $0.categoryClass == kind.categoryClass }
+            }
     }
     
     private var matchingResults: [PaymentCategory.Kind] {
@@ -83,7 +85,33 @@ public struct CategoryPicker: View {
         return matchingResults
     }
     
-    private var filteredAreas: [LifeArea] { groupedItems.keys.sorted(by: { $0.index < $1.index }) }
+    private var sortedCategories: [PaymentCategory.Kind] {
+        PaymentCategory.Kind.allCases.sorted {
+            switch order {
+            case .index:
+                return $0.categoryClass.lifeArea.index < $1.categoryClass.lifeArea.index
+            case .financeFirst:
+                if $0.categoryClass.lifeArea == $1.categoryClass.lifeArea {
+                    return $0.categoryClass.lifeArea.index < $1.categoryClass.lifeArea.index
+                }
+                return $0.categoryClass.lifeArea == .finance
+            }
+        }
+    }
+    
+    private var filteredAreas: [LifeArea] {
+        groupedItems.keys.sorted {
+            switch order {
+            case .index:
+                return $0.index < $1.index
+            case .financeFirst:
+                if $0 != .finance, $1 != .finance {
+                    return $0.index < $1.index
+                }
+                return $0 == .finance
+            }
+        }
+    }
 }
 
 extension PaymentCategory.Kind {

@@ -10,5 +10,5 @@ import Foundation
 public enum Feedback {
     case success
     case warning
-    case failure
+    case danger
 }

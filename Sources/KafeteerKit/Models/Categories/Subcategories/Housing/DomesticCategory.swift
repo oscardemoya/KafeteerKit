@@ -47,7 +47,7 @@ public extension PaymentCategory {
             case .domesticService: "bubbles.and.sparkles" // 􁒉
             case .chef: "cooktop" // 􁕠
             case .laundry: "drop.keypad.rectangle" // 􁓀
-            case .lawnCare: "tree" // 􁝯
+            case .lawnCare: "sprinkler.and.droplets" // 􁒼
             case .securityGuard: "lock.fill" // 􀎡
             }
         }

@@ -12,6 +12,7 @@ public struct CircularButton: View {
         case close
         case search
         case edit
+        case replace
         case delete
         case system(name: String)
         
@@ -20,6 +21,7 @@ public struct CircularButton: View {
             case .close: return "xmark.circle.fill"
             case .search: return "magnifyingglass.circle.fill"
             case .edit: return "pencil.circle.fill"
+            case .replace: return "arrow.trianglehead.2.clockwise.rotate.90.circle.fill"
             case .delete: return "trash.circle.fill"
             case .system(let name): return name
             }
@@ -60,14 +62,21 @@ public struct CircularButton: View {
         }
     }
 
-    public init(size: Size = .regular, icon: Icon = .close, action: @escaping Action) {
+    public init(
+        size: Size = .regular,
+        icon: Icon = .close,
+        foregroundColor: Color = .tertiaryForeground,
+        action: @escaping Action
+    ) {
         self.size = size
         self.icon = icon
+        self.foregroundColor = foregroundColor
         self.action = action
     }
     
     public var size: Size = .regular
     public var icon: Icon = .close
+    public var foregroundColor: Color = .tertiaryForeground
     public var action: Action
 
     public var body: some View {
@@ -80,7 +89,7 @@ public struct CircularButton: View {
                 .padding(.horizontal, size.horizontalPadding)
                 .padding(.vertical, size.verticalPadding)
         }
-        .foregroundColor(.tertiaryForeground)
+        .foregroundColor(foregroundColor)
     }
 }
 
@@ -88,5 +97,6 @@ public struct CircularButton: View {
     CircularButton {}
     CircularButton(icon: .search) {}
     CircularButton(icon: .edit) {}
+    CircularButton(icon: .replace) {}
     CircularButton(icon: .delete) {}
 }

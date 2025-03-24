@@ -16,37 +16,22 @@ public extension PaymentCategory {
         
         case general
         case payment
-        case personal
         case moneyTransfer
         case recurringPayment
-        case shopping
-        case list
-        case deal
 
         public enum Keyword: String, KeywordRepresentable {
             case general
             case payment
-            case personal
             case moneyTransfer
             case recurringPayment
             case recurring
-            case shopping
-            case list
-            case deal
-            case clearance
-            case outlet
-            case sale
 
             public var value: General {
                 switch self {
                 case .general: .general
                 case .payment: .payment
-                case .personal: .personal
                 case .moneyTransfer: .moneyTransfer
                 case .recurringPayment, .recurring: .recurringPayment
-                case .shopping: .shopping
-                case .list: .list
-                case .deal, .clearance, .outlet, .sale: .deal
                 }
             }
         }
@@ -55,12 +40,8 @@ public extension PaymentCategory {
             switch self {
             case .general: "circle.dashed" // 􀓞
             case .payment: "dollarsign.circle" // 􀖗
-            case .personal: "person" // 􀉩
             case .moneyTransfer:  "arrow.down.left.arrow.up.right" // 􁽧
             case .recurringPayment: "dollarsign.arrow.circlepath" // 􁎣
-            case .shopping: "cart" // 􀍩
-            case .list: "text.page" // 􀉆
-            case .deal: "tag" // 􀋡
             }
         }
         
@@ -68,12 +49,8 @@ public extension PaymentCategory {
             switch self {
             case .general: String(localized: "General", bundle: .module)
             case .payment: String(localized: "Payment", bundle: .module)
-            case .personal: String(localized: "Personal", bundle: .module)
             case .moneyTransfer: String(localized: "Money Transfer", bundle: .module)
             case .recurringPayment: String(localized: "Recurring Payment", bundle: .module)
-            case .shopping: String(localized: "Shopping", bundle: .module)
-            case .list: String(localized: "List", bundle: .module)
-            case .deal: String(localized: "Deal", bundle: .module)
             }
         }
     }

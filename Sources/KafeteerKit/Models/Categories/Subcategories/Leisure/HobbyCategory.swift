@@ -65,8 +65,8 @@ public extension PaymentCategory {
             case .artSupplies: "paintpalette" // 􀝥
             case .boardGame: "dice" // 􀺴
             case .puzzle: "puzzlepiece" // 􀤚
-            case .gardenTools: "sprinkler.and.droplets" // 􁒼
-            case .plant: "leaf" // 􀥲
+            case .gardenTools: "sprinkler" // 􁔌
+            case .plant: "tree" // 􁝯
             case .camera: "camera" // 􀌞
             case .piano: "pianokeys" // 􀎏
             case .guitar: "guitars" // 􀑭
