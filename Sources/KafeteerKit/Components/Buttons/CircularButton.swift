@@ -14,6 +14,7 @@ public struct CircularButton: View {
         case edit
         case replace
         case delete
+        case info
         case system(name: String)
         
         var systemName: String {
@@ -23,6 +24,7 @@ public struct CircularButton: View {
             case .edit: return "pencil.circle.fill"
             case .replace: return "arrow.trianglehead.2.clockwise.rotate.90.circle.fill"
             case .delete: return "trash.circle.fill"
+            case .info: return "info.circle.fill"
             case .system(let name): return name
             }
         }
@@ -99,4 +101,5 @@ public struct CircularButton: View {
     CircularButton(icon: .edit) {}
     CircularButton(icon: .replace) {}
     CircularButton(icon: .delete) {}
+    CircularButton(icon: .info) {}
 }

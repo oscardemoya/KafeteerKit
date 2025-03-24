@@ -15,7 +15,7 @@ public struct TagColorVariant: Identifiable, Codable, DefaultProviding {
     var tagColor: TagColor
     var variant: TagColor.Variant
     
-    public init(tagColor: TagColor, variant: TagColor.Variant) {
+    public init(tagColor: TagColor = .defaultValue, variant: TagColor.Variant) {
         self.tagColor = tagColor
         self.variant = variant
     }

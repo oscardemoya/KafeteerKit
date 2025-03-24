@@ -26,9 +26,9 @@ public enum TagColor: String, Codable, DefaultProviding, CaseIterable, Identifia
     case gold
     case yellow
     case lemon
-    case lime
     case olive
     case apple
+    case lime
     case green
     case emerald
     case teal
@@ -96,5 +96,14 @@ public extension [TagColor] {
         let oddCases = self.enumerated().filter { $0.offset % 2 != 0 }.map { $0.element }
         let evenCases = self.enumerated().filter { $0.offset % 2 == 0 }.map { $0.element }
         return oddCases + evenCases
+    }
+}
+
+#Preview {
+    List {
+        ForEach(TagColorVariant.allCasesByColor) { colorVariant in
+            TagView(tag: Tag(name: "Tag", colorVariant: colorVariant), size: .large)
+                .listRowBackground(colorVariant.tintColor)
+        }
     }
 }

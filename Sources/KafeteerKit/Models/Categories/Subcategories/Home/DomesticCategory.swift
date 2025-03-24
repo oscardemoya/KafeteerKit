@@ -9,7 +9,7 @@ import Foundation
 
 public extension PaymentCategory {
     enum Domestic: String, CategoryRepresentable {
-        public static var lifeArea: LifeArea = .housing
+        public static var lifeArea: LifeArea = .home
         public static var categoryIcon: Self = .domesticService
         public static var categoryName = String(localized: "Domestic Service", bundle: .module)
         public var asPaymentCategory: PaymentCategory { .domestic(self) }

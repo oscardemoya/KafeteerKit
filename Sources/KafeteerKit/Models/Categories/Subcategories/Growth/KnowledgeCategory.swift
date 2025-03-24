@@ -16,6 +16,7 @@ public extension PaymentCategory {
         
         case education
         case schoolSupplies
+        case stationary
         case books
         case newspaper
         case magazine
@@ -29,6 +30,7 @@ public extension PaymentCategory {
             case school
             case university
             case schoolSupplies
+            case stationary
             case books
             case eBooks
             case newspaper
@@ -43,6 +45,7 @@ public extension PaymentCategory {
                 switch self {
                 case .education, .school, .university: .education
                 case .schoolSupplies: .schoolSupplies
+                case .stationary: .stationary
                 case .books, .eBooks: .books
                 case .newspaper: .newspaper
                 case .magazine: .magazine
@@ -58,6 +61,7 @@ public extension PaymentCategory {
             switch self {
             case .education: "graduationcap" // 􀫓
             case .schoolSupplies: "pencil.and.ruler" // 􁖆
+            case .stationary: "pencil" // 􀈊
             case .books: "book" // 􀉚
             case .newspaper: "newspaper" // 􀤦
             case .magazine: "magazine" // 􁂾
@@ -72,6 +76,7 @@ public extension PaymentCategory {
             switch self {
             case .education: String(localized: "Education", bundle: .module)
             case .schoolSupplies: String(localized: "School Supplies", bundle: .module)
+            case .stationary: String(localized: "Stationary", bundle: .module)
             case .books: String(localized: "Books", bundle: .module)
             case .newspaper: String(localized: "Newspaper", bundle: .module)
             case .magazine: String(localized: "Magazine", bundle: .module)
