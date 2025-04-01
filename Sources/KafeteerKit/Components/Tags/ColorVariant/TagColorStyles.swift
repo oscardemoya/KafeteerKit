@@ -11,15 +11,15 @@ public extension TagColor {
     func backgroundColor(_ variant: Variant) -> Color {
         switch variant {
         case .light: colorProvider.color(shade: .shade100)
-        case .mid: colorProvider.color(shade: .shade500)
-        case .dark: colorProvider.color(shade: .shade900)
+        case .mid: colorProvider.color(shade: .shade600)
+        case .dark: colorProvider.color(shade: .shade950)
         }
     }
     
     func foregroundColor(_ variant: Variant) -> Color {
         switch variant {
-        case .light: colorProvider.color(shade: .shade900)
-        case .mid: colorProvider.color(shade: .shade020)
+        case .light: colorProvider.color(shade: .shade950)
+        case .mid: colorProvider.color(shade: .shade010)
         case .dark: colorProvider.color(shade: .shade050)
         }
     }

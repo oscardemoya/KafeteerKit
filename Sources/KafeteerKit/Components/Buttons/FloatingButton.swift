@@ -31,8 +31,7 @@ public struct FloatingButton: View {
         .buttonStyle(.borderedProminent)
         .clipShape(.circle)
         .frame(width: 40, height: 40)
-        .padding(.horizontal, 20)
-        .padding(.vertical, 16)
+        .padding(.large)
         .shadowStyle(.medium)
     }
 }
