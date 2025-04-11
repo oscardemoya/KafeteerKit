@@ -9,6 +9,13 @@ import Foundation
 
 public extension TimeInterval {
     var date: Date { Date(timeIntervalSince1970: self) }
+    
+    var hourAndMinuteString: String {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.hour, .minute]
+        formatter.unitsStyle = .full
+        return formatter.string(from: self) ?? ""
+    }
 }
 
 public extension Int {

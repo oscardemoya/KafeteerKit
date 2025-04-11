@@ -9,25 +9,35 @@ import SwiftUI
 
 public struct ClosableModifier: ViewModifier {
     @Environment(\.dismiss) private var dismiss
-    @Environment(\.dismissAction) private var dismissAction
+    
+    public enum ColorTheme {
+        case light
+        case dark
+        
+        var foregroundColor: Color {
+            switch self {
+            case .light: return .primaryBackground.opacity(0.75)
+            case .dark: return .primaryForeground.opacity(0.75)
+            }
+        }
+    }
+    
+    var placement: ToolbarItemPlacement = .topBarTrailing
+    var theme: ColorTheme = .dark
     
     public func body(content: Content) -> some View {
         content
 #if !os(macOS)
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: placement) {
                     Button {
-                        if let dismissAction {
-                            dismissAction()
-                        } else {
-                            dismiss()
-                        }
+                        dismiss()
                     } label: {
                         Image(systemName: "xmark.circle.fill")
                             .font(.system(size: 20))
                             .symbolRenderingMode(.hierarchical)
                     }
-                    .foregroundColor(.secondaryForeground)
+                    .foregroundColor(theme.foregroundColor)
                 }
             }
 #endif
@@ -35,7 +45,8 @@ public struct ClosableModifier: ViewModifier {
 }
 
 public extension View {
-    func closable() -> some View {
-        modifier(ClosableModifier())
+    func closable(_ placement: ToolbarItemPlacement = .topBarTrailing,
+                  theme: ClosableModifier.ColorTheme = .dark) -> some View {
+        modifier(ClosableModifier(placement: placement, theme: theme))
     }
 }

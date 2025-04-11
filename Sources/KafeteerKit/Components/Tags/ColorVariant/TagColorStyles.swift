@@ -11,7 +11,7 @@ public extension TagColor {
     func backgroundColor(_ variant: Variant) -> Color {
         switch variant {
         case .light: colorProvider.color(shade: .shade100)
-        case .mid: colorProvider.color(shade: .shade600)
+        case .mid: colorProvider.color(shade: .shade500)
         case .dark: colorProvider.color(shade: .shade950)
         }
     }

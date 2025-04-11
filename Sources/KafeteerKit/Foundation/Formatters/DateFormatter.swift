@@ -27,6 +27,23 @@ public extension Date {
         Calendar.current.dateInterval(of: component, for: self)?.end ?? self
     }
     
+    var startOfWeek: Date {
+        let date = Calendar.current.startOfDay(for: self)
+        let components = Calendar.current.dateComponents([.yearForWeekOfYear, .weekOfYear], from: date)
+        return Calendar.current.date(from: components) ?? self
+    }
+    
+    var startOfHalfMonth: Date {
+        let date = Calendar.current.startOfDay(for: self)
+        let components = Calendar.current.dateComponents([.day], from: date)
+        guard let day = components.day else { return self }
+        if day > 15 {
+            return Calendar.current.date(bySetting: .day, value: 15, of: self) ?? self
+        } else {
+            return startOfMonth
+        }
+    }
+    
     var endOfHalfMonth: Date {
         let date = Calendar.current.startOfDay(for: self)
         let components = Calendar.current.dateComponents([.day], from: date)
