@@ -12,7 +12,11 @@ public struct FloatingButton: View {
     public var icon: Image
     public var action: Action
     
-    public init(isOn: Binding<Bool>, icon: Image = Image(systemName: "plus"), action: @escaping Action) {
+    public init(
+        isOn: Binding<Bool>,
+        icon: Image = Image(systemName: "plus"),
+        action: @escaping Action
+    ) {
         self._isOn = isOn
         self.icon = icon
         self.action = action

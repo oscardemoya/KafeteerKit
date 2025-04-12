@@ -24,8 +24,8 @@
         "components" : {
           "alpha" : "1.000",
           "blue" : "0x30",
-          "green" : "0x45",
-          "red" : "0x54"
+          "green" : "0x44",
+          "red" : "0x56"
         }
       },
       "idiom" : "universal"
